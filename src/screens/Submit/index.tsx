@@ -1,22 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
+import SubmitForm from '../../components/SubmitForm';
+import Motivations from '../../components/Motivations';
+import {fonts} from '../../config/stylesGuides';
+import styles from './styles';
 
 const SubmitScreen = () => {
   return (
     <View style={[styles.screenContainer, styles.submitScreen]}>
-      <Text>Submit screen</Text>
+      <View style={styles.pageTitle}>
+        <Text style={fonts.h4}>Hi there</Text>
+        <Text style={fonts.h2}>Have a cool song to share?</Text>
+      </View>
+      <SubmitForm />
+      <Motivations />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  screenContainer: {
-    height: '100%',
-    width: '100%',
-  },
-  submitScreen: {
-    backgroundColor: '#FEEAE3',
-  },
-});
 
 export default SubmitScreen;

@@ -1,22 +1,47 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
+import AchievedBadge from '../../components/AchievedBadge';
+import Avatar from '../../components/Avatar';
+import Wallet from '../../components/Wallet';
+import styles from './styles';
+import {fonts} from '../../config/stylesGuides';
 
-const ProfileScreen = () => {
+const data = [
+  {title: 'Song Of The Day', type: 'dayBadge', count: 23},
+  {title: 'Song Of The Week', type: 'weekBadge', count: 7},
+  {title: 'Song Of The Month', type: 'monthBadge', count: 1},
+  {title: 'Video Of The Day', type: 'videoBadge', count: 1},
+  {title: 'Super Link', type: 'superLinkBadge', count: 2},
+];
+const profile = {
+  name: 'Full Name',
+  username: 'username',
+  address: 'lskh96jgzfftzff2fta2zvsmba9mvs5cnz9ahr3ke',
+  balance: '12.5 MZK',
+};
+
+const HomeScreen = () => {
   return (
-    <View style={[styles.screenContainer, styles.profileScreen]}>
-      <Text>Profile screen</Text>
-    </View>
+    <ScrollView style={[styles.screenContainer, styles.profileScreen]}>
+      <View>
+        <Text style={styles.pageTitle}>Profile</Text>
+        <View style={styles.details}>
+          <Avatar />
+          <Text style={[styles.name, fonts.h1]}>{profile.name}</Text>
+          <Text style={[styles.username, fonts.h2]}>{profile.username}</Text>
+        </View>
+      </View>
+
+      <View>
+        <Text style={styles.pageTitle}>Badges</Text>
+        {data.map(item => (
+          <AchievedBadge item={item} key={item.title} />
+        ))}
+      </View>
+
+      <Wallet address={profile.address} balance={profile.balance} />
+    </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({
-  screenContainer: {
-    height: '100%',
-    width: '100%',
-  },
-  profileScreen: {
-    backgroundColor: '#FEEAE3',
-  },
-});
-
-export default ProfileScreen;
+export default HomeScreen;
