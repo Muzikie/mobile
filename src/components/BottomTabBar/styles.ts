@@ -23,19 +23,20 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
   },
+  tabs: {
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+  },
   tab: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: '5%',
-    marginRight: '5%',
-    backgroundColor: '#fff',
   },
-  inactiveTab: {
-    color: '#999',
-  },
-  activeTab: {
-    color: '#453248',
+  iconWrapper: {
+    display: 'block',
+    width: 27,
   },
 };
 

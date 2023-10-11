@@ -4,6 +4,7 @@ export default {
   menuHeight: 60,
   avatarSize: 124,
   badgeSize: 58,
+  playButtonSize: 40,
 
   // paddings
   boxPadding: 20,

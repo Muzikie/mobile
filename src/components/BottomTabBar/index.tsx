@@ -1,39 +1,58 @@
 import React from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, TouchableHighlight} from 'react-native';
 import styles from './styles';
-import type {BottomTabBarProps} from './types';
+import Player from '../Player';
+import Icon from '../Icon';
+import {BottomTabBarProps} from './types';
+import {colors} from '../../config/stylesGuides';
+
+const RouteButton = ({route, navigation, stateIndex, index}: any) => {
+  const isFocused = stateIndex === index;
+
+  const onPress = () => {
+    const event = navigation.emit({
+      type: 'tabPress',
+      target: route.key,
+      canPreventDefault: true,
+    });
+
+    if (!isFocused && !event.defaultPrevented) {
+      // Navigate to the tab if it's not focused already
+      navigation.navigate(route.name);
+    }
+  };
+
+  const iconColor = isFocused ? colors.light.grey : colors.light.purple;
+
+  return (
+    <TouchableHighlight
+      onPress={onPress}
+      key={route.key}
+      underlayColor="transparent"
+      style={styles.tab}>
+      <View style={styles.iconWrapper}>
+        <Icon name={route.name} color={iconColor} />
+      </View>
+    </TouchableHighlight>
+  );
+};
 
 const BottomTabBar = ({state, navigation}: BottomTabBarProps) => {
   return (
     <View style={styles.tabBar}>
       <View style={styles.wrapper}>
-        {state.routes.map((route, index) => {
-          const isFocused = state.index === index;
-
-          const onPress = () => {
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route.key,
-              canPreventDefault: true,
-            });
-
-            if (!isFocused && !event.defaultPrevented) {
-              // Navigate to the tab if it's not focused already
-              navigation.navigate(route.name);
-            }
-          };
-
-          return (
-            <TouchableHighlight
-              onPress={onPress}
-              key={route.key}
-              style={styles.tab}>
-              <Text style={isFocused ? styles.activeTab : styles.inactiveTab}>
-                {route.name}
-              </Text>
-            </TouchableHighlight>
-          );
-        })}
+        <Player />
+        <View style={styles.tabs}>
+          {state.routes.map((route, index) => (
+            <RouteButton
+              navigation={navigation}
+              route={route}
+              stateIndex={state.index}
+              index={index}
+              key={index}
+            />
+          ))}
+        </View>
       </View>
     </View>
   );
