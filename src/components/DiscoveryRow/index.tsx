@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, Image, View, TouchableHighlight} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
+import Icon from '../Icon';
 import {truncateText} from '../../utils/helpers';
 import styles from './styles';
 import type {DiscoveryRowProps} from './types';
 
 import thumbnail from '../../assets/images/discovery-thumbnail.png';
-import upvoteIcon from '../../assets/images/upvote.png';
 
 const DiscoveryRow = ({item}: DiscoveryRowProps) => {
   const {title, artist, submitter} = item;
@@ -16,7 +16,10 @@ const DiscoveryRow = ({item}: DiscoveryRowProps) => {
 
   return (
     <View style={[styles.container, styles.row]}>
-      <TouchableHighlight onPress={listen} style={[styles.link, styles.row]}>
+      <TouchableHighlight
+        onPress={listen}
+        underlayColor="transparent"
+        style={[styles.link, styles.row]}>
         <>
           <Image source={thumbnail} style={styles.thumbnail} />
           <View>
@@ -31,8 +34,11 @@ const DiscoveryRow = ({item}: DiscoveryRowProps) => {
           </View>
         </>
       </TouchableHighlight>
-      <TouchableHighlight onPress={upvote} style={styles.button}>
-        <Image source={upvoteIcon} style={styles.upvoteIcon} />
+      <TouchableHighlight
+        onPress={upvote}
+        underlayColor="transparent"
+        style={styles.button}>
+        <Icon name="UpVote" style={styles.upvoteIcon} />
       </TouchableHighlight>
     </View>
   );
