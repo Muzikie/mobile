@@ -5,15 +5,33 @@ const styles = {
   wrapper: {
     borderWidth: 1,
     borderColor: 'transparent',
-    paddingLeft: boxes.boxPadding,
-    paddingRight: boxes.boxPadding,
+    // paddingLeft: boxes.boxPadding,
+    // paddingRight: boxes.boxPadding,
     marginTop: boxes.boxPadding,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
   },
-  Success: {
-    color: colors.light.success,
+  info: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'nowrap',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingLeft: boxes.boxPadding,
+    borderWidth: 1,
+    borderColor: 'transparent',
+    paddingTop: boxes.boxPadding / 3,
+    paddingBottom: boxes.boxPadding / 3,
   },
-  error: {
-    color: colors.light.error,
+  image: {
+    height: boxes.buttonHeight,
+    width: boxes.buttonHeight,
+    borderWidth: 1,
+    borderColor: colors.light.white,
+    borderRadius: boxes.thumbnailRadius,
+    overflow: 'hidden',
   },
 };
 

@@ -9,10 +9,19 @@ export interface Account {
 }
 
 export interface Link {
-  spotifyId: string;
-  appleMusicId: string;
-  title: string;
-  artist: string;
-  submitter: string;
-  id: string;
+  spotifyId?: string;
+  appleMusicId?: string;
+  name: string;
+  album: string;
+  artists: string[];
+  images: {
+    url: string;
+    height: number;
+    width: number;
+  }[];
+  submitter: {
+    address: string;
+    name: string;
+    username: string;
+  };
 }
