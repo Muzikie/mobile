@@ -4,7 +4,7 @@ import styles from './styles';
 import {FeedbackProps, SubmissionStatuses} from './types';
 
 const Feedback = ({style, status, message}: FeedbackProps) => {
-  if (status === SubmissionStatuses.pending) {
+  if (status !== SubmissionStatuses.error) {
     return null;
   }
 
