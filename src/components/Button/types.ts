@@ -8,4 +8,5 @@ export interface ButtonProps {
   style?: object;
   theme?: ButtonThemes;
   title: string;
+  disabled?: boolean;
 }

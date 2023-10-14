@@ -43,6 +43,9 @@ const styles = {
     color: colors.light.purple,
     backgroundColor: colors.light.white,
   },
+  disabled: {
+    opacity: 0.5,
+  },
 };
 
 export default StyleSheet.create(styles);
