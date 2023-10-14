@@ -9,7 +9,7 @@ import type {DiscoveryRowProps} from './types';
 import thumbnail from '../../assets/images/discovery-thumbnail.png';
 
 const DiscoveryRow = ({item}: DiscoveryRowProps) => {
-  const {title, artist, submitter} = item;
+  const {name, artists, submitter} = item;
 
   const listen = () => {};
   const upvote = () => {};
@@ -24,12 +24,12 @@ const DiscoveryRow = ({item}: DiscoveryRowProps) => {
           <Image source={thumbnail} style={styles.thumbnail} />
           <View>
             <Text style={[fonts.h4, styles.title]}>
-              {truncateText(title, 25)}
+              {truncateText(name, 25)}
             </Text>
             <View style={styles.row}>
-              <Text style={fonts.base}>{truncateText(artist, 15)}</Text>
+              <Text style={fonts.base}>{truncateText(artists[0], 15)}</Text>
               <Text style={fonts.base}> • </Text>
-              <Text style={fonts.base}>{truncateText(submitter, 10)}</Text>
+              <Text style={fonts.base}>{truncateText(submitter.name, 10)}</Text>
             </View>
           </View>
         </>
