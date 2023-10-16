@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, View, Image} from 'react-native';
-import {SubmissionStatuses} from '../Feedback/types';
+import {FetchStatus} from '../../config/types';
 import type {PreviewProps} from './types';
 import styles from './styles';
 import {fonts} from '../../config/stylesGuides';
 
 const Preview = ({style, submissionStatus, data}: PreviewProps) => {
-  if (submissionStatus !== SubmissionStatuses.success || !data) {
+  if (submissionStatus !== FetchStatus.success || !data) {
     return null;
   }
 

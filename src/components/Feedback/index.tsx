@@ -1,19 +1,18 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import styles from './styles';
-import {FeedbackProps, SubmissionStatuses} from './types';
+import {FeedbackProps} from './types';
+import {FetchStatus} from '../../config/types';
 
 const Feedback = ({style, status, message}: FeedbackProps) => {
-  if (status !== SubmissionStatuses.error) {
+  if (status !== FetchStatus.error) {
     return null;
   }
 
   return (
     <View style={[styles.wrapper, style]}>
       <Text
-        style={
-          status === SubmissionStatuses.error ? styles.error : styles.success
-        }>
+        style={status === FetchStatus.error ? styles.error : styles.success}>
         {message || 'Oops, try again later.'}
       </Text>
     </View>

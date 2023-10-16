@@ -1,11 +1,7 @@
-export enum SubmissionStatuses {
-  success = 'success',
-  error = 'error',
-  pending = 'pending',
-}
+import {FetchStatus} from '../../config/types';
 
 export interface FeedbackProps {
   style?: object;
-  status: SubmissionStatuses;
+  status: FetchStatus;
   message?: string;
 }

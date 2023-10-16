@@ -1,8 +1,8 @@
 import {Link} from '../../config/types';
-import {SubmissionStatuses} from '../Feedback/types';
+import {FetchStatus} from '../../config/types';
 
 export interface PreviewProps {
   style?: object;
-  submissionStatus: SubmissionStatuses;
-  data?: Link;
+  submissionStatus: FetchStatus;
+  data?: Omit<Link, 'id' | 'submitter'>;
 }
