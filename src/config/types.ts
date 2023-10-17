@@ -79,3 +79,13 @@ export enum FetchStatus {
   success = 'success',
   error = 'error',
 }
+
+export enum MODULES {
+  ANCHOR = 'anchor',
+  BADGE = 'badge',
+}
+
+export enum COMMANDS {
+  CREATE = 'create',
+  VOTE = 'vote',
+}

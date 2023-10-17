@@ -3,16 +3,25 @@ import {Text, Image, View, TouchableHighlight} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
 import Icon from '../Icon';
 import {truncateText} from '../../utils/helpers';
+import {useVoteAnchor} from '../../hooks/useVoteAnchor';
 import styles from './styles';
 import type {DiscoveryRowProps} from './types';
 
 import thumbnail from '../../assets/images/discovery-thumbnail.png';
 
 const DiscoveryRow = ({item}: DiscoveryRowProps) => {
+  const {signAndBroadcast} = useVoteAnchor();
   const {name, artists, submitter} = item;
 
-  const listen = () => {};
-  const upvote = () => {};
+  const listen = () => {
+    console.log('Implement the play functionality');
+  };
+
+  const upvote = async () => {
+    await signAndBroadcast({
+      anchorID: item.id,
+    });
+  };
 
   return (
     <View style={[styles.container, styles.row]}>

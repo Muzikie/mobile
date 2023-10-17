@@ -90,3 +90,5 @@ export const removeNullValues = (obj: KeyValue): KeyValue => {
 
   return newObj;
 };
+
+export const bufferize = (value: string): Buffer => Buffer.from(value, 'hex');

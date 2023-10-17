@@ -4,7 +4,7 @@ import {MODULES, COMMANDS} from '../../config/constants';
 import {useBroadcast} from '../useBroadcast';
 import {KeyValue} from '../../config/types';
 
-export const useCreateAnchor = () => {
+export const useVoteAnchor = () => {
   const {account} = useAccount();
   const {broadcast} = useBroadcast();
 
@@ -27,10 +27,9 @@ export const useCreateAnchor = () => {
 
     const result = await broadcast({
       module: MODULES.ANCHOR,
-      command: COMMANDS.CREATE,
+      command: COMMANDS.VOTE,
       params: {
         ...formValues,
-        submitter: account.address,
       },
       account,
     });

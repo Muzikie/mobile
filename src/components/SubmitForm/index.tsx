@@ -6,17 +6,26 @@ import {ButtonThemes} from '../Button/types';
 import Feedback from '../Feedback';
 import Preview from '../Preview';
 import {useFetchTrack} from '../../hooks/useFetchTrack';
+import {useCreateAnchor} from '../../hooks/useCreateAnchor';
 import {FetchStatus} from '../../config/types';
 import type {SubmitFormProps} from './types';
 
 const SubmitForm = ({style}: SubmitFormProps) => {
-  const {anchor, feedback, updateUrl} = useFetchTrack();
-  // const {broadcast} = useCreateAnchor();
+  const {url, anchor, feedback, updateUrl} = useFetchTrack();
+  const {signAndBroadcast} = useCreateAnchor();
 
   const onSubmit = async () => {
-    // Submit the song data to the blockchain
-    // await broadcast(anchor);
-    console.log('anchor', anchor);
+    if (anchor) {
+      // Submit the song data to the blockchain
+      await signAndBroadcast({
+        spotifyId: url,
+        appleMusicId: '',
+        ...anchor,
+      });
+    } else {
+      // @todo Replace this with an error display prompt
+      console.log('No anchor data to submit');
+    }
   };
 
   return (
