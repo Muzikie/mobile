@@ -1,3 +1,4 @@
+import {Buffer} from 'buffer';
 import type {KeyValue} from '../config/types';
 
 export const truncateText = (text: string, length: number): string => {
