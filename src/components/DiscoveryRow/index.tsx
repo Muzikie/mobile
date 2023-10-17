@@ -29,7 +29,7 @@ const DiscoveryRow = ({item}: DiscoveryRowProps) => {
             <View style={styles.row}>
               <Text style={fonts.base}>{truncateText(artists[0], 15)}</Text>
               <Text style={fonts.base}> • </Text>
-              <Text style={fonts.base}>{truncateText(submitter.name, 10)}</Text>
+              <Text style={fonts.base}>{truncateText(submitter, 10)}</Text>
             </View>
           </View>
         </>

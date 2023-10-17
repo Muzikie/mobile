@@ -17,7 +17,6 @@ export const useFetchTrack = () => {
   const [anchor, setAnchor] = useState<Omit<Link, 'id' | 'submitter'>>();
 
   const retrieveInfo = async () => {
-    console.log('retrieveInfo');
     if (!url.isValid) {
       setFeedback({
         status: FetchStatus.error,

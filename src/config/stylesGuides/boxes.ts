@@ -7,6 +7,7 @@ export default {
   playButtonSize: 40,
 
   // paddings
+  doublePadding: 40,
   boxPadding: 20,
   elementPadding: 10,
 
