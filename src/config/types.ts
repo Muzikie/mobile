@@ -32,7 +32,7 @@ export interface Account {
   appleMusicId: string;
 }
 
-export interface Link {
+export interface Anchor {
   spotifyId?: string;
   appleMusicId?: string;
   name: string;

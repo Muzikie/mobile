@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Link} from '../../config/types';
+import {Anchor} from '../../config/types';
 import {API_CALL_LIMIT} from '../../config/constants';
 import {FetchStatus} from '../../config/types';
 import {getAnchors} from '../../utils/api';
@@ -10,7 +10,7 @@ export const useFetchAnchors = () => {
     status: FetchStatus.idle,
     message: '',
   });
-  const [anchors, setAnchors] = useState<Link[]>([]);
+  const [anchors, setAnchors] = useState<Anchor[]>([]);
   const [offset, setOffset] = useState(0);
 
   const retrieveAnchors = async (direction: FetchDirection) => {

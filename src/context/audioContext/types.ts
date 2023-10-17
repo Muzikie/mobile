@@ -1,9 +1,9 @@
 import {ReactNode} from 'react';
-import {Link} from '../../config/types';
+import {Anchor} from '../../config/types';
 
 export interface AudioContextType {
-  audio: Link | undefined;
-  setAudio: (audio: Link) => void;
+  audio: Anchor | undefined;
+  setAudio: (audio: Anchor) => void;
 }
 
 export interface AudioContextProviderProps {

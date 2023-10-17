@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
-import {Link} from '../../config/types';
+import {Anchor} from '../../config/types';
 import {SPOTIFY_LINK_REG} from '../../config/constants';
 import {getFromSpotify} from '../../utils/api';
 import {FetchStatus} from '../../config/types';
@@ -14,7 +14,7 @@ export const useFetchTrack = () => {
     status: FetchStatus.idle,
     message: '',
   });
-  const [anchor, setAnchor] = useState<Omit<Link, 'id' | 'submitter'>>();
+  const [anchor, setAnchor] = useState<Omit<Anchor, 'id' | 'submitter'>>();
 
   const retrieveInfo = async () => {
     if (!url.isValid) {
@@ -38,7 +38,7 @@ export const useFetchTrack = () => {
           status: FetchStatus.success,
           message: '',
         });
-        const normalizedData: Omit<Link, 'id' | 'submitter'> = {
+        const normalizedData: Omit<Anchor, 'id' | 'submitter'> = {
           spotifyId: trackID,
           name: data.name,
           album: data.album.name,

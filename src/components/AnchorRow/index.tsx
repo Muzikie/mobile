@@ -5,11 +5,11 @@ import Icon from '../Icon';
 import {truncateText} from '../../utils/helpers';
 import {useVoteAnchor} from '../../hooks/useVoteAnchor';
 import styles from './styles';
-import type {DiscoveryRowProps} from './types';
+import type {AnchorRowProps} from './types';
 
-import thumbnail from '../../assets/images/discovery-thumbnail.png';
+import thumbnail from '../../assets/images/anchor-thumbnail.png';
 
-const DiscoveryRow = ({item}: DiscoveryRowProps) => {
+const AnchorRow = ({item}: AnchorRowProps) => {
   const {signAndBroadcast} = useVoteAnchor();
   const {name, artists, submitter} = item;
 
@@ -53,4 +53,4 @@ const DiscoveryRow = ({item}: DiscoveryRowProps) => {
   );
 };
 
-export default DiscoveryRow;
+export default AnchorRow;

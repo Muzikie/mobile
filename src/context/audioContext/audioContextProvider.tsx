@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import AudioContext from './audioContext';
 import {AudioContextProviderProps} from './types';
-import {Link} from '../../config/types';
+import {Anchor} from '../../config/types';
 
 const AudioContextProvider = ({children}: AudioContextProviderProps) => {
-  const [audio, setAudio] = useState<Link>();
+  const [audio, setAudio] = useState<Anchor>();
 
   const value = {
     audio,

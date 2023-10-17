@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
 import {useFetchAnchors} from '../../hooks/useFetchAnchors';
-import DiscoveryRow from '../DiscoveryRow';
+import AnchorRow from '../AnchorRow';
 import ListFooter from '../ListFooter';
 
 const AnchorsList = () => {
@@ -21,7 +21,7 @@ const AnchorsList = () => {
   return (
     <FlatList
       data={anchors}
-      renderItem={DiscoveryRow}
+      renderItem={AnchorRow}
       keyExtractor={item => item.id}
       ListFooterComponent={ListFooter}
       onEndReachedThreshold={0.4}
