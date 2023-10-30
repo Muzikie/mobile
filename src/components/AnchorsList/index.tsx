@@ -1,35 +1,72 @@
-import React, {useState, useEffect} from 'react';
-import {FlatList, RefreshControl} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {FlatList, RefreshControl, View, LayoutChangeEvent} from 'react-native';
+import {COMMANDS, MODULES} from '../../config/constants';
+import {useAccount} from '../../hooks/useAccount';
+import {useTransaction} from '../../hooks/useTransaction';
 import {useFetchAnchors} from '../../hooks/useFetchAnchors';
+import {FetchStatus} from '../../config/types';
+import {bufferize, calculateItemsToDisplay} from '../../utils/helpers';
 import AnchorRow from '../AnchorRow';
 import ListFooter from '../ListFooter';
+import AnchorsHeader from '../AnchorsHeader';
 
 const AnchorsList = () => {
-  const {anchors, fetchOlderAnchors, fetchNewerAnchors} = useFetchAnchors();
-  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [displaySize, setDisplaySize] = useState(0);
+  const {account} = useAccount();
+  const {signAndBroadcast} = useTransaction();
+  const {anchors, feedback, fetchOlderAnchors, fetchNewerAnchors} =
+    useFetchAnchors();
 
   const onRefresh = async () => {
-    setIsRefreshing(true);
     await fetchNewerAnchors();
-    setIsRefreshing(false);
+  };
+
+  const handleLayout = (event: LayoutChangeEvent) => {
+    const {height} = event.nativeEvent.layout;
+    const calculatedItemsToDisplay = calculateItemsToDisplay(height);
+    setDisplaySize(calculatedItemsToDisplay);
+  };
+
+  const onVote = async (anchorID: string) => {
+    await signAndBroadcast({
+      params: {
+        anchorID: bufferize(anchorID),
+      },
+      module: MODULES.ANCHOR,
+      command: COMMANDS.VOTE,
+    });
   };
 
   useEffect(() => {
-    fetchOlderAnchors();
-  }, []);
+    if (feedback.message === FetchStatus.idle) {
+      fetchOlderAnchors();
+    }
+  }, [feedback, fetchOlderAnchors]);
 
   return (
-    <FlatList
-      data={anchors}
-      renderItem={AnchorRow}
-      keyExtractor={item => item.id}
-      ListFooterComponent={ListFooter}
-      onEndReachedThreshold={0.4}
-      onEndReached={fetchOlderAnchors}
-      refreshControl={
-        <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
-      }
-    />
+    <View onLayout={handleLayout}>
+      <FlatList
+        data={anchors}
+        ListHeaderComponent={AnchorsHeader}
+        renderItem={({item}) => (
+          <AnchorRow
+            item={item}
+            onVote={() => onVote(item.anchorID)}
+            address={account?.address ?? ''}
+          />
+        )}
+        keyExtractor={item => item.anchorID}
+        ListFooterComponent={anchors.length > displaySize ? ListFooter : null}
+        onEndReachedThreshold={0.4}
+        onEndReached={fetchOlderAnchors}
+        refreshControl={
+          <RefreshControl
+            refreshing={feedback.message === FetchStatus.pending}
+            onRefresh={onRefresh}
+          />
+        }
+      />
+    </View>
   );
 };
 
