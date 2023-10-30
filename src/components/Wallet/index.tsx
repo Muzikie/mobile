@@ -1,11 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';
 import styles from './styles';
 import type {WalletProps, Timeout} from './types';
-
-import walletGradient from '../../assets/images/wallet-gradient.png';
 
 const Wallet = ({style, address, balance}: WalletProps) => {
   const [_, setString] = useClipboard();
@@ -29,23 +27,21 @@ const Wallet = ({style, address, balance}: WalletProps) => {
 
   return (
     <View style={[styles.wrapper, style]}>
-      <View style={styles.shadowWrapper}>
-        <ImageBackground
-          source={walletGradient}
-          resizeMode="stretch"
-          style={styles.background}>
-          <View style={styles.info}>
-            <Text
-              style={[fonts.h3, styles.copied, copied ? styles.visible : {}]}>
-              Copied
-            </Text>
-            <Text style={[fonts.h2, styles.address]} onPress={copyToClipboard}>
-              {address}
-            </Text>
-            <Text style={[fonts.h3, styles.label]}>Balance:</Text>
-            <Text style={[fonts.h1, styles.balance]}>{balance}</Text>
-          </View>
-        </ImageBackground>
+      <View style={styles.info}>
+        <View style={styles.balanceContainer}>
+          <Text style={[fonts.base, styles.label]}>Balance:</Text>
+          <Text style={[fonts.h1, styles.balance]}>{balance} MZK</Text>
+        </View>
+        <View style={[styles.container, styles.addressContainer]}>
+          <Text style={[fonts.base, styles.label]}>Address:</Text>
+          <Text
+            style={[fonts.base, styles.copied, copied ? styles.visible : {}]}>
+            Copied
+          </Text>
+          <Text style={[fonts.h3, styles.address]} onPress={copyToClipboard}>
+            {address}
+          </Text>
+        </View>
       </View>
     </View>
   );

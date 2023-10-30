@@ -1,4 +1,4 @@
-// import BigNumber from 'bignumber.js';
+import BigNumber from 'bignumber.js';
 
 export const formatThousands = (num: number): string => {
   const si = [
@@ -23,16 +23,16 @@ export const getYear = (num: number): string => {
   return year.toString();
 };
 
-// export const fromBaseToken = (
-//   num: string,
-//   token?: string | undefined,
-// ): string => {
-//   const formatted = BigNumber(num).dividedBy(BigNumber(1e8)).toFixed(4);
-//   return token ? `${formatted} ${token}` : formatted;
-// };
+export const fromBaseToken = (
+  num: string,
+  token?: string | undefined,
+): string => {
+  const formatted = BigNumber(num).dividedBy(BigNumber(1e8)).toFixed(4);
+  return token ? `${formatted} ${token}` : formatted;
+};
 
-// export const toBaseToken = (num: string): string =>
-//   BigNumber(num).multipliedBy(BigNumber(1e8)).toFixed(0);
+export const toBaseToken = (num: string): string =>
+  BigNumber(num).multipliedBy(BigNumber(1e8)).toFixed(0);
 
 export const truncateAddress = (address: string): string => {
   return address.replace(/^(.{6})(.+)?(.{5})$/, '$1...$3');
