@@ -72,10 +72,10 @@ const AccountProvider = ({passphrase, children}: AccountProviderProps) => {
   }, [account, update]);
 
   useEffect(() => {
-    if (passphrase) {
+    if (passphrase && !account.address) {
       signIn(passphrase);
     }
-  }, [passphrase, signIn]);
+  }, [passphrase, account, signIn]);
 
   const value = {
     account,
