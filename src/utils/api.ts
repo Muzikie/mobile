@@ -31,7 +31,14 @@ const getList = (entity: string, params: EndpointParams) => {
   const queryString = search.toString();
   return fetch(
     `${API_URLS.STREAMER}/api/${API_VERSION}/${entity}?${queryString}`,
-  ).then(res => res.json());
+  )
+    .then(res => res.json())
+    .catch(err => {
+      console.log(
+        `API call to ${entity} failed with error:`,
+        JSON.stringify(err),
+      );
+    });
 };
 
 const get = async (url: string, headers: IncomingHttpHeaders) => {
@@ -118,3 +125,6 @@ export const getFromSpotify = async (id: string) =>
 
 export const getAnchors = async (params: EndpointParams) =>
   getList('anchors', params);
+
+export const getBadges = async (params: EndpointParams) =>
+  getList('badges', params);

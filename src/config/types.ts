@@ -37,40 +37,36 @@ export interface Anchor {
   appleMusicId?: string;
   name: string;
   album: string;
-  artists: string[];
+  artists: string;
   images: {
     url: string;
     height: number;
     width: number;
   }[];
   submitter: string;
-  id: string;
+  anchorID: string;
 }
 
-interface ProjectOfDayBadge {
-  badgeId: number;
-  linkId: number;
-  date: string;
+export enum Badges {
+  AOTD = 'anchor_of_the_day',
+  AOTW = 'anchor_of_the_week',
+  AOTM = 'anchor_of_the_month',
+}
+
+export interface Badge {
+  badgeID: Buffer;
+  anchorID: Buffer;
+  awardedTo: Buffer;
+  type: Badges;
+  awardDate: string;
   rank: number;
-  prize: string; // 45%, 25%, 15%, 10%, 5%
-  owner: string;
+  prize: bigint;
+  claimed: boolean;
 }
 
-// Badge representing a weekly award
-interface ProjectOfWeekBadge {
-  badgeId: number;
-  linkId: number[];
-  weekStartDate: string;
-  weekEndDate: string;
-  owner: string;
-}
-
-// Badge representing a monthly award
-interface ProjectOfMonthBadge {
-  badgeId: number;
-  linkId: number[];
-  monthYear: string;
-  owner: string;
+export interface BadgeStat {
+  type: Badges;
+  count: number;
 }
 
 export enum FetchStatus {

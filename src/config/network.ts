@@ -6,7 +6,7 @@ export const SPOTIFY_ACCESS_TOKEN =
 export const APPLE_ACCESS_TOKEN = '';
 
 export const API_URLS = {
-  STREAMER: 'http://localhost:3000',
+  STREAMER: 'http://localhost:9901',
   SPOTIFY: 'https://api.spotify.com/v1',
   APPLE_MUSIC: 'https://api.music.apple.com/v1',
 };
