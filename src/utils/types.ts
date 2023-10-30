@@ -11,8 +11,9 @@ export type EndpointParams = Partial<
     | 'transactionID'
     | 'blockID'
     | 'creatorAddress'
+    | 'awardedTo'
     | 'address',
-    string
+    string | number
   >
 >;
 
@@ -67,6 +68,25 @@ export interface ErrorResponse {
   error: true;
 }
 
+export interface DruRunError {
+  data: {
+    message: string;
+    events: BlockEvent[];
+    result: -1;
+    status: 'invalid';
+  };
+  meta: unknown;
+}
+
+export interface DryRunSuccess {
+  data: {
+    events: BlockEvent[];
+    result: 1;
+    status: 'valid';
+  };
+  meta: unknown;
+}
+
 export interface DefaultValues {
   [Method.postTransaction]: PostTxData;
   [Method.dryRunTransaction]: DryRunTxData;
@@ -76,9 +96,7 @@ export interface SuccessResponse<T extends Method> {
   data: DefaultValues[T];
   error: false;
 }
-export type DryRunTxResponse =
-  | SuccessResponse<Method.dryRunTransaction>
-  | ErrorResponse;
+export type DryRunTxResponse = DryRunSuccess | DruRunError;
 export type PostTxResponse =
   | SuccessResponse<Method.postTransaction>
   | ErrorResponse;
