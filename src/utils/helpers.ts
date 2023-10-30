@@ -53,7 +53,6 @@ export const isEmpty = (value: any) => {
  */
 export const isNonEmptyBuffer = (value: any): boolean => {
   if (Buffer.isBuffer(value)) {
-    console.log('In here', value);
     return value.length > 0;
   }
   return false;
@@ -93,3 +92,6 @@ export const removeNullValues = (obj: KeyValue): KeyValue => {
 };
 
 export const bufferize = (value: string): Buffer => Buffer.from(value, 'hex');
+
+export const calculateItemsToDisplay = (height: number): number =>
+  Math.floor(height / 70);
