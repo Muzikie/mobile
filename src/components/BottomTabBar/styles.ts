@@ -1,15 +1,16 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../config/stylesGuides';
 
 const styles = {
   tabBar: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FEEAE3',
+    backgroundColor: colors.light.beige,
     paddingBottom: 30,
   },
   wrapper: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.light.white,
     width: '90%',
     height: 60,
     borderRadius: 18,
@@ -24,7 +25,7 @@ const styles = {
     flexDirection: 'row',
   },
   tabs: {
-    width: '50%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
