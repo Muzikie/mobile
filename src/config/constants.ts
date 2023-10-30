@@ -1,7 +1,7 @@
 export const SPOTIFY_LINK_REG =
   /^https:\/\/open\.spotify\.com\/track\/[\w-]+\?si=[\w-]+/;
 
-export const API_CALL_LIMIT = '10';
+export const API_CALL_LIMIT = 10;
 
 export const HTTP_STATUS = {
   OK: {CODE: 200, MESSAGE: 'OK'},

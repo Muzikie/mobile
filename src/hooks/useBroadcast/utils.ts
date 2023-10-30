@@ -2,6 +2,7 @@ import {transactions} from '@liskhq/lisk-client';
 import md5 from 'md5';
 import {CHAIN_ID} from '../../config/network';
 import {SCHEMAS} from '../../config/schemas';
+import {Buffer} from 'buffer';
 import {BroadcastProps, SignTransactionResult} from './types';
 
 export const signTransaction = async ({

@@ -44,13 +44,15 @@ export const useBroadcast = () => {
         };
       }
       return {
-        message: HTTP_STATUS.INTERNAL_ERROR.MESSAGE,
+        message:
+          broadcastResponse.message || HTTP_STATUS.INTERNAL_ERROR.MESSAGE,
         error: true,
         events: getEntityEvent(module, dryRunResponse),
       };
     }
     return {
-      message: HTTP_STATUS.BAD_REQUEST.MESSAGE,
+      message:
+        dryRunResponse.data.errorMessage || HTTP_STATUS.BAD_REQUEST.MESSAGE,
       error: true,
     };
   };

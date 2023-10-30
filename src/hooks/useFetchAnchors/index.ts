@@ -16,7 +16,7 @@ export const useFetchAnchors = () => {
   const retrieveAnchors = async (direction: FetchDirection) => {
     setFeedback({
       status: FetchStatus.pending,
-      message: 'Sit tight ...',
+      message: 'Hang tight ...',
     });
 
     try {
@@ -40,7 +40,7 @@ export const useFetchAnchors = () => {
 
         setFeedback({
           status: FetchStatus.success,
-          message: 'Successfully retrieved.',
+          message: '',
         });
       }
     } catch (error) {
