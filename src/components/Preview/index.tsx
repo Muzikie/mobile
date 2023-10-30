@@ -17,7 +17,10 @@ const Preview = ({style, submissionStatus, data}: PreviewProps) => {
       <Image source={{uri: albumArt}} style={styles.image} />
       <View style={styles.info}>
         <Text style={[fonts.h3]}>{data.name}</Text>
-        <Text style={[fonts.base]}>{`From ${data.album} • by ${data.artists[0]}`}</Text>
+        <Text
+          style={[
+            fonts.base,
+          ]}>{`From ${data.album} • by ${data.artists[0]}`}</Text>
       </View>
     </View>
   );
