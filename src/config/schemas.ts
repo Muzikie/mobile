@@ -21,11 +21,8 @@ export const ANCHOR_CREATE_SCHEMA = {
       fieldNumber: 4,
     },
     artists: {
-      type: 'array',
+      dataType: 'string',
       fieldNumber: 5,
-      items: {
-        dataType: 'string',
-      },
     },
     images: {
       type: 'array',
