@@ -22,11 +22,24 @@ const styles = {
     flexWrap: 'nowrap',
     paddingTop: boxes.boxPadding,
   },
-  name: {
-    paddingTop: boxes.boxPadding,
-    fontFamily: fonts.family,
+  label: {
+    paddingTop: boxes.elementPadding,
+    color: colors.light.grey,
   },
-  username: {},
+  name: {
+    fontFamily: fonts.body,
+  },
+  username: {
+    width: 230,
+    letterSpacing: 0.5,
+    textAlign: 'center',
+  },
+  emptyState: {
+    height: 200,
+    flexFlow: 'row noWrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 };
 
 export default StyleSheet.create(styles);

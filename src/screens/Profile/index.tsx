@@ -1,47 +1,47 @@
 import React from 'react';
 import {Text, View, ScrollView} from 'react-native';
+import {fromBaseToken} from '../../utils/formatters';
 import AchievedBadge from '../../components/AchievedBadge';
 import Avatar from '../../components/Avatar';
 import Wallet from '../../components/Wallet';
 import styles from './styles';
+import {useAccount} from '../../hooks/useAccount';
 import {fonts} from '../../config/stylesGuides';
+import {useFetchBadges} from '../../hooks/useFetchBadges';
 
-const data = [
-  {title: 'Song Of The Day', type: 'dayBadge', count: 23},
-  {title: 'Song Of The Week', type: 'weekBadge', count: 7},
-  {title: 'Song Of The Month', type: 'monthBadge', count: 1},
-  {title: 'Video Of The Day', type: 'videoBadge', count: 1},
-  {title: 'Super Link', type: 'superLinkBadge', count: 2},
-];
-const profile = {
-  name: 'Full Name',
-  username: 'username',
-  address: 'lskh96jgzfftzff2fta2zvsmba9mvs5cnz9ahr3ke',
-  balance: '12.5 MZK',
-};
+const BadgesHeader = () => <Text style={styles.pageTitle}>Badges</Text>;
 
-const HomeScreen = () => {
+const EmptyBadgeList = () => (
+  <View style={styles.emptyState}>
+    <Text style={[fonts.base]}>No badges earned yet</Text>
+  </View>
+);
+
+const ProfileScreen = () => {
+  const {account} = useAccount();
+  const {badgesStats} = useFetchBadges();
+  const balance = account?.balances.length
+    ? fromBaseToken(account?.balances[0].availableBalance)
+    : '0';
+
   return (
     <ScrollView style={[styles.screenContainer, styles.profileScreen]}>
       <View>
-        <Text style={styles.pageTitle}>Profile</Text>
         <View style={styles.details}>
           <Avatar />
-          <Text style={[styles.name, fonts.h1]}>{profile.name}</Text>
-          <Text style={[styles.username, fonts.h2]}>{profile.username}</Text>
+          <Wallet address={account?.address ?? ''} balance={balance} />
         </View>
       </View>
 
       <View>
-        <Text style={styles.pageTitle}>Badges</Text>
-        {data.map(item => (
-          <AchievedBadge item={item} key={item.title} />
+        {badgesStats.length > 0 && <BadgesHeader />}
+        {badgesStats.map(item => (
+          <AchievedBadge item={item} key={item.type} />
         ))}
+        {badgesStats.length === 0 && <EmptyBadgeList />}
       </View>
-
-      <Wallet address={profile.address} balance={profile.balance} />
     </ScrollView>
   );
 };
 
-export default HomeScreen;
+export default ProfileScreen;

@@ -1,12 +1,6 @@
-export enum BadgeNames {
-  day = 'dayBadge',
-  week = 'weekBadge',
-  month = 'monthBadge',
-  video = 'videoBadge',
-  superLink = 'superLinkBadge',
-}
+import {Badges} from '../../config/types';
 
 export interface BadgeProps {
   style?: object;
-  name: BadgeNames;
+  name: Badges;
 }
