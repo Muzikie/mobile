@@ -3,24 +3,14 @@ import {Text, Image, View, TouchableHighlight} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
 import Icon from '../Icon';
 import {truncateText} from '../../utils/helpers';
-import {useVoteAnchor} from '../../hooks/useVoteAnchor';
 import styles from './styles';
 import type {AnchorRowProps} from './types';
 
-import thumbnail from '../../assets/images/anchor-thumbnail.png';
-
-const AnchorRow = ({item}: AnchorRowProps) => {
-  const {signAndBroadcast} = useVoteAnchor();
-  const {name, artists, submitter} = item;
+const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
+  const {name, artists, submitter, votes, images} = item;
 
   const listen = () => {
     console.log('Implement the play functionality');
-  };
-
-  const upvote = async () => {
-    await signAndBroadcast({
-      anchorID: item.id,
-    });
   };
 
   return (
@@ -30,7 +20,7 @@ const AnchorRow = ({item}: AnchorRowProps) => {
         underlayColor="transparent"
         style={[styles.link, styles.row]}>
         <>
-          <Image source={thumbnail} style={styles.thumbnail} />
+          <Image source={{url: images[0].url}} style={styles.thumbnail} />
           <View>
             <Text style={[fonts.h4, styles.title]}>
               {truncateText(name, 25)}
@@ -43,12 +33,14 @@ const AnchorRow = ({item}: AnchorRowProps) => {
           </View>
         </>
       </TouchableHighlight>
-      <TouchableHighlight
-        onPress={upvote}
-        underlayColor="transparent"
-        style={styles.button}>
-        <Icon name="UpVote" style={styles.upvoteIcon} />
-      </TouchableHighlight>
+      {votes.findIndex(voter => voter.senderAddress === address) === -1 ? (
+        <TouchableHighlight
+          onPress={onVote}
+          underlayColor="transparent"
+          style={styles.button}>
+          <Icon name="UpVote" style={styles.upvoteIcon} />
+        </TouchableHighlight>
+      ) : null}
     </View>
   );
 };
