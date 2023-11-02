@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import io from 'socket.io-client';
-
+import {useCredentials} from '../../hooks/useCredentials';
 import AccountContext from './accountContext';
 import {AccountProviderProps, NewTransactionEvent} from './types';
 import {Account} from '../../config/types';
@@ -8,8 +8,9 @@ import {API_URLS} from '../../config/network';
 import {extractCredentials} from '../../utils/cryptography';
 import {getAuth, getTokenBalances} from '../../utils/api';
 
-const AccountProvider = ({passphrase, children}: AccountProviderProps) => {
+const AccountProvider = ({children}: AccountProviderProps) => {
   const [account, setAccount] = useState<Account>({} as Account);
+  const {retrieveCredentials} = useCredentials();
 
   const update = useCallback(async () => {
     // Fetch data
@@ -31,24 +32,25 @@ const AccountProvider = ({passphrase, children}: AccountProviderProps) => {
     setAccount(newValue);
   }, [account]);
 
-  const signIn = useCallback(
-    async (value: string) => {
-      const {address, publicKey, privateKey} = await extractCredentials(value);
-      const auth = await getAuth({params: {address}});
-      const {data: balances} = await getTokenBalances({params: {address}});
+  const signIn = useCallback(async () => {
+    const retrieveRes = await retrieveCredentials();
+    // @todo Show an error to the user if the credentials are not found
+    const {address, publicKey, privateKey} = await extractCredentials(
+      retrieveRes.value,
+    );
+    const auth = await getAuth({params: {address}});
+    const {data: balances} = await getTokenBalances({params: {address}});
 
-      setAccount({
-        ...account,
-        passphrase: value,
-        privateKey,
-        publicKey,
-        address,
-        nonce: auth.nonce,
-        balances,
-      });
-    },
-    [account],
-  );
+    setAccount({
+      ...account,
+      passphrase: retrieveRes.value,
+      privateKey,
+      publicKey,
+      address,
+      nonce: auth.nonce,
+      balances,
+    });
+  }, [account, retrieveCredentials]);
 
   // Connect to WebSocket
   useEffect(() => {
@@ -72,10 +74,10 @@ const AccountProvider = ({passphrase, children}: AccountProviderProps) => {
   }, [account, update]);
 
   useEffect(() => {
-    if (passphrase && !account.address) {
-      signIn(passphrase);
+    if (!account.address) {
+      signIn();
     }
-  }, [passphrase, account, signIn]);
+  }, [account, signIn]);
 
   const value = {
     account,

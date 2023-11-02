@@ -2,7 +2,6 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import AccountProvider from '../context/accountContext/AccountContextProvider';
-import {PASSPHRASE} from '../config/network';
 import HomeScreen from '../screens/Home';
 import SubmitScreen from '../screens/Submit';
 import ProfileScreen from '../screens/Profile';
@@ -11,7 +10,7 @@ import BottomTabBar from '../components/BottomTabBar';
 const Tab = createBottomTabNavigator();
 
 const Navigation = (): JSX.Element => (
-  <AccountProvider passphrase={PASSPHRASE}>
+  <AccountProvider>
     <NavigationContainer>
       <Tab.Navigator initialRouteName="Home" tabBar={BottomTabBar}>
         <Tab.Screen

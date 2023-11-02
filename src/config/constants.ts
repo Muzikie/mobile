@@ -25,3 +25,5 @@ export const COMMANDS = {
   CREATE: 'create',
   VOTE: 'vote',
 };
+
+export const USER_SESSION = 'user_session';

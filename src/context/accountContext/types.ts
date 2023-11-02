@@ -3,7 +3,6 @@ import {Account} from '../../config/types';
 
 export interface AccountProviderProps {
   children: ReactElement;
-  passphrase: string;
 }
 
 export interface AccountContextType {
