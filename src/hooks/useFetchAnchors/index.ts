@@ -3,7 +3,6 @@ import {Anchor} from '../../config/types';
 import {API_CALL_LIMIT} from '../../config/constants';
 import {FetchStatus} from '../../config/types';
 import {getAnchors} from '../../utils/api';
-import {FetchDirection} from './types';
 
 export const useFetchAnchors = () => {
   const [feedback, setFeedback] = useState({
@@ -13,7 +12,7 @@ export const useFetchAnchors = () => {
   const [anchors, setAnchors] = useState<Anchor[]>([]);
   const [offset, setOffset] = useState(0);
 
-  const retrieveAnchors = async (direction: FetchDirection) => {
+  const retrieve = async (refresh?: boolean) => {
     setFeedback({
       status: FetchStatus.pending,
       message: 'Hang tight ...',
@@ -22,22 +21,16 @@ export const useFetchAnchors = () => {
     try {
       const response = await getAnchors({
         limit: API_CALL_LIMIT,
-        offset: direction === FetchDirection.newer ? '0' : offset.toString(),
+        offset: refresh ? 0 : offset,
       });
 
       if (response?.data) {
-        if (direction === FetchDirection.newer) {
-          setAnchors([...response.data, ...anchors]);
+        if (refresh) {
+          setAnchors(response.data);
         } else {
           setAnchors([...anchors, ...response.data]);
         }
-
-        setOffset(
-          direction === FetchDirection.newer
-            ? offset
-            : offset + response.data.length,
-        );
-
+        setOffset((refresh ? 0 : offset) + response.data.length);
         setFeedback({
           status: FetchStatus.success,
           message: '',
@@ -51,18 +44,9 @@ export const useFetchAnchors = () => {
     }
   };
 
-  const fetchOlderAnchors = () => {
-    retrieveAnchors(FetchDirection.older);
-  };
-
-  const fetchNewerAnchors = () => {
-    retrieveAnchors(FetchDirection.newer);
-  };
-
   return {
     anchors,
     feedback,
-    fetchOlderAnchors,
-    fetchNewerAnchors,
+    retrieve,
   };
 };

@@ -71,8 +71,3 @@ export type DryRunTxResponse =
 export type PostTxResponse =
   | SuccessResponse<Method.postTransaction>
   | ErrorResponse;
-
-export enum FetchDirection {
-  newer = 'newer',
-  older = 'older',
-}
