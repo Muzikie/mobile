@@ -43,8 +43,16 @@ export const useTransaction = () => {
     }
   };
 
+  const reset = () => {
+    setBroadcastStatus({
+      message: '',
+      status: FetchStatus.idle,
+    });
+  };
+
   return {
     signAndBroadcast,
     broadcastStatus,
+    reset,
   };
 };

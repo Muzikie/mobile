@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {TextInput, View} from 'react-native';
 import styles from './styles';
 import Button from '../Button';
@@ -9,44 +9,25 @@ import {useFetchTrack} from '../../hooks/useFetchTrack';
 import {useTransaction} from '../../hooks/useTransaction';
 import {useAccount} from '../../hooks/useAccount';
 import {FetchStatus} from '../../config/types';
+import {getStatus} from './utils';
 import type {SubmitFormProps} from './types';
 import {COMMANDS, MODULES} from '../../config/constants';
 
-const getStatus = (
-  broadcastStatus: FetchStatus,
-  fetchStatus: FetchStatus,
-): FetchStatus => {
-  // FetchStatus.idle id both are idle
-  if (
-    broadcastStatus === FetchStatus.idle &&
-    fetchStatus === FetchStatus.idle
-  ) {
-    return FetchStatus.idle;
-  }
-  // FetchStatus.pending if either is pending
-  if (
-    broadcastStatus === FetchStatus.pending ||
-    fetchStatus === FetchStatus.pending
-  ) {
-    return FetchStatus.pending;
-  }
-  // FetchStatus.success if both are success
-  if (
-    (broadcastStatus === FetchStatus.success &&
-      fetchStatus !== FetchStatus.error) ||
-    (broadcastStatus !== FetchStatus.error &&
-      fetchStatus === FetchStatus.success)
-  ) {
-    return FetchStatus.success;
-  }
-  // FetchStatus.error if either is error
-  return FetchStatus.error;
-};
-
 const SubmitForm = ({style}: SubmitFormProps) => {
+  const timer = useRef<NodeJS.Timeout>();
   const {account} = useAccount();
-  const {anchor, feedback: fetchFeedback, updateUrl} = useFetchTrack();
-  const {signAndBroadcast, broadcastStatus} = useTransaction();
+  const {
+    anchor,
+    url,
+    feedback: fetchFeedback,
+    updateUrl,
+    reset: resetTrack,
+  } = useFetchTrack();
+  const {
+    signAndBroadcast,
+    broadcastStatus,
+    reset: resetTransaction,
+  } = useTransaction();
 
   const onSubmit = async () => {
     if (anchor && account) {
@@ -65,6 +46,22 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     }
   };
 
+  useEffect(() => {
+    if (broadcastStatus.status === FetchStatus.success) {
+      timer.current = setTimeout(() => {
+        resetTrack();
+        resetTransaction();
+      }, 2000);
+    }
+  }, [broadcastStatus, resetTrack, resetTransaction, fetchFeedback, url]);
+
+  useEffect(
+    () => () => {
+      clearTimeout(timer.current);
+    },
+    [],
+  );
+
   const status = getStatus(broadcastStatus.status, fetchFeedback.status);
 
   return (
@@ -72,8 +69,9 @@ const SubmitForm = ({style}: SubmitFormProps) => {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder="Song link"
+          placeholder="Spotify URL"
           onChangeText={updateUrl}
+          value={url.value}
         />
         <Button
           title="Submit"
@@ -85,7 +83,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
           status={status}
           message={broadcastStatus.message || fetchFeedback.message}
         />
-        <Preview submissionStatus={status} data={anchor} />
+        <Preview fetchStatus={fetchFeedback.status} data={anchor} />
       </View>
     </View>
   );

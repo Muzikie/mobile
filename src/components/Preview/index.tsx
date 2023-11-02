@@ -5,8 +5,8 @@ import type {PreviewProps} from './types';
 import styles from './styles';
 import {fonts} from '../../config/stylesGuides';
 
-const Preview = ({style, submissionStatus, data}: PreviewProps) => {
-  if (submissionStatus !== FetchStatus.success || !data) {
+const Preview = ({style, fetchStatus, data}: PreviewProps) => {
+  if (fetchStatus !== FetchStatus.success || !data) {
     return null;
   }
 
