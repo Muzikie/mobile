@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, Image, View, TouchableHighlight} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
 import Icon from '../Icon';
@@ -7,16 +7,17 @@ import styles from './styles';
 import type {AnchorRowProps} from './types';
 
 const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
+  const [voted, setVoted] = useState(false);
   const {name, artists, submitter, votes, images} = item;
 
-  const listen = () => {
-    console.log('Implement the play functionality');
+  const onPress = () => {
+    setVoted(true);
+    onVote();
   };
 
   return (
     <View style={[styles.container, styles.row]}>
       <TouchableHighlight
-        onPress={listen}
         underlayColor="transparent"
         style={[styles.link, styles.row]}>
         <>
@@ -33,9 +34,10 @@ const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
           </View>
         </>
       </TouchableHighlight>
-      {votes.findIndex(voter => voter.senderAddress === address) === -1 ? (
+      {!voted &&
+      votes.findIndex(voter => voter.senderAddress === address) === -1 ? (
         <TouchableHighlight
-          onPress={onVote}
+          onPress={onPress}
           underlayColor="transparent"
           style={styles.button}>
           <Icon name="UpVote" style={styles.upvoteIcon} />

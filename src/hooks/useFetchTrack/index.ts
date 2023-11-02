@@ -14,7 +14,8 @@ export const useFetchTrack = () => {
     status: FetchStatus.idle,
     message: '',
   });
-  const [anchor, setAnchor] = useState<Omit<Anchor, 'id' | 'submitter'>>();
+  const [anchor, setAnchor] =
+    useState<Omit<Anchor, 'anchorID' | 'submitter'>>();
 
   const retrieveInfo = useCallback(async () => {
     setFeedback({
@@ -37,7 +38,7 @@ export const useFetchTrack = () => {
         status: FetchStatus.success,
         message: '',
       });
-      const normalizedData: Omit<Anchor, 'id' | 'submitter'> = {
+      const normalizedData: Omit<Anchor, 'anchorID' | 'submitter'> = {
         spotifyId: trackID,
         name: data.name,
         album: data.album.name,
@@ -52,15 +53,23 @@ export const useFetchTrack = () => {
   }, [url]);
 
   const updateUrl = (value: string) => {
-    clearTimeout(timer.current);
-
-    timer.current = setTimeout(() => {
-      setUrl({
-        value,
-        isValid: SPOTIFY_LINK_REG.test(value),
-      });
-    }, 500);
+    setUrl({
+      value,
+      isValid: SPOTIFY_LINK_REG.test(value),
+    });
   };
+
+  const reset = useCallback(() => {
+    setUrl({
+      value: '',
+      isValid: false,
+    });
+    setAnchor(undefined);
+    setFeedback({
+      status: FetchStatus.idle,
+      message: '',
+    });
+  }, []);
 
   useEffect(
     () => () => {
@@ -70,8 +79,11 @@ export const useFetchTrack = () => {
   );
 
   useEffect(() => {
+    clearTimeout(timer.current);
     if (url.isValid) {
-      retrieveInfo();
+      timer.current = setTimeout(() => {
+        retrieveInfo();
+      }, 500);
     }
   }, [url, retrieveInfo]);
 
@@ -80,5 +92,6 @@ export const useFetchTrack = () => {
     url,
     feedback,
     updateUrl,
+    reset,
   };
 };

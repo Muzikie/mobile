@@ -14,11 +14,10 @@ const AnchorsList = () => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
   const {signAndBroadcast} = useTransaction();
-  const {anchors, feedback, fetchOlderAnchors, fetchNewerAnchors} =
-    useFetchAnchors();
+  const {anchors, feedback, retrieve} = useFetchAnchors();
 
   const onRefresh = async () => {
-    await fetchNewerAnchors();
+    await retrieve(true);
   };
 
   const handleLayout = (event: LayoutChangeEvent) => {
@@ -39,9 +38,9 @@ const AnchorsList = () => {
 
   useEffect(() => {
     if (feedback.message === FetchStatus.idle) {
-      fetchOlderAnchors();
+      retrieve();
     }
-  }, [feedback, fetchOlderAnchors]);
+  }, [feedback, retrieve]);
 
   return (
     <View onLayout={handleLayout}>
@@ -58,7 +57,7 @@ const AnchorsList = () => {
         keyExtractor={item => item.anchorID}
         ListFooterComponent={anchors.length > displaySize ? ListFooter : null}
         onEndReachedThreshold={0.4}
-        onEndReached={fetchOlderAnchors}
+        onEndReached={retrieve}
         refreshControl={
           <RefreshControl
             refreshing={feedback.message === FetchStatus.pending}

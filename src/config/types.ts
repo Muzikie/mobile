@@ -45,6 +45,7 @@ export interface Anchor {
   }[];
   submitter: string;
   anchorID: string;
+  votes?: {senderAddress: string}[];
 }
 
 export enum Badges {
