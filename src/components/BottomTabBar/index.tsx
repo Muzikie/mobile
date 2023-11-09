@@ -1,9 +1,9 @@
 import React from 'react';
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {View, TouchableHighlight} from 'react-native';
 import styles from './styles';
 // import Player from '../Player';
 import Icon from '../Icon';
-import {BottomTabBarProps} from './types';
 import {colors} from '../../config/stylesGuides';
 
 const RouteButton = ({route, navigation, stateIndex, index}: any) => {
@@ -43,7 +43,7 @@ const BottomTabBar = ({state, navigation}: BottomTabBarProps) => {
       <View style={styles.wrapper}>
         {/* <Player /> */}
         <View style={styles.tabs}>
-          {state.routes.map((route, index) => (
+          {state.routes.map((route, index: number) => (
             <RouteButton
               navigation={navigation}
               route={route}

@@ -21,7 +21,7 @@ const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
         underlayColor="transparent"
         style={[styles.link, styles.row]}>
         <>
-          <Image source={{url: images[0].url}} style={styles.thumbnail} />
+          <Image source={{uri: images[0].url}} style={styles.thumbnail} />
           <View>
             <Text style={[fonts.h4, styles.title]}>
               {truncateText(name, 25)}
