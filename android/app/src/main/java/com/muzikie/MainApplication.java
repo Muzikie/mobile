@@ -1,4 +1,4 @@
-package com.muzikie;
+package com.muzikie.mobile;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

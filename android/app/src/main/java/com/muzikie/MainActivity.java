@@ -1,4 +1,4 @@
-package com.muzikie;
+package com.muzikie.mobile;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
