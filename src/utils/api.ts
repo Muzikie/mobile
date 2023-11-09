@@ -7,12 +7,7 @@ import {
   PostTxResponse,
 } from './types';
 import {Auth, Balance} from '../config/types';
-import {
-  SPOTIFY_ACCESS_TOKEN,
-  APPLE_ACCESS_TOKEN,
-  API_URLS,
-  API_VERSION,
-} from '../config/network';
+import {APPLE_ACCESS_TOKEN, API_URLS, API_VERSION} from '../config/network';
 import {removeNullValues} from './helpers';
 
 interface IncomingHttpHeaders {
@@ -114,14 +109,12 @@ export async function broadcastTransaction(
 }
 
 export const getFromAppleMusic = (storefront: string, id: string) =>
-  get(`https://api.music.apple.com/v1/catalog/${storefront}/songs/${id}`, {
+  get(`${API_URLS.RELAY}/apple/${storefront}/${id}`, {
     Authorization: `Bearer ${APPLE_ACCESS_TOKEN}`,
   });
 
 export const getFromSpotify = async (id: string) =>
-  get(`https://api.spotify.com/v1/tracks/${id}`, {
-    Authorization: `Bearer ${SPOTIFY_ACCESS_TOKEN}`,
-  });
+  get(`${API_URLS.RELAY}/spotify/${id}`, {});
 
 export const getAnchors = async (params: EndpointParams) =>
   getList('anchors', params);

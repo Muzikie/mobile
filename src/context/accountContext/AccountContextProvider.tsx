@@ -22,7 +22,7 @@ const AccountProvider = ({children}: AccountProviderProps) => {
     // Prepare the new value
     const newValue = {
       ...account,
-      auth: authData,
+      ...authData,
     };
     if (balanceData.length) {
       newValue.balances = balanceData;
@@ -47,7 +47,7 @@ const AccountProvider = ({children}: AccountProviderProps) => {
       privateKey,
       publicKey,
       address,
-      nonce: auth.nonce,
+      ...auth,
       balances,
     });
   }, [account, retrieveCredentials]);

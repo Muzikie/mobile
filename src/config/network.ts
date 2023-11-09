@@ -1,12 +1,10 @@
 import {bufferize} from '../utils/helpers';
 
-export const SPOTIFY_ACCESS_TOKEN =
-  'BQAQKfUOwM1-Qnx1B6w-Io0-3HpsaIYhtMNvmcpPlubtqVe5pUKtcMvHgiYZPyypI9c5QKBbmKo6cLieKUzAXHhoq-Bk8zcbiGKdD1USMrIwMZr9ZVI';
-
 export const APPLE_ACCESS_TOKEN = '';
 
 export const API_URLS = {
-  STREAMER: 'http://localhost:9901',
+  STREAMER: 'https://testnet-streamer.muzikie.com',
+  RELAY: 'https://token.muzikie.com',
   SPOTIFY: 'https://api.spotify.com/v1',
   APPLE_MUSIC: 'https://api.music.apple.com/v1',
 };
