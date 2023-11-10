@@ -15,6 +15,8 @@ const styles = {
     width: '100%',
     height: boxes.buttonHeight,
     borderRadius: boxes.buttonBorderRadius,
+  },
+  shadow: {
     shadowColor: colors.light.purple,
     shadowOffset: {
       width: 0,

@@ -3,11 +3,19 @@ import {TouchableHighlight, Text, View} from 'react-native';
 import styles from './styles';
 import {ButtonProps, ButtonThemes} from './types';
 
-const Button = ({onPress, style, theme, title, disabled}: ButtonProps) => {
+const Button = ({
+  onPress,
+  style,
+  shadow,
+  theme,
+  title,
+  disabled,
+}: ButtonProps) => {
   const disabledStyle = disabled ? styles.disabled : {};
   return (
     <View style={styles.wrapper}>
-      <View style={styles.shadowWrapper}>
+      <View
+        style={[styles.shadowWrapper, shadow === false ? {} : styles.shadow]}>
         <TouchableHighlight
           disabled={disabled}
           onPress={onPress}
