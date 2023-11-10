@@ -54,6 +54,12 @@ export enum Badges {
   AOTM = 'anchor_of_the_month',
 }
 
+export const BADGE_TITLES = {
+  [Badges.AOTD]: 'Song Of The Day',
+  [Badges.AOTW]: 'Song Of The Week',
+  [Badges.AOTM]: 'Song Of The Month',
+};
+
 export interface Badge {
   badgeID: Buffer;
   anchorID: Buffer;

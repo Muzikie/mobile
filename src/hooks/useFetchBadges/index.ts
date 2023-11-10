@@ -86,6 +86,7 @@ export const useFetchBadges = () => {
   return {
     badgesStats,
     feedback,
+    unclaimed: badges.filter(item => !item.claimed),
     update,
   };
 };
