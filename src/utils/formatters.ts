@@ -26,8 +26,11 @@ export const getYear = (num: number): string => {
 export const fromBaseToken = (
   num: string,
   token?: string | undefined,
+  floatingPoints: number = 8,
 ): string => {
-  const formatted = BigNumber(num).dividedBy(BigNumber(1e8)).toFixed(4);
+  const formatted = BigNumber(num)
+    .dividedBy(BigNumber(1e8))
+    .toFixed(floatingPoints);
   return token ? `${formatted} ${token}` : formatted;
 };
 

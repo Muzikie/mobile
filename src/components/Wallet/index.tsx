@@ -30,7 +30,7 @@ const Wallet = ({style, address, balance}: WalletProps) => {
       <View style={styles.info}>
         <View style={styles.balanceContainer}>
           <Text style={[fonts.base, styles.label]}>Balance:</Text>
-          <Text style={[fonts.h1, styles.balance]}>{balance} MZK</Text>
+          <Text style={[fonts.h1, styles.balance]}>{balance}</Text>
         </View>
         <View style={[styles.container, styles.addressContainer]}>
           <Text style={[fonts.base, styles.label]}>Address:</Text>
