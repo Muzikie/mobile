@@ -7,6 +7,7 @@ import Feedback from '../Feedback';
 import Preview from '../Preview';
 import {useFetchTrack} from '../../hooks/useFetchTrack';
 import {useTransaction} from '../../hooks/useTransaction';
+import {useModal} from '../../hooks/useModal';
 import {useAccount} from '../../hooks/useAccount';
 import {FetchStatus} from '../../config/types';
 import {getStatus} from './utils';
@@ -28,17 +29,26 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     broadcastStatus,
     reset: resetTransaction,
   } = useTransaction();
+  const {show, hide} = useModal();
 
   const onSubmit = async () => {
     if (anchor && account) {
-      // Submit the song data to the blockchain
-      await signAndBroadcast({
-        params: {
-          ...anchor,
-          appleMusicId: '',
+      show({
+        title: 'Looking good!',
+        description:
+          "You're about to share the cool song you found with the world. People will love it! \nYou'll pay a small fee of 0.0012 MZK and get a chance to win a prize.",
+        onPrimaryPress: async () => {
+          hide();
+          // Submit the song data to the blockchain
+          await signAndBroadcast({
+            params: {
+              ...anchor,
+              appleMusicId: '',
+            },
+            module: MODULES.ANCHOR,
+            command: COMMANDS.CREATE,
+          });
         },
-        module: MODULES.ANCHOR,
-        command: COMMANDS.CREATE,
       });
     } else {
       // @todo Replace this with an error display prompt
