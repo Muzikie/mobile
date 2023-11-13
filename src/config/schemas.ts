@@ -63,7 +63,21 @@ export const ANCHOR_VOTE_SCHEMA = {
   },
 };
 
+export const BADGE_CLAIM_SCHEMA = {
+  $id: 'badge/claim',
+  title: 'ClaimAsset transaction asset for badge module',
+  type: 'object',
+  required: ['badgeID'],
+  properties: {
+    badgeID: {
+      dataType: 'bytes',
+      fieldNumber: 1,
+    },
+  },
+};
+
 export const SCHEMAS = {
   [ANCHOR_CREATE_SCHEMA.$id]: ANCHOR_CREATE_SCHEMA,
   [ANCHOR_VOTE_SCHEMA.$id]: ANCHOR_VOTE_SCHEMA,
+  [BADGE_CLAIM_SCHEMA.$id]: BADGE_CLAIM_SCHEMA,
 };

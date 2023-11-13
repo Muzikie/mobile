@@ -24,18 +24,23 @@ export const signTransaction = async ({
     senderPublicKey: account.publicKey,
     params,
   };
-  const fee = transactions.computeMinFee(tx, schema);
-  // Sign the transaction
-  const signedTx = transactions.signTransactionWithPrivateKey(
-    {...tx, fee},
-    CHAIN_ID,
-    account.privateKey,
-    schema,
-  );
+  let signedTx;
+  try {
+    const fee = transactions.computeMinFee(tx, schema);
+    // Sign the transaction
+    signedTx = transactions.signTransactionWithPrivateKey(
+      {...tx, fee},
+      CHAIN_ID,
+      account.privateKey,
+      schema,
+    );
+  } catch (e) {
+    console.log(e);
+  }
   // @todo improve the transaction signature validation
   // meaning, check if there is an array called signatures
   // which includes a valid signature (buffer of length 64)
-  if (!signedTx.id || !Buffer.isBuffer(signedTx.id)) {
+  if (!signedTx?.id || !Buffer.isBuffer(signedTx.id)) {
     return new Error('Error while signing transaction');
   }
 

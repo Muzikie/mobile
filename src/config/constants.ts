@@ -24,6 +24,7 @@ export const MODULES = {
 export const COMMANDS = {
   CREATE: 'create',
   VOTE: 'vote',
+  CLAIM: 'claim',
 };
 
 export const USER_SESSION = 'user_session';
