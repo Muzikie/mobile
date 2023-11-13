@@ -6,7 +6,12 @@ import {truncateText} from '../../utils/helpers';
 import styles from './styles';
 import type {AnchorRowProps} from './types';
 
-const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
+const AnchorRow = ({
+  item,
+  onVote,
+  address,
+  votingEnabled = false,
+}: AnchorRowProps) => {
   const [voted, setVoted] = useState(false);
   const {name, artists, submitter, votes, images} = item;
 
@@ -35,6 +40,7 @@ const AnchorRow = ({item, onVote, address}: AnchorRowProps) => {
         </>
       </TouchableHighlight>
       {!voted &&
+      votingEnabled &&
       votes.findIndex(voter => voter.senderAddress === address) === -1 ? (
         <TouchableHighlight
           onPress={onPress}

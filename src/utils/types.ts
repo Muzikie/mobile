@@ -12,7 +12,8 @@ export type EndpointParams = Partial<
     | 'blockID'
     | 'creatorAddress'
     | 'awardedTo'
-    | 'address',
+    | 'address'
+    | 'winner',
     string | number
   >
 >;

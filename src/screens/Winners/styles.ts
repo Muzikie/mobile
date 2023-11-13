@@ -6,7 +6,7 @@ const styles = {
     height: '100%',
     width: '100%',
   },
-  homeScreen: {
+  winnersScreen: {
     backgroundColor: colors.light.beige,
   },
   pageTitle: {

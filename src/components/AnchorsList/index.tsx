@@ -8,13 +8,14 @@ import {FetchStatus} from '../../config/types';
 import {bufferize, calculateItemsToDisplay} from '../../utils/helpers';
 import AnchorRow from '../AnchorRow';
 import ListFooter from '../ListFooter';
-import AnchorsHeader from '../AnchorsHeader';
+import {AnchorListProps} from './types';
+import styles from './styles';
 
-const AnchorsList = () => {
+const AnchorsList = ({filter, header}: AnchorListProps) => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
   const {signAndBroadcast} = useTransaction();
-  const {anchors, feedback, retrieve} = useFetchAnchors();
+  const {anchors, feedback, retrieve} = useFetchAnchors(filter);
 
   const onRefresh = async () => {
     await retrieve(true);
@@ -43,15 +44,16 @@ const AnchorsList = () => {
   }, [feedback, retrieve]);
 
   return (
-    <View onLayout={handleLayout}>
+    <View onLayout={handleLayout} style={styles.wrapper}>
       <FlatList
         data={anchors}
-        ListHeaderComponent={AnchorsHeader}
+        ListHeaderComponent={header}
         renderItem={({item}) => (
           <AnchorRow
             item={item}
             onVote={() => onVote(item.anchorID)}
             address={account?.address ?? ''}
+            votingEnabled={filter === 'winner'}
           />
         )}
         keyExtractor={item => item.anchorID}
