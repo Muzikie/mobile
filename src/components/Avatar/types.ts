@@ -1,4 +1,4 @@
 export interface AvatarProps {
   style?: object;
-  source?: string;
+  id: number;
 }

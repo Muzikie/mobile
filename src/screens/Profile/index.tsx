@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, ScrollView} from 'react-native';
 import {fromBaseToken} from '../../utils/formatters';
+import {mapAddressToNumber} from '../../utils/helpers';
 import AchievedBadge from '../../components/AchievedBadge';
 import Avatar from '../../components/Avatar';
 import Wallet from '../../components/Wallet';
@@ -23,7 +24,7 @@ const EmptyBadgeList = () => (
 const ProfileScreen = () => {
   const {account} = useAccount();
   const {badgesStats, unclaimed} = useFetchBadges();
-  const balance = account?.balances.length
+  const balance = account?.balances?.length
     ? fromBaseToken(account?.balances[0].availableBalance, 'MZK', 2)
     : '0 MZK';
 
@@ -31,7 +32,7 @@ const ProfileScreen = () => {
     <ScrollView style={[styles.screenContainer, styles.profileScreen]}>
       <View>
         <View style={styles.details}>
-          <Avatar />
+          <Avatar id={mapAddressToNumber(account?.address)} />
           <Wallet address={account?.address ?? ''} balance={balance} />
         </View>
       </View>

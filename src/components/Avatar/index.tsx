@@ -2,12 +2,11 @@ import React from 'react';
 import {View, Image} from 'react-native';
 import styles from './styles';
 import type {AvatarProps} from './types';
+import {avatars} from './assets';
 
-import avatarPlaceholder from '../../assets/images/avatar-placeholder.png';
-
-const Avatar = ({style, source}: AvatarProps) => (
+const Avatar = ({style, id}: AvatarProps) => (
   <View style={[styles.wrapper, style]}>
-    <Image source={source || avatarPlaceholder} style={styles.avatar} />
+    <Image source={avatars[id]} style={styles.avatar} />
   </View>
 );
 

@@ -95,3 +95,9 @@ export const bufferize = (value: string): Buffer => Buffer.from(value, 'hex');
 
 export const calculateItemsToDisplay = (height: number): number =>
   Math.floor(height / 70);
+
+export const mapAddressToNumber = (address: string = '') => {
+  // Extract the last character of the wallet address and convert it to a number
+  const lastCharacter = address.charAt(address.length - 1);
+  return parseInt(lastCharacter, 36) % 10;
+};
