@@ -61,14 +61,14 @@ export const BADGE_TITLES = {
 };
 
 export interface Badge {
-  badgeID: Buffer;
-  anchorID: Buffer;
-  awardedTo: Buffer;
+  badgeID: string;
+  anchorID: string;
+  awardedTo: string;
   type: Badges;
   awardDate: string;
   rank: number;
   prize: bigint;
-  claimed: boolean;
+  claimed: boolean | null;
 }
 
 export interface BadgeStat {

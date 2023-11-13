@@ -6,6 +6,7 @@ import {ButtonProps, ButtonThemes} from './types';
 const Button = ({
   onPress,
   style,
+  wrapperStyle,
   shadow,
   theme,
   title,
@@ -13,7 +14,7 @@ const Button = ({
 }: ButtonProps) => {
   const disabledStyle = disabled ? styles.disabled : {};
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, wrapperStyle]}>
       <View
         style={[styles.shadowWrapper, shadow === false ? {} : styles.shadow]}>
         <TouchableHighlight

@@ -4,7 +4,7 @@ import {API_CALL_LIMIT} from '../../config/constants';
 import {FetchStatus} from '../../config/types';
 import {getAnchors} from '../../utils/api';
 
-export const useFetchAnchors = () => {
+export const useFetchAnchors = (filter: 'winner' | 'all') => {
   const [feedback, setFeedback] = useState({
     status: FetchStatus.idle,
     message: '',
@@ -22,6 +22,7 @@ export const useFetchAnchors = () => {
       const response = await getAnchors({
         limit: API_CALL_LIMIT,
         offset: refresh ? 0 : offset,
+        ...(filter === 'winner' ? {winner: 1} : {}),
       });
 
       if (response?.data) {
@@ -43,6 +44,8 @@ export const useFetchAnchors = () => {
       });
     }
   };
+
+  console.log('anchors', anchors);
 
   return {
     anchors,

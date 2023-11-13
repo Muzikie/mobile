@@ -20,9 +20,11 @@ export const useFetchBadges = () => {
       [Badges.AOTW]: 0,
     };
 
-    badges.forEach(badge => {
-      categorizedStats[badge.type] += 1;
-    });
+    badges
+      .filter(item => item.claimed)
+      .forEach(item => {
+        categorizedStats[item.type] += 1;
+      });
 
     const badgeStatsArray: BadgeStat[] = Object.keys(categorizedStats)
       .map(type => ({
@@ -86,7 +88,13 @@ export const useFetchBadges = () => {
   return {
     badgesStats,
     feedback,
-    unclaimed: badges.filter(item => !item.claimed),
+    // filter unique badges based on badgeID
+    unclaimed: badges
+      .filter(item => !item.claimed)
+      .filter(
+        (item, index, self) =>
+          self.findIndex(t => t.badgeID === item.badgeID) === index,
+      ),
     update,
   };
 };
