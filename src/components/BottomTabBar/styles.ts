@@ -36,7 +36,6 @@ const styles = {
     alignItems: 'center',
   },
   iconWrapper: {
-    display: 'block',
     width: 27,
   },
 };

@@ -3,7 +3,6 @@ import {fonts, colors, boxes} from '../../config/stylesGuides';
 
 const styles = {
   wrapper: {
-    display: 'block',
     width: '100%',
     height: boxes.buttonHeight + boxes.shadowHeight,
     paddingTop: boxes.shadowHeight,

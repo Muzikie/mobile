@@ -3,7 +3,6 @@ import {boxes} from '../../config/stylesGuides';
 
 const styles = {
   wrapper: {
-    display: 'block',
     width: boxes.avatarSize,
     height: boxes.avatarSize,
     borderWidth: 1,

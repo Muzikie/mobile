@@ -3,7 +3,6 @@ import {colors, boxes} from '../../config/stylesGuides';
 
 const styles = {
   wrapper: {
-    display: 'block',
     width: boxes.playButtonSize,
     height: boxes.playButtonSize,
     backgroundColor: colors.light.purple,
