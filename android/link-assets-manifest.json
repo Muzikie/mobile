@@ -1,0 +1,177 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Black.ttf",
+      "sha1": "645e04c53c6b5b35bce654a811ebce16af8aa721"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Bold.ttf",
+      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-ExtraBold.ttf",
+      "sha1": "4b5c0750f073abd576413a0898d3b95adaf199c8"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Light.ttf",
+      "sha1": "e247a92158e112f8bf7b638c8d95381d66b00dbb"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Medium.ttf",
+      "sha1": "283f21b44efbdbf276ba802be2d949a36bbc4233"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Regular.ttf",
+      "sha1": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-SemiBold.ttf",
+      "sha1": "8a4ace9392d06bcb7f8ea2f5169b07e4c383a90d"
+    },
+    {
+      "path": "src/assets/fonts/poppins/Poppins-Thin.ttf",
+      "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
+    },
+    {
+      "path": "src/assets/images/anchor-thumbnail.png",
+      "sha1": "fdbef95b726a9f4a6c286c1ceb2b7ba93275fef2"
+    },
+    {
+      "path": "src/assets/images/apple-music-logo.png",
+      "sha1": "da043b36fe2b996a526e7b0c9f68927e1a1eec74"
+    },
+    {
+      "path": "src/assets/images/avatars/0.jpg",
+      "sha1": "f6937e1fbbc2b3189967db9b514b4938d0973ae6"
+    },
+    {
+      "path": "src/assets/images/avatars/1.jpg",
+      "sha1": "6cd23a1cd81c603506fa3c1a2de3060695645411"
+    },
+    {
+      "path": "src/assets/images/avatars/10.jpg",
+      "sha1": "9664ad60d7a779a790be4d96b51214bd08c0ffdf"
+    },
+    {
+      "path": "src/assets/images/avatars/11.jpg",
+      "sha1": "f4b0fb357174a5d084808ac7708da310a7f87867"
+    },
+    {
+      "path": "src/assets/images/avatars/12.jpg",
+      "sha1": "2fe21a2dd995166b8f31279a1e0a10ef1f8649a6"
+    },
+    {
+      "path": "src/assets/images/avatars/13.jpg",
+      "sha1": "17fd262b884f8d9714f63c837f7c1c986b2c2511"
+    },
+    {
+      "path": "src/assets/images/avatars/14.jpg",
+      "sha1": "8e83993918cc39bc504976ba9e318c73f983da53"
+    },
+    {
+      "path": "src/assets/images/avatars/15.jpg",
+      "sha1": "eea4d3b4dedff2c9b656212fb3f75e188503a1d2"
+    },
+    {
+      "path": "src/assets/images/avatars/16.jpg",
+      "sha1": "00a4a9c2911f5c1482a05a55dea635ab6e8cfd3f"
+    },
+    {
+      "path": "src/assets/images/avatars/17.jpg",
+      "sha1": "898dd92ad07d114997dee104a354e5f1115efb82"
+    },
+    {
+      "path": "src/assets/images/avatars/18.jpg",
+      "sha1": "3e4e84e87ef69a229539b884780f2554f04bb0f2"
+    },
+    {
+      "path": "src/assets/images/avatars/19.jpg",
+      "sha1": "08c1bc6130bee14e4e90295392f3d95f6c1be63e"
+    },
+    {
+      "path": "src/assets/images/avatars/2.jpg",
+      "sha1": "ce77b072dbedb1b290698ebdfb754a6c71fb8dfe"
+    },
+    {
+      "path": "src/assets/images/avatars/20.jpg",
+      "sha1": "93bf9997f23a98ed1f0137d092115b9c9c35c262"
+    },
+    {
+      "path": "src/assets/images/avatars/3.jpg",
+      "sha1": "c841526d3c9c88ecaedc7491cdd12ca556e30f50"
+    },
+    {
+      "path": "src/assets/images/avatars/4.jpg",
+      "sha1": "8c6a2d8a1a3b6abc6e6890127bbb8db7a6e0a82a"
+    },
+    {
+      "path": "src/assets/images/avatars/5.jpg",
+      "sha1": "9071958be97cf76e1ed2e15920c2b40eb0cb5821"
+    },
+    {
+      "path": "src/assets/images/avatars/6.jpg",
+      "sha1": "200ea284526c9793ad394179690b4131ea1c25d0"
+    },
+    {
+      "path": "src/assets/images/avatars/7.jpg",
+      "sha1": "dcaf7d26fc35b1273495405c590c85e046e29b85"
+    },
+    {
+      "path": "src/assets/images/avatars/8.jpg",
+      "sha1": "bd3e948e94d13ef0d7437a3589f0eb2820974595"
+    },
+    {
+      "path": "src/assets/images/avatars/9.jpg",
+      "sha1": "219c15d3e0e8cdad614501a5dd3f00c54f319271"
+    },
+    {
+      "path": "src/assets/images/badges/day-badge.png",
+      "sha1": "b1e903c5d74c86b2487364248aab707208417d8e"
+    },
+    {
+      "path": "src/assets/images/badges/month-badge.png",
+      "sha1": "c696e32baaa0ab161957b7beda7f4b8345c0c1b0"
+    },
+    {
+      "path": "src/assets/images/badges/super-link-badge.png",
+      "sha1": "2f3db7d7386c5213fbf44a1efea869a052bbc782"
+    },
+    {
+      "path": "src/assets/images/badges/video-badge.png",
+      "sha1": "e4c651a8e11af976c7ce6bf75f5d2dcbbc8cb110"
+    },
+    {
+      "path": "src/assets/images/badges/week-badge.png",
+      "sha1": "1e46a7e76a398e04c3827c7fbac9493ab85add7f"
+    },
+    {
+      "path": "src/assets/images/motivation1.png",
+      "sha1": "2f3db7d7386c5213fbf44a1efea869a052bbc782"
+    },
+    {
+      "path": "src/assets/images/motivation2.png",
+      "sha1": "e4c651a8e11af976c7ce6bf75f5d2dcbbc8cb110"
+    },
+    {
+      "path": "src/assets/images/motivation3.png",
+      "sha1": "c696e32baaa0ab161957b7beda7f4b8345c0c1b0"
+    },
+    {
+      "path": "src/assets/images/motivation4.png",
+      "sha1": "1e46a7e76a398e04c3827c7fbac9493ab85add7f"
+    },
+    {
+      "path": "src/assets/images/muzikie-logo.png",
+      "sha1": "bcd0ea5f068120053b0d41eafd27399b06f278a7"
+    },
+    {
+      "path": "src/assets/images/spotify-logo.png",
+      "sha1": "bf6380369dd6bb18c7c487e1afb9434249012dae"
+    },
+    {
+      "path": "src/assets/images/wallet-gradient.png",
+      "sha1": "952ca5b165175ade9b196d5cb57d8b18cf582d9f"
+    }
+  ]
+}
