@@ -34,8 +34,8 @@ export const useCredentials = () => {
         await EncryptedStorage.setItem(USER_SESSION, generatedPassphrase);
       }
       success = true;
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e);
     }
 
     return {

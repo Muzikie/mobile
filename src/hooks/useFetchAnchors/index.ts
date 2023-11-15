@@ -45,8 +45,6 @@ export const useFetchAnchors = (filter: 'winner' | 'all') => {
     }
   };
 
-  console.log('anchors', anchors);
-
   return {
     anchors,
     feedback,

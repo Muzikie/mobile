@@ -5,7 +5,6 @@ import {FeedbackProps} from './types';
 import {FetchStatus} from '../../config/types';
 
 const Feedback = ({style, status, message}: FeedbackProps) => {
-  console.log('Feedback status', status);
   if (status === FetchStatus.idle || status === FetchStatus.pending) {
     return null;
   }
