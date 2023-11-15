@@ -53,7 +53,7 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
             item={item}
             onVote={() => onVote(item.anchorID)}
             address={account?.address ?? ''}
-            votingEnabled={filter === 'winner'}
+            votingEnabled={filter === 'all'}
           />
         )}
         keyExtractor={item => item.anchorID}

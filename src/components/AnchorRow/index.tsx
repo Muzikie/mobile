@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, Image, View, TouchableHighlight} from 'react-native';
+import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
 import Icon from '../Icon';
 import {truncateText} from '../../utils/helpers';
@@ -20,9 +20,23 @@ const AnchorRow = ({
     onVote();
   };
 
+  const openSpotifyLink = async (songID: string) => {
+    // Check if Spotify app is installed
+    let isSpotifyInstalled = false;
+    isSpotifyInstalled = await Linking.canOpenURL('spotify:');
+    if (isSpotifyInstalled) {
+      // Open the Spotify app
+      await Linking.openURL(`spotify:track:${songID}`);
+    } else {
+      // If Spotify app is not installed, open the default browser
+      await Linking.openURL(`https://open.spotify.com/track/${songID}`);
+    }
+  };
+
   return (
     <View style={[styles.container, styles.row]}>
       <TouchableHighlight
+        onPress={() => openSpotifyLink(item.spotifyId)}
         underlayColor="transparent"
         style={[styles.link, styles.row]}>
         <>
