@@ -31,7 +31,6 @@ const styles = {
     color: colors.light.purple,
     fontFamily: fontFamilies.poppinsBlack,
     fontWeight: '900',
-    marginBottom: 16,
   },
   h2: {
     fontSize: fontSizes.h2,
