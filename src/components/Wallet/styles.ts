@@ -43,6 +43,7 @@ const styles = {
   },
   balanceContainer: {
     marginTop: boxes.boxPadding,
+    paddingBottom: boxes.boxPadding,
   },
   balance: {
     color: colors.light.purple,

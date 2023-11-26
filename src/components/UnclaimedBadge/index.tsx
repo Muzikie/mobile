@@ -18,7 +18,10 @@ const UnclaimedBadge = ({
   signAndBroadcast,
   broadcastStatus,
 }: UnclaimedBadgeProps) => {
-  const formattedPrize = fromBaseToken(badge.prize.toString(), 'MZK', 2);
+  const formattedPrize =
+    badge.prize === null
+      ? '0 MZK'
+      : fromBaseToken(badge.prize.toString(), 'MZK', 2);
   const badgeTitle = `${BADGE_TITLES[badge.type]} #${badge.rank}`;
   const title = 'Claim you badge and prize';
   const description = `You are about to claim your ${badgeTitle} badge and ${formattedPrize} prize.\nYou will pay a network fee of 0.0015 MZK.`;
