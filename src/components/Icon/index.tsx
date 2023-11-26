@@ -49,11 +49,7 @@ export const Icon = ({
   }
 
   return (
-    <Svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      style={style}>
+    <Svg width={size} height={size} viewBox="0 0 28 28" style={style}>
       {icons[name].map((path, index) => (
         <Path key={index} d={path} fill={color} />
       ))}

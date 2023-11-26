@@ -1,6 +1,6 @@
 export interface IconButtonProps {
   onPress: () => void;
-  style: any;
+  style?: any;
   iconSize: number;
   iconName: string;
 }
