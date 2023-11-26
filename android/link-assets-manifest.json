@@ -168,10 +168,6 @@
     {
       "path": "src/assets/images/spotify-logo.png",
       "sha1": "bf6380369dd6bb18c7c487e1afb9434249012dae"
-    },
-    {
-      "path": "src/assets/images/wallet-gradient.png",
-      "sha1": "952ca5b165175ade9b196d5cb57d8b18cf582d9f"
     }
   ]
 }
