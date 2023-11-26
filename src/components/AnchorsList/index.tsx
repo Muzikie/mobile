@@ -18,7 +18,7 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
   const {anchors, feedback, retrieve} = useFetchAnchors(filter);
 
   const onRefresh = async () => {
-    await retrieve(true);
+    await retrieve(null, true);
   };
 
   const handleLayout = (event: LayoutChangeEvent) => {
@@ -39,7 +39,7 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
 
   useEffect(() => {
     if (feedback.message === FetchStatus.idle) {
-      retrieve();
+      retrieve(null, false);
     }
   }, [feedback, retrieve]);
 
@@ -57,12 +57,16 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
           />
         )}
         keyExtractor={item => item.anchorID}
-        ListFooterComponent={anchors.length > displaySize ? ListFooter : null}
+        ListFooterComponent={
+          anchors.length > displaySize ? (
+            <ListFooter status={feedback.status} />
+          ) : null
+        }
         onEndReachedThreshold={0.4}
         onEndReached={retrieve}
         refreshControl={
           <RefreshControl
-            refreshing={feedback.message === FetchStatus.pending}
+            refreshing={feedback.status === FetchStatus.pending}
             onRefresh={onRefresh}
           />
         }
