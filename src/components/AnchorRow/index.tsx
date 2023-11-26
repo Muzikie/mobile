@@ -46,7 +46,7 @@ const AnchorRow = ({
               {truncateText(name, 25)}
             </Text>
             <View style={styles.row}>
-              <Text style={fonts.base}>{truncateText(artists[0], 15)}</Text>
+              <Text style={fonts.base}>{truncateText(artists, 15)}</Text>
               <Text style={fonts.base}> • </Text>
               <Text style={fonts.base}>{truncateText(submitter, 10)}</Text>
             </View>
