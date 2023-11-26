@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {TextInput, View} from 'react-native';
+import {TextInput, View, Keyboard} from 'react-native';
 import styles from './styles';
 import Button from '../Button';
 import {ButtonThemes} from '../Button/types';
@@ -32,6 +32,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
   const {show, hide} = useModal();
 
   const onSubmit = async () => {
+    Keyboard.dismiss();
     if (anchor && account) {
       show({
         title: 'Looking good!',
