@@ -28,3 +28,4 @@ export const COMMANDS = {
 };
 
 export const USER_SESSION = 'user_session';
+export const USER_PRESETS = 'user_presets';
