@@ -4,24 +4,19 @@ import styles from './styles';
 import {FeedbackProps} from './types';
 import {FetchStatus} from '../../config/types';
 
-const Feedback = ({style, status, message}: FeedbackProps) => {
-  if (status === FetchStatus.idle || status === FetchStatus.pending) {
-    return null;
-  }
-
-  const defaultMessage =
-    status === FetchStatus.error
-      ? 'Oops, try again later.'
-      : 'Thank you for sharing.';
-
-  return (
-    <View style={[styles.wrapper, style]}>
-      <Text
-        style={status === FetchStatus.error ? styles.error : styles.success}>
-        {message || defaultMessage}
-      </Text>
-    </View>
-  );
+const messages = {
+  [FetchStatus.idle]: '',
+  [FetchStatus.pending]: '',
+  [FetchStatus.success]: 'Thank you for sharing.',
+  [FetchStatus.error]: 'Oops, try again later.',
 };
+
+const Feedback = ({style, status, message}: FeedbackProps) => (
+  <View style={[styles.wrapper, style]}>
+    <Text style={status === FetchStatus.error ? styles.error : styles.success}>
+      {message || messages[status]}
+    </Text>
+  </View>
+);
 
 export default Feedback;

@@ -12,6 +12,7 @@ import {useAccount} from '../../hooks/useAccount';
 import {FetchStatus, Timeout} from '../../config/types';
 import {getStatus} from './utils';
 import type {SubmitFormProps} from './types';
+import Confirm from './Confirm';
 import {COMMANDS, MODULES} from '../../config/constants';
 
 const SubmitForm = ({style}: SubmitFormProps) => {
@@ -36,8 +37,8 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     if (anchor && account) {
       show({
         title: 'Looking good!',
-        description:
-          "You're about to share the cool song you found with the world. People will love it! \nYou'll pay a small fee of 0.0012 MZK and get a chance to win a prize.",
+        description: '',
+        content: <Confirm />,
         onPrimaryPress: async () => {
           hide();
           // Submit the song data to the blockchain
@@ -76,26 +77,24 @@ const SubmitForm = ({style}: SubmitFormProps) => {
   const status = getStatus(broadcastStatus.status, fetchFeedback.status);
 
   return (
-    <View style={[styles.wrapper, style]}>
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="Spotify URL"
-          onChangeText={updateUrl}
-          value={url.value}
-        />
-        <Button
-          title="Submit"
-          theme={ButtonThemes.purple}
-          onPress={onSubmit}
-          disabled={fetchFeedback.status !== FetchStatus.success}
-        />
-        <Feedback
-          status={status}
-          message={broadcastStatus.message || fetchFeedback.message}
-        />
-        <Preview fetchStatus={fetchFeedback.status} data={anchor} />
-      </View>
+    <View style={style}>
+      <TextInput
+        style={styles.input}
+        placeholder="Spotify URL"
+        onChangeText={updateUrl}
+        value={url.value}
+      />
+      <Preview fetchStatus={fetchFeedback.status} data={anchor} />
+      <Button
+        title="Submit"
+        theme={ButtonThemes.purple}
+        onPress={onSubmit}
+        disabled={fetchFeedback.status !== FetchStatus.success}
+      />
+      <Feedback
+        status={status}
+        message={broadcastStatus.message || fetchFeedback.message}
+      />
     </View>
   );
 };
