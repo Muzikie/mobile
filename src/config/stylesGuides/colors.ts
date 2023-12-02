@@ -4,6 +4,7 @@ const common = {
   beige: '#FEEAE3',
   purple: '#4E344D',
   grey: '#99868B',
+  lightGrey: '#BDB3B5',
   paleGrey: '#E8E7E7',
   darkGrey: '#98918F',
   iceberg: '#D7F4EE',

@@ -16,7 +16,7 @@ export default {
 
   // border radius
   thumbnailRadius: 8,
-  buttonBorderRadius: 15,
+  buttonBorderRadius: 8,
   boxBorderRadius: 18,
   avatarRadius: 40,
 

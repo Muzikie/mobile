@@ -12,19 +12,23 @@ const Button = ({
   title,
   disabled,
 }: ButtonProps) => {
-  const disabledStyle = disabled ? styles.disabled : {};
+  const disabledTouchable = disabled ? styles.disabled : {};
+  const disabledText = disabled
+    ? styles.disabled
+    : styles[theme || ButtonThemes.purple];
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
       <View
-        style={[styles.shadowWrapper, shadow === false ? {} : styles.shadow]}>
+        style={[
+          styles.shadowWrapper,
+          shadow === false || disabled ? {} : styles.shadow,
+        ]}>
         <TouchableHighlight
           disabled={disabled}
           onPress={onPress}
           underlayColor="transparent"
-          style={[styles.touchable, disabledStyle, style]}>
-          <Text style={[styles.title, styles[theme || ButtonThemes.purple]]}>
-            {title}
-          </Text>
+          style={[styles.touchable, disabledTouchable, style]}>
+          <Text style={[styles.title, disabledText]}>{title}</Text>
         </TouchableHighlight>
       </View>
     </View>

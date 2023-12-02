@@ -1,5 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {fonts, colors, boxes} from '../../config/stylesGuides';
+import {
+  fontSizes,
+  colors,
+  boxes,
+  fontFamilies,
+} from '../../config/stylesGuides';
 
 const styles = {
   wrapper: {
@@ -33,7 +38,8 @@ const styles = {
     width: '100%',
     lineHeight: boxes.buttonHeight,
     textAlign: 'center',
-    ...fonts.h4,
+    fontSize: fontSizes.h4,
+    fontFamily: fontFamilies.poppinsRegular,
     marginBottom: 0,
   },
   purple: {
@@ -45,7 +51,8 @@ const styles = {
     backgroundColor: colors.light.white,
   },
   disabled: {
-    opacity: 0.5,
+    color: colors.light.lightGrey,
+    backgroundColor: colors.light.darkGrey,
   },
 };
 
