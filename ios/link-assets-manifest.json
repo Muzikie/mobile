@@ -166,6 +166,18 @@
       "sha1": "bcd0ea5f068120053b0d41eafd27399b06f278a7"
     },
     {
+      "path": "src/assets/images/preview.png",
+      "sha1": "fe572873d7db51df4142a59bbe13265fc3edecda"
+    },
+    {
+      "path": "src/assets/images/preview@2x.png",
+      "sha1": "fad93b292afed85bb670ee1c083bdb6f0ee68ded"
+    },
+    {
+      "path": "src/assets/images/preview@3x.png",
+      "sha1": "f7e9014cd6f59ff5a0a492255e441bee97f21c57"
+    },
+    {
       "path": "src/assets/images/splashScreen.png",
       "sha1": "6671eb1c528e9141f272658c832e024333e938de"
     },
