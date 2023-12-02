@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {boxes} from '../../config/stylesGuides';
+import {boxes, colors, fontFamilies, fontSizes} from '../../config/stylesGuides';
 
 const styles = {
   container: {
@@ -14,8 +14,25 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'nowrap',
   },
+  info: {
+    paddingLeft: boxes.elementPadding,
+  },
   title: {
     width: '100%',
+    color: colors.light.purple,
+    fontSize: fontSizes.h4,
+    fontFamily: fontFamilies.poppinsMedium,
+    paddingBottom: 4,
+  },
+  submitter: {
+    color: colors.light.lightGrey,
+    fontSize: fontSizes.base,
+    fontFamily: fontFamilies.poppinsRegular,
+  },
+  artist: {
+    color: colors.light.darkGrey,
+    fontSize: fontSizes.base,
+    fontFamily: fontFamilies.poppinsRegular,
   },
   link: {
     flex: 1,
@@ -27,16 +44,15 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.light.fadeBeige,
   },
   thumbnail: {
-    width: 40,
-    height: 40,
+    width: 66,
+    height: 66,
     borderRadius: boxes.thumbnailRadius,
-    marginRight: boxes.boxPadding,
-  },
-  upvoteIcon: {
-    width: 17,
-    height: 15,
+    // marginRight: boxes.boxPadding,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };
 

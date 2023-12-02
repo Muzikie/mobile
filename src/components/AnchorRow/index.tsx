@@ -41,15 +41,10 @@ const AnchorRow = ({
         style={[styles.link, styles.row]}>
         <>
           <Image source={{uri: images[0].url}} style={styles.thumbnail} />
-          <View>
-            <Text style={[fonts.h4, styles.title]}>
-              {truncateText(name, 25)}
-            </Text>
-            <View style={styles.row}>
-              <Text style={fonts.base}>{truncateText(artists, 15)}</Text>
-              <Text style={fonts.base}> • </Text>
-              <Text style={fonts.base}>{truncateText(submitter, 10)}</Text>
-            </View>
+          <View style={styles.info}>
+            <Text style={styles.submitter}>{truncateText(submitter, 10)}</Text>
+            <Text style={styles.title}>{truncateText(name, 25)}</Text>
+            <Text style={styles.artist}>{truncateText(artists, 15)}</Text>
           </View>
         </>
       </TouchableHighlight>
@@ -60,7 +55,7 @@ const AnchorRow = ({
           onPress={onPress}
           underlayColor="transparent"
           style={styles.button}>
-          <Icon name="UpVote" style={styles.upvoteIcon} />
+          <Icon name="heart" size={16} />
         </TouchableHighlight>
       ) : null}
     </View>
