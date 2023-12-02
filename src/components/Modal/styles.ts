@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {boxes, colors} from '../../config/stylesGuides';
+import {boxes, colors, fontFamilies} from '../../config/stylesGuides';
 
 const styles = {
   wrapper: {
@@ -10,7 +10,8 @@ const styles = {
     zIndex: 100,
   },
   container: {
-    padding: boxes.boxPadding,
+    paddingVertical: boxes.boxPadding,
+    paddingHorizontal: boxes.boxPadding * 1.5,
     borderTopLeftRadius: boxes.boxBorderRadius,
     borderTopRightRadius: boxes.boxBorderRadius,
     backgroundColor: colors.light.white,
@@ -25,12 +26,9 @@ const styles = {
     shadowRadius: boxes.shadowHeight,
   },
   closeButtonWrapper: {
-    width: '100%',
-    height: 35,
-    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
   },
   closeButton: {
     width: 35,
@@ -46,13 +44,18 @@ const styles = {
   },
   title: {
     textAlign: 'left',
-    marginBottom: 20,
-    fontWeight: 600,
+    marginBottom: 5,
+    marginTop: boxes.elementPadding,
+    color: colors.light.purple,
+    fontFamilies: fontFamilies.poppinsSemiBold,
+    maxWidth: '90%',
   },
   description: {
     textAlign: 'left',
     marginBottom: 20,
     lineHeight: 20,
+    color: colors.light.darkGrey,
+    maxWidth: '100%',
   },
   actionBar: {
     width: '100%',

@@ -13,6 +13,7 @@ const Modal = ({data, hide}: ModalProps) => {
     <View style={styles.wrapper}>
       <View style={[styles.container, styles.shadow]}>
         <View style={styles.closeButtonWrapper}>
+          <Text style={[fonts.h2, styles.title]}>{data.title}</Text>
           <IconButton
             onPress={hide}
             style={styles.closeButton}
@@ -20,9 +21,8 @@ const Modal = ({data, hide}: ModalProps) => {
             iconName="cross"
           />
         </View>
+        <Text style={[fonts.h4, styles.description]}>{data.description}</Text>
         {data?.image && <Image source={data.image} style={styles.image} />}
-        <Text style={[fonts.h3, styles.title]}>{data.title}</Text>
-        <Text style={[fonts.base, styles.description]}>{data.description}</Text>
         {data?.content}
         <View style={styles.actionBar}>
           {typeof data?.onSecondaryPress === 'function' && (
@@ -49,6 +49,6 @@ const Modal = ({data, hide}: ModalProps) => {
       </View>
     </View>
   );
-}
+};
 
 export default Modal;
