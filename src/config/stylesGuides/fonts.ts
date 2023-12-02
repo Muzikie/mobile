@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import colors from './colors';
 
-const fontFamilies = {
+export const fontFamilies = {
   poppinsThin: 'Poppins-Thin',
   poppinsLight: 'Poppins-Light',
   poppinsRegular: 'Poppins-Regular',
@@ -14,7 +14,7 @@ const fontFamilies = {
   dots: 'dots',
 };
 
-const fontSizes = {
+export const fontSizes = {
   h1: 28,
   h2: 22,
   h3: 18,
