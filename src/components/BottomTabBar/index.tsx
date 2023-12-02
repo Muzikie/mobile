@@ -22,7 +22,7 @@ const RouteButton = ({route, navigation, stateIndex, index}: any) => {
     }
   };
 
-  const iconColor = isFocused ? colors.light.grey : colors.light.purple;
+  const iconColor = isFocused ? colors.light.purple : colors.light.grey;
 
   return (
     <TouchableHighlight

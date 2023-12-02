@@ -1,67 +1,29 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Home';
-import SubmitScreen from '../screens/Submit';
-import ProfileScreen from '../screens/Profile';
-import WinnersScreen from '../screens/Winners';
+import Settings from '../screens/Settings';
+import Profile from '../screens/Profile';
+import Winners from '../screens/Winners';
 import BottomTabBar from '../components/BottomTabBar';
+import {colors} from '../config/stylesGuides';
 
 const Tab = createBottomTabNavigator();
 
+const tabBarOptions = {
+  tabBarShowLabel: false,
+  headerStyle: {
+    backgroundColor: colors.light.beige,
+    shadowColor: 'transparent',
+    elevation: 0,
+  },
+};
+
 const Navigation = (): JSX.Element => (
   <Tab.Navigator initialRouteName="Intro" tabBar={BottomTabBar}>
-    <Tab.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: '#09c',
-        headerStyle: {
-          backgroundColor: '#FEEAE3',
-          shadowColor: 'transparent',
-          elevation: 0,
-        },
-      }}
-    />
-    <Tab.Screen
-      name="Winners"
-      component={WinnersScreen}
-      options={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: '#09c',
-        headerStyle: {
-          backgroundColor: '#FEEAE3',
-          shadowColor: 'transparent',
-          elevation: 0,
-        },
-      }}
-    />
-    <Tab.Screen
-      name="Profile"
-      component={ProfileScreen}
-      options={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: '#09c',
-        headerStyle: {
-          backgroundColor: '#FEEAE3',
-          shadowColor: 'transparent',
-          elevation: 0,
-        },
-      }}
-    />
-    <Tab.Screen
-      name="Submit"
-      component={SubmitScreen}
-      options={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: '#09c',
-        headerStyle: {
-          backgroundColor: '#FEEAE3',
-          shadowColor: 'transparent',
-          elevation: 0,
-        },
-      }}
-    />
+    <Tab.Screen name="Home" component={HomeScreen} options={tabBarOptions} />
+    <Tab.Screen name="Winners" component={Winners} options={tabBarOptions} />
+    <Tab.Screen name="Profile" component={Profile} options={tabBarOptions} />
+    <Tab.Screen name="Settings" component={Settings} options={tabBarOptions} />
   </Tab.Navigator>
 );
 
