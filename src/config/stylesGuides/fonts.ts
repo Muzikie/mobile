@@ -10,6 +10,8 @@ const fontFamilies = {
   poppinsBold: 'Poppins-Bold',
   poppinsExtraBold: 'Poppins-ExtraBold',
   poppinsBlack: 'Poppins-Black',
+  mono: 'mono',
+  dots: 'dots',
 };
 
 const fontSizes = {
@@ -35,7 +37,7 @@ const styles = {
   h2: {
     fontSize: fontSizes.h2,
     color: colors.light.grey,
-    fontFamily: fontFamilies.poppinsSemiBold,
+    fontFamily: fontFamilies.poppinsMedium,
   },
   h3: {
     fontSize: fontSizes.h3,
@@ -55,6 +57,16 @@ const styles = {
   small: {
     color: colors.light.purple,
     fontSize: fontSizes.small,
+  },
+  passphrase: {
+    fontFamily: fontFamilies.mono,
+    fontSize: fontSizes.h2,
+    lineHeight: 30,
+  },
+  hiddenPassphrase: {
+    fontFamily: fontFamilies.dots,
+    fontSize: 13,
+    lineHeight: 30,
   },
 };
 
