@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {View, Text} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';

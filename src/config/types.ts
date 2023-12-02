@@ -92,3 +92,5 @@ export enum COMMANDS {
   CREATE = 'create',
   VOTE = 'vote',
 }
+
+export type Timeout = NodeJS.Timeout;

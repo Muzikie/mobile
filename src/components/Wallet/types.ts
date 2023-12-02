@@ -3,5 +3,3 @@ export interface WalletProps {
   address: string;
   balance: string;
 }
-
-export type Timeout = ReturnType<typeof setTimeout>;

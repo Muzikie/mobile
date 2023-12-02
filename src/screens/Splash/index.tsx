@@ -2,13 +2,14 @@ import React, {useEffect, useRef} from 'react';
 import {View, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import muzikieLogo from '../../assets/images/splashScreen.png';
-import styles from './styles';
 import {usePresets} from '../../hooks/usePresets';
+import type {Timeout} from '../../config/types';
+import styles from './styles';
 
 const SplashScreen = () => {
   const {presets} = usePresets();
   const navigation = useNavigation();
-  const timeout = useRef<NodeJS.Timeout | null>(null);
+  const timeout = useRef<Timeout>();
 
   useEffect(() => {
     timeout.current = setTimeout(() => {

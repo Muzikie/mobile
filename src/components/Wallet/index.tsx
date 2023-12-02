@@ -2,8 +2,9 @@ import React, {useEffect, useRef, useState} from 'react';
 import {View, Text} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';
+import type {Timeout} from '../../config/types';
 import styles from './styles';
-import type {WalletProps, Timeout} from './types';
+import type {WalletProps} from './types';
 
 const Wallet = ({style, address, balance}: WalletProps) => {
   const [_, setString] = useClipboard();

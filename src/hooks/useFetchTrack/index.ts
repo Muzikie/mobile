@@ -2,10 +2,10 @@ import {useState, useEffect, useRef, useCallback} from 'react';
 import {Anchor} from '../../config/types';
 import {SPOTIFY_LINK_REG} from '../../config/constants';
 import {getFromSpotify} from '../../utils/api';
-import {FetchStatus} from '../../config/types';
+import {FetchStatus, Timeout} from '../../config/types';
 
 export const useFetchTrack = () => {
-  const timer = useRef<NodeJS.Timeout>();
+  const timer = useRef<Timeout>();
   const [url, setUrl] = useState({
     value: '',
     isValid: false,

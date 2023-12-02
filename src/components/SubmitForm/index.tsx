@@ -9,13 +9,13 @@ import {useFetchTrack} from '../../hooks/useFetchTrack';
 import {useTransaction} from '../../hooks/useTransaction';
 import {useModal} from '../../hooks/useModal';
 import {useAccount} from '../../hooks/useAccount';
-import {FetchStatus} from '../../config/types';
+import {FetchStatus, Timeout} from '../../config/types';
 import {getStatus} from './utils';
 import type {SubmitFormProps} from './types';
 import {COMMANDS, MODULES} from '../../config/constants';
 
 const SubmitForm = ({style}: SubmitFormProps) => {
-  const timer = useRef<NodeJS.Timeout>();
+  const timer = useRef<Timeout>();
   const {account} = useAccount();
   const {
     anchor,
