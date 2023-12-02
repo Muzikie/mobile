@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/dots.ttf",
+      "sha1": "10faae01cfeaed43a29c273cb71b51789358d85a"
+    },
+    {
+      "path": "src/assets/fonts/mono.ttf",
+      "sha1": "716e402a6216c4ed67d8b1687980608d066c9acf"
+    },
+    {
       "path": "src/assets/fonts/poppins/Poppins-Black.ttf",
       "sha1": "645e04c53c6b5b35bce654a811ebce16af8aa721"
     },
@@ -32,14 +40,6 @@
     {
       "path": "src/assets/fonts/poppins/Poppins-Thin.ttf",
       "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
-    },
-    {
-      "path": "src/assets/images/anchor-thumbnail.png",
-      "sha1": "fdbef95b726a9f4a6c286c1ceb2b7ba93275fef2"
-    },
-    {
-      "path": "src/assets/images/apple-music-logo.png",
-      "sha1": "da043b36fe2b996a526e7b0c9f68927e1a1eec74"
     },
     {
       "path": "src/assets/images/avatars/a0.jpg",
@@ -166,8 +166,20 @@
       "sha1": "bcd0ea5f068120053b0d41eafd27399b06f278a7"
     },
     {
-      "path": "src/assets/images/spotify-logo.png",
-      "sha1": "bf6380369dd6bb18c7c487e1afb9434249012dae"
+      "path": "src/assets/images/splashScreen.png",
+      "sha1": "6671eb1c528e9141f272658c832e024333e938de"
+    },
+    {
+      "path": "src/assets/images/splashScreen@2x.png",
+      "sha1": "81e0b8cfbb2f0467d62c8470cee81bfb727036d6"
+    },
+    {
+      "path": "src/assets/images/splashScreen@3x.png",
+      "sha1": "d93f1eb41533bdf0a6a9294fedaa52423404c096"
+    },
+    {
+      "path": "src/assets/images/wallet-gradient.png",
+      "sha1": "952ca5b165175ade9b196d5cb57d8b18cf582d9f"
     }
   ]
 }
