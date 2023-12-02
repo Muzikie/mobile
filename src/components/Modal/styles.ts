@@ -45,12 +45,12 @@ const styles = {
     marginBottom: 20,
   },
   title: {
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 20,
     fontWeight: 600,
   },
   description: {
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 20,
     lineHeight: 20,
   },

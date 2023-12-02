@@ -23,6 +23,7 @@ const Modal = ({data, hide}: ModalProps) => {
         {data?.image && <Image source={data.image} style={styles.image} />}
         <Text style={[fonts.h3, styles.title]}>{data.title}</Text>
         <Text style={[fonts.base, styles.description]}>{data.description}</Text>
+        {data?.content}
         <View style={styles.actionBar}>
           {typeof data?.onSecondaryPress === 'function' && (
             <Button
