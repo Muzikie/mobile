@@ -47,7 +47,7 @@ const styles = {
     marginBottom: 5,
     marginTop: boxes.elementPadding,
     color: colors.light.purple,
-    fontFamilies: fontFamilies.poppinsSemiBold,
+    fontFamily: fontFamilies.poppinsSemiBold,
     maxWidth: '90%',
   },
   description: {

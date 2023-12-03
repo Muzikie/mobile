@@ -65,7 +65,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
         resetTransaction();
       }, 2000);
     }
-  }, [broadcastStatus, resetTrack, resetTransaction, fetchFeedback, url]);
+  }, [broadcastStatus, resetTrack, resetTransaction]);
 
   useEffect(
     () => () => {
