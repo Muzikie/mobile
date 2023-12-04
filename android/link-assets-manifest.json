@@ -146,6 +146,22 @@
       "sha1": "1e46a7e76a398e04c3827c7fbac9493ab85add7f"
     },
     {
+      "path": "src/assets/images/carrot@2x.png",
+      "sha1": "87ab8300637d07f09718a16995c561a490b416bb"
+    },
+    {
+      "path": "src/assets/images/carrot@3x.png",
+      "sha1": "f88732fdf5cd2eefdd4e52cdf837260e631e47b7"
+    },
+    {
+      "path": "src/assets/images/corps.png",
+      "sha1": "016847b3cc4181c8a5ba353266280180f49c0e4c"
+    },
+    {
+      "path": "src/assets/images/how.png",
+      "sha1": "3a0f18aacb1597b6d178685772e965cb6c2ff221"
+    },
+    {
       "path": "src/assets/images/motivation1.png",
       "sha1": "2f3db7d7386c5213fbf44a1efea869a052bbc782"
     },
@@ -192,6 +208,14 @@
     {
       "path": "src/assets/images/wallet-gradient.png",
       "sha1": "952ca5b165175ade9b196d5cb57d8b18cf582d9f"
+    },
+    {
+      "path": "src/assets/images/what.png",
+      "sha1": "ec5faae528a816677e111b340beabf90a533b502"
+    },
+    {
+      "path": "src/assets/images/why.png",
+      "sha1": "823998ca795c76dfd91d0e19c16346c9a479dabf"
     }
   ]
 }

@@ -19,7 +19,7 @@ const tabBarOptions = {
 };
 
 const Navigation = (): JSX.Element => (
-  <Tab.Navigator initialRouteName="Intro" tabBar={BottomTabBar}>
+  <Tab.Navigator initialRouteName="Home" tabBar={BottomTabBar}>
     <Tab.Screen name="Home" component={HomeScreen} options={tabBarOptions} />
     <Tab.Screen name="Winners" component={Winners} options={tabBarOptions} />
     <Tab.Screen name="Profile" component={Profile} options={tabBarOptions} />

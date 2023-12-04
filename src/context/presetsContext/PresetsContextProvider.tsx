@@ -11,7 +11,7 @@ import {
 } from './types';
 
 const DEFAULT_PRESETS = {
-  introShown: false,
+  visitedIntroVersion: '0.0.0',
   theme: Themes.light,
 };
 
@@ -20,7 +20,6 @@ const PresetsProvider = ({children}: PresetsProviderProps) => {
 
   const storePresets = useCallback(
     async (params: StorePresetsProps): Promise<StoreResponse> => {
-      console.log('Storing presets', params);
       try {
         const previousValues = await AsyncStorage.getItem(USER_PRESETS);
         const previousValuesObject = previousValues
@@ -52,7 +51,6 @@ const PresetsProvider = ({children}: PresetsProviderProps) => {
     let value = DEFAULT_PRESETS;
     try {
       const storedValue = await AsyncStorage.getItem(USER_PRESETS);
-      console.log('storedValue', storedValue);
       if (storedValue) {
         value = JSON.parse(storedValue);
       } else {
@@ -62,7 +60,6 @@ const PresetsProvider = ({children}: PresetsProviderProps) => {
       console.log(e);
     }
 
-    console.log('Loading old presets', value);
     setPresets(value);
   }, [setPresets]);
 

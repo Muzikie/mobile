@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import muzikieLogo from '../../assets/images/splashScreen.png';
 import {usePresets} from '../../hooks/usePresets';
 import type {Timeout} from '../../config/types';
+import {CURRENT_INTRO_VERSION} from '../Intro';
 import styles from './styles';
 
 const SplashScreen = () => {
@@ -13,19 +14,15 @@ const SplashScreen = () => {
 
   useEffect(() => {
     timeout.current = setTimeout(() => {
-      if (presets.introShown) {
+      if (presets.visitedIntroVersion >= CURRENT_INTRO_VERSION) {
         navigation.navigate('Tabs' as never);
       } else {
         navigation.navigate('Intro' as never);
       }
     }, 1000);
-
-    return () => {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-    };
   }, [presets, navigation]);
+
+  useEffect(() => () => clearTimeout(timeout.current), []);
 
   return (
     <View style={styles.splashContainer}>

@@ -14,6 +14,9 @@ const common = {
   fadeSuccess: '#BDDFE1',
   error: '#F2994A',
   errorFade: '#FF8696',
+  lemon: '#FDE8B2',
+  navyBlue: '#88A4C9',
+  opaqueWhite: 'rgba(255, 255, 255, 0.5)',
 };
 
 const light = {

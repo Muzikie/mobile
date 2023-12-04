@@ -14,8 +14,8 @@ const Stacks = (): JSX.Element => (
       initialRouteName="Splash"
       screenOptions={{
         headerShown: false,
-      }}
-      detachInactiveScreens={true}>
+        detachPreviousScreen: true,
+      }}>
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Intro" component={IntroScreen} />
       <Stack.Screen name="Tabs" component={Tabs} />

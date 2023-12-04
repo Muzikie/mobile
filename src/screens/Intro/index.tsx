@@ -1,91 +1,64 @@
-import React, {useEffect, useState, useRef} from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useEffect} from 'react';
+import {View} from 'react-native';
+import Carousel from '../../components/Carousel';
 import {useNavigation} from '@react-navigation/native';
-import {fonts} from '../../config/stylesGuides';
-import muzikieLogo from '../../assets/images/splashScreen.png';
-import engageImage from '../../assets/images/motivation1.png';
-import futureImage from '../../assets/images/motivation2.png';
-import discoverImage from '../../assets/images/motivation3.png';
+import {colors} from '../../config/stylesGuides';
+import IntroContent from '../../components/IntroContent';
+import whyImage from '../../assets/images/why.png';
+import howImage from '../../assets/images/how.png';
+import whatImage from '../../assets/images/what.png';
+import corpsImage from '../../assets/images/corps.png';
 import styles from './styles';
-import IconButton from '../../components/IconButton';
 import {usePresets} from '../../hooks/usePresets';
 
-const DiscoverStep = ({setStep}) => (
-  <View style={styles.stepContainer}>
-    <View style={styles.imageContainer}>
-      <Image style={styles.image} source={discoverImage} />
-    </View>
-    <View style={styles.titleContainer}>
-      <Text style={[fonts.h1, styles.title]}>Discover</Text>
-      <Text style={[fonts.base, styles.subtitle]}>
-        Find fresh beats from emerging artists. Share Spotify links and upvote
-        the best tracks to elevate new talent.
-      </Text>
-    </View>
-    <View style={styles.buttonContainer}>
-      <IconButton iconName="Play" iconSize={60} onPress={() => setStep(2)} />
-    </View>
-  </View>
-);
+const entries = [
+  {
+    image: whyImage,
+    description: 'Muzikie helps you discover wonderful tunes',
+    backgroundColor: colors.light.navyBlue,
+    color: colors.light.white,
+  },
+  {
+    image: howImage,
+    description:
+      'Share the music you loved or upvote tunes shared by others to help everyone find wonderful music',
+    backgroundColor: colors.light.fadeSuccess,
+    color: colors.light.purple,
+  },
+  {
+    image: whatImage,
+    description:
+      'Three most popular tunes of each day receive a badge and prize',
+    backgroundColor: colors.light.errorFade,
+    color: colors.light.white,
+  },
+  {
+    image: corpsImage,
+    description: 'Listen and share songs directly from Spotify and Apple Music',
+    backgroundColor: colors.light.lemon,
+    color: colors.light.purple,
+  },
+];
 
-const EngageStep = ({setStep}) => (
-  <View style={styles.stepContainer}>
-    <View style={styles.imageContainer}>
-      <Image style={styles.image} source={engageImage} />
-    </View>
-    <View style={styles.titleContainer}>
-      <Text style={[fonts.h1, styles.title]}>Engage</Text>
-      <Text style={[fonts.base, styles.subtitle]}>
-        Join a vibrant community passionate about music. Your likes and shares
-        drive the spotlight onto rising stars.
-      </Text>
-    </View>
-    <View style={styles.buttonContainer}>
-      <IconButton iconName="Play" iconSize={60} onPress={() => setStep(3)} />
-    </View>
-  </View>
-);
-
-const FutureStep = ({setStep}) => (
-  <View style={styles.stepContainer}>
-    <View style={styles.imageContainer}>
-      <Image style={styles.image} source={futureImage} />
-    </View>
-    <View style={styles.titleContainer}>
-      <Text style={[fonts.h1, styles.title]}>Future</Text>
-      <Text style={[fonts.base, styles.subtitle]}>
-        Coming soon: Share music via Apple Music! Artists can share exclusive
-        updates about upcoming albums and EPs.
-      </Text>
-    </View>
-    <View style={styles.buttonContainer}>
-      <IconButton iconName="Play" iconSize={60} onPress={() => setStep(4)} />
-    </View>
-  </View>
-);
+export const CURRENT_INTRO_VERSION = '0.1.0';
 
 const IntroScreen = () => {
-  const {storePresets, presets} = usePresets();
+  const {presets, storePresets} = usePresets();
   const navigation = useNavigation();
-  const [step, setStep] = useState(1);
 
   useEffect(() => {
-    if (presets.introShown) {
+    if (presets.visitedIntroVersion >= CURRENT_INTRO_VERSION) {
       navigation.navigate('Tabs' as never);
     }
-  }, [step, navigation, presets]);
+  }, [navigation, presets.visitedIntroVersion]);
 
-  useEffect(() => {
-    if (step === 4) {
-      storePresets({introShown: true});
-    }
-  }, [step, storePresets]);
+  const onEnd = () => {
+    storePresets({visitedIntroVersion: CURRENT_INTRO_VERSION});
+  };
 
   return (
-    <View style={[styles.screenContainer, styles.introScreen]}>
-      {step === 1 && <DiscoverStep setStep={setStep} />}
-      {step === 2 && <EngageStep setStep={setStep} />}
-      {step >= 3 && <FutureStep setStep={setStep} />}
+    <View style={styles.screenContainer}>
+      <Carousel data={entries} content={IntroContent} onEnd={onEnd} />
     </View>
   );
 };

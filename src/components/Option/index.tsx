@@ -9,7 +9,7 @@ import styles from './styles';
 const Option = ({
   title, state, href, onPress, style,
 }: OptionProps) => {
-  const iconName = href ? 'link' : 'rightChevron';
+  const iconName = href ? 'link' : 'rightChev';
 
   if (href && !onPress) {
     onPress = () => {

@@ -7,10 +7,6 @@ import {
 } from '../../config/stylesGuides';
 
 const styles = {
-  screenContainer: {
-    height: '100%',
-    width: '100%',
-  },
   stepContainer: {
     flex: 1,
     alignItems: 'center',
@@ -33,12 +29,8 @@ const styles = {
     paddingBottom: 80,
   },
   image: {
-    width: 150,
-    height: 150,
-  },
-  title: {
-    color: colors.light.purple,
-    textAlign: 'center',
+    width: '80%',
+    height: '80%',
   },
   subtitle: {
     color: colors.light.purple,
@@ -48,15 +40,6 @@ const styles = {
     paddingLeft: boxes.doublePadding,
     fontFamily: fontFamilies.poppinsRegular,
     fontSize: fontSizes.h2,
-  },
-  buttonContainer: {
-    width: 80,
-    height: 80,
-    backgroundColor: colors.light.white,
-    borderRadius: boxes.boxBorderRadius,
-    paddingLeft: 15,
-    paddingRight: 5,
-    paddingTop: 15,
   },
 };
 

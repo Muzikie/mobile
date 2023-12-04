@@ -10,7 +10,7 @@ export enum Themes {
 }
 
 export interface Presets {
-  introShown: boolean;
+  visitedIntroVersion: string;
   theme: Themes;
 }
 
