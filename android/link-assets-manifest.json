@@ -158,6 +158,14 @@
       "sha1": "016847b3cc4181c8a5ba353266280180f49c0e4c"
     },
     {
+      "path": "src/assets/images/heart@2x.png",
+      "sha1": "d3b4da67e00b25b30bf6e5b186ffe0e4cb900a95"
+    },
+    {
+      "path": "src/assets/images/heart@3x.png",
+      "sha1": "81bea69df817b96a28d448d68d1c3e63ea330e71"
+    },
+    {
       "path": "src/assets/images/how.png",
       "sha1": "3a0f18aacb1597b6d178685772e965cb6c2ff221"
     },

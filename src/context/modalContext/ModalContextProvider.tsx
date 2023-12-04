@@ -17,6 +17,7 @@ const ModalProvider = ({children}: ModalProviderProps) => {
   const value = {
     show,
     hide,
+    isVisible: content !== null,
   };
 
   return (

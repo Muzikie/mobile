@@ -16,4 +16,5 @@ export interface ModalContent {
 export interface ModalContextType {
   show: (content: ModalContent) => void;
   hide: () => void;
+  isVisible: boolean;
 }

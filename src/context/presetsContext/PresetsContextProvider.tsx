@@ -12,6 +12,7 @@ import {
 
 const DEFAULT_PRESETS = {
   visitedIntroVersion: '0.0.0',
+  visitedVoteHintVersion: '0.0.0',
   theme: Themes.light,
 };
 
@@ -51,11 +52,10 @@ const PresetsProvider = ({children}: PresetsProviderProps) => {
     let value = DEFAULT_PRESETS;
     try {
       const storedValue = await AsyncStorage.getItem(USER_PRESETS);
-      if (storedValue) {
-        value = JSON.parse(storedValue);
-      } else {
-        await AsyncStorage.setItem(USER_PRESETS, JSON.stringify(value));
-      }
+      value = {
+        ...DEFAULT_PRESETS,
+        ...(storedValue ? JSON.parse(storedValue) : {}),
+      };
     } catch (e) {
       console.log(e);
     }

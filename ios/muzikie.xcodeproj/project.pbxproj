@@ -68,6 +68,8 @@
 		8555466B1C06452C8BAE05DC /* how.png in Resources */ = {isa = PBXBuildFile; fileRef = E40DB5E8482D4412BBE3FB5F /* how.png */; };
 		BEE50EAD4A094754AF2336E0 /* what.png in Resources */ = {isa = PBXBuildFile; fileRef = C62DC0194C4C48C9BDA48E6F /* what.png */; };
 		BC667F22D88240F5B218C992 /* why.png in Resources */ = {isa = PBXBuildFile; fileRef = D0835C9F563748F1A5D5F099 /* why.png */; };
+		C21C69B463A54F61BD1DF5E7 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DDFB69098B472A83F240FB /* heart@2x.png */; };
+		2AF32E1C6ECE4EB3A539C810 /* heart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A80D43C3DC42BD8B6A4DA9 /* heart@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		E40DB5E8482D4412BBE3FB5F /* how.png */ = {isa = PBXFileReference; name = "how.png"; path = "../src/assets/images/how.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C62DC0194C4C48C9BDA48E6F /* what.png */ = {isa = PBXFileReference; name = "what.png"; path = "../src/assets/images/what.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D0835C9F563748F1A5D5F099 /* why.png */ = {isa = PBXFileReference; name = "why.png"; path = "../src/assets/images/why.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		49DDFB69098B472A83F240FB /* heart@2x.png */ = {isa = PBXFileReference; name = "heart@2x.png"; path = "../src/assets/images/heart@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		06A80D43C3DC42BD8B6A4DA9 /* heart@3x.png */ = {isa = PBXFileReference; name = "heart@3x.png"; path = "../src/assets/images/heart@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +318,8 @@
 				E40DB5E8482D4412BBE3FB5F /* how.png */,
 				C62DC0194C4C48C9BDA48E6F /* what.png */,
 				D0835C9F563748F1A5D5F099 /* why.png */,
+				49DDFB69098B472A83F240FB /* heart@2x.png */,
+				06A80D43C3DC42BD8B6A4DA9 /* heart@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -468,6 +474,8 @@
 				8555466B1C06452C8BAE05DC /* how.png in Resources */,
 				BEE50EAD4A094754AF2336E0 /* what.png in Resources */,
 				BC667F22D88240F5B218C992 /* why.png in Resources */,
+				C21C69B463A54F61BD1DF5E7 /* heart@2x.png in Resources */,
+				2AF32E1C6ECE4EB3A539C810 /* heart@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
