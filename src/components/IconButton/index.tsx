@@ -9,8 +9,14 @@ import Icon from '../Icon';
 import {IconButtonProps} from './types';
 import styles from './styles';
 
-const IconButton = ({onPress, style, iconSize, iconName}: IconButtonProps) => (
-  <TouchableWithoutFeedback onPress={onPress}>
+const IconButton = ({
+  onPress,
+  style,
+  iconSize,
+  iconName,
+  disabled,
+}: IconButtonProps) => (
+  <TouchableWithoutFeedback onPress={onPress} disabled={disabled}>
     <View style={[styles.wrapper, style]}>
       <Icon name={iconName} size={iconSize} style={styles.icon} />
       <TouchableHighlight

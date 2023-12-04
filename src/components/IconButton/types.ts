@@ -3,4 +3,5 @@ export interface IconButtonProps {
   style?: any;
   iconSize: number;
   iconName: string;
+  disabled?: boolean;
 }
