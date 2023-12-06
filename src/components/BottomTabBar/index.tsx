@@ -3,7 +3,7 @@ import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {View, TouchableHighlight} from 'react-native';
 import styles from './styles';
 // import Player from '../Player';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import {colors} from '../../config/stylesGuides';
 
 const RouteButton = ({route, navigation, stateIndex, index}: any) => {

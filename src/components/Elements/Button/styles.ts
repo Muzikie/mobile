@@ -4,7 +4,7 @@ import {
   colors,
   boxes,
   fontFamilies,
-} from '../../config/stylesGuides';
+} from '../../../config/stylesGuides';
 
 const styles = {
   wrapper: {

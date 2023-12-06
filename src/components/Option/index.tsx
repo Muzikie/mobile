@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, TouchableHighlight, Linking} from 'react-native';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import {fonts} from '../../config/stylesGuides';
 import {OptionProps} from './types';
 import styles from './styles';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableHighlight} from 'react-native';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import {colors} from '../../config/stylesGuides';
 import {PlayButtonProps, PlayButtonStatus} from './types';
 import styles from './styles';

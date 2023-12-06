@@ -5,7 +5,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import Icon from '../Icon';
+import {Icon} from '../Icon';
 import {IconButtonProps} from './types';
 import styles from './styles';
 

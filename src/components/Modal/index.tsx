@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
-import IconButton from '../IconButton';
-import Button from '../Button';
+import {IconButton} from '../Elements';
+import {Button} from '../Elements';
 import {ModalProps} from './types';
 import styles from './styles';
 

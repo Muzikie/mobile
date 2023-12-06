@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, TouchableHighlight} from 'react-native';
-import Icon from '../Icon';
-import {fonts} from '../../config/stylesGuides';
+import {Icon} from '../Icon';
+import {fonts} from '../../../config/stylesGuides';
 import {CheckboxProps} from './types';
 import styles from './styles';
 

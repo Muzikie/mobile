@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {usePresets} from '../../hooks/usePresets';
 import {Themes} from '../../hooks/usePresets/types';
-import CheckBox from '../../components/CheckBox';
+import {CheckBox} from '../Elements';
 
 const SelectTheme = () => {
   const {presets, storePresets} = usePresets();

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import {colors} from '../../config/stylesGuides';
 
 const Confirm = () => (

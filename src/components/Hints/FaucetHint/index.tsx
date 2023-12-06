@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, Linking, Image} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
-import Button from '../../Button';
+import {Button} from '../../Elements';
 import {useAccount} from '../../../hooks/useAccount';
 import styles from './styles';
 import coin from '../../../assets/images/coin.png';

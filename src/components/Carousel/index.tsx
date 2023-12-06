@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Animated} from 'react-native';
-import IconButton from '../IconButton';
+import {IconButton} from '../Elements';
 import Dots from './Dots';
 import styles from './styles';
 import {CarouselProps} from './types';

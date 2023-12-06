@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, Image} from 'react-native';
 import {FetchStatus} from '../../config/types';
 import {colors} from '../../config/stylesGuides';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import previewPlaceholder from '../../assets/images/preview.png';
 import type {PreviewProps} from './types';
 import styles from './styles';

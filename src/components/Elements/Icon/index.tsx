@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {IconProps, IconsConfig} from './types';
-import {colors} from '../../config/stylesGuides';
+import {colors} from '../../../config/stylesGuides';
 
 const icons: IconsConfig = {
   Home: [

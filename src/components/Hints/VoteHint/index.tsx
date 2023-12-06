@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import heart from '../../assets/images/heart.png';
+import heart from '../../../assets/images/heart.png';
 import styles from './styles';
 
 const VoteHint = () => (

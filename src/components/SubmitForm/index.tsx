@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import {TextInput, View, Keyboard} from 'react-native';
 import styles from './styles';
-import Button from '../Button';
-import {ButtonThemes} from '../Button/types';
+import {Button} from '../Elements';
+import {ButtonThemes} from '../Elements/Button/types';
 import Feedback from '../Feedback';
 import Preview from '../Preview';
 import {useFetchTrack} from '../../hooks/useFetchTrack';

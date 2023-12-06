@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {usePresets} from '../../hooks/usePresets';
-import Icon from '../Icon';
-import Checkbox from '../CheckBox';
+import {Icon} from '../Elements';
+import Checkbox from '../Elements/CheckBox';
 import styles from './styles';
 
 const VoteConfirmation = () => {

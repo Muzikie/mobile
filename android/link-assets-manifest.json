@@ -154,6 +154,14 @@
       "sha1": "f88732fdf5cd2eefdd4e52cdf837260e631e47b7"
     },
     {
+      "path": "src/assets/images/coin@2x.png",
+      "sha1": "63638196c60c4db3ac61cc913c57910bac13fd12"
+    },
+    {
+      "path": "src/assets/images/coin@3x.png",
+      "sha1": "d3509657200fbc63c2885093f141c0d7554801dc"
+    },
+    {
       "path": "src/assets/images/corps.png",
       "sha1": "016847b3cc4181c8a5ba353266280180f49c0e4c"
     },

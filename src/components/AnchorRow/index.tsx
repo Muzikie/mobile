@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
-import Icon from '../Icon';
+import {Icon} from '../Elements';
 import VoteConfirmation from '../VoteConfirmation';
 import {truncateText} from '../../utils/helpers';
 import styles from './styles';

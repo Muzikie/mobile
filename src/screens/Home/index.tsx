@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {useModal} from '../../hooks/useModal';
 import {usePresets} from '../../hooks/usePresets';
 import AnchorsList from '../../components/AnchorsList';
-import IconButton from '../../components/IconButton';
+import {IconButton} from '../../components/Elements';
 import SubmitForm from '../../components/SubmitForm';
 import {VoteHint} from '../../components/Hints';
 import {Timeout} from '../../config/types';

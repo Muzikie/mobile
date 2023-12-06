@@ -6,7 +6,7 @@ import {fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
 import styles from './styles';
 import {useAccount} from '../../hooks/useAccount';
-import IconButton from '../IconButton';
+import {IconButton} from '../Elements';
 
 const BackupPassphrase = () => {
   const {account} = useAccount();
