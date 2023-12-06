@@ -1,8 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
+import carrot from '../../assets/images/carrot.png';
 import styles from './styles';
 import type {WalletProps} from './types';
 
@@ -28,12 +29,13 @@ const Wallet = ({style, address, balance}: WalletProps) => {
 
   return (
     <View style={[styles.wrapper, style]}>
+      <Image source={carrot} />
       <View style={styles.info}>
         <View style={styles.balanceContainer}>
           <Text style={[fonts.base, styles.label]}>Balance:</Text>
           <Text style={[fonts.h1, styles.balance]}>{balance}</Text>
         </View>
-        <View style={[styles.container, styles.addressContainer]}>
+        <View style={styles.addressContainer}>
           <Text style={[fonts.base, styles.label]}>Address:</Text>
           <Text
             style={[fonts.base, styles.copied, copied ? styles.visible : {}]}>

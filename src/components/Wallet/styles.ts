@@ -6,9 +6,13 @@ const styles = {
     width: '100%',
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
+    alignItems: 'center',
+    marginTop: boxes.boxPadding,
   },
   info: {
     flex: 1,
+    backgroundColor: colors.light.white,
+    borderRadius: boxes.boxBorderRadius,
   },
   copied: {
     position: 'absolute',
@@ -25,16 +29,13 @@ const styles = {
     paddingBottom: boxes.elementPadding,
     textAlign: 'center',
   },
-  container: {
+  addressContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     padding: boxes.boxPadding,
-  },
-  addressContainer: {
-    backgroundColor: colors.light.white,
-    borderRadius: boxes.boxBorderRadius,
+    paddingBottom: boxes.doublePadding,
   },
   address: {
     color: colors.light.purple,
@@ -42,8 +43,8 @@ const styles = {
     textAlign: 'center',
   },
   balanceContainer: {
-    marginTop: boxes.boxPadding,
-    paddingBottom: boxes.boxPadding,
+    marginTop: boxes.doublePadding,
+    paddingBottom: boxes.elementPadding,
   },
   balance: {
     color: colors.light.purple,
