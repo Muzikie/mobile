@@ -13,6 +13,8 @@ import {
 const DEFAULT_PRESETS = {
   visitedIntroVersion: '0.0.0',
   visitedVoteHintVersion: '0.0.0',
+  visitedFaucetVersion: '0.0.0',
+  skipVoteConfirmation: false,
   theme: Themes.light,
 };
 

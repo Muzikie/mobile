@@ -12,6 +12,8 @@ export enum Themes {
 export interface Presets {
   visitedIntroVersion: string;
   visitedVoteHintVersion: string;
+  visitedFaucetVersion: string;
+  skipVoteConfirmation: boolean;
   theme: Themes;
 }
 
