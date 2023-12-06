@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, View, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {fromBaseToken} from '../../utils/formatters';
 import {mapAddressToNumber} from '../../utils/helpers';
 import AchievedBadge from '../../components/AchievedBadge';
@@ -7,16 +7,13 @@ import Avatar from '../../components/Avatar';
 import Wallet from '../../components/Wallet';
 import UnclaimedBadges from '../../components/UnclaimedBadges';
 import {FaucetHint} from '../../components/Hints';
-import {EmptyBadgeList} from '../../components/EmptyState';
+import {EmptyBadgeList} from '../../components/EmptyStates';
+import {BadgesHeader} from '../../components/Headers';
 import {useAccount} from '../../hooks/useAccount';
 import {useModal} from '../../hooks/useModal';
 import {usePresets} from '../../hooks/usePresets';
 import {useFetchBadges} from '../../hooks/useFetchBadges';
 import styles from './styles';
-
-const BadgesHeader = ({title}: {title: string}) => (
-  <Text style={styles.pageTitle}>{title}</Text>
-);
 
 const CURRENT_HINT_VERSION = '0.1.0';
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {View, Text} from 'react-native';
 import {fonts} from '../../config/stylesGuides';
 import {usePresets} from '../../hooks/usePresets';

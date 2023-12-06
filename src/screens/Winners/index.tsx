@@ -1,18 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import AnchorsList from '../../components/AnchorsList';
+import {WinnersHeader} from '../../components/Headers';
 import styles from './styles';
 
-const Header = () => (
-  <View>
-    <Text style={styles.pageTitle}>Top songs</Text>
-  </View>
-);
-
-const HomeScreen = () => (
+const WinnersScreen = () => (
   <View style={[styles.screenContainer, styles.winnersScreen]}>
-    <AnchorsList filter="winner" header={Header} />
+    <AnchorsList filter="winner" header={WinnersHeader} />
   </View>
 );
 
-export default HomeScreen;
+export default WinnersScreen;
