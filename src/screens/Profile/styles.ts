@@ -34,12 +34,6 @@ const styles = {
     letterSpacing: 0.5,
     textAlign: 'center',
   },
-  emptyState: {
-    height: 200,
-    flexFlow: 'row noWrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 };
 
 export default StyleSheet.create(styles);
