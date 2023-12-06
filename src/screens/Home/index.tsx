@@ -5,7 +5,7 @@ import {usePresets} from '../../hooks/usePresets';
 import AnchorsList from '../../components/AnchorsList';
 import IconButton from '../../components/IconButton';
 import SubmitForm from '../../components/SubmitForm';
-import VoteHint from '../../components/VoteHint';
+import {VoteHint} from '../../components/Hints';
 import {Timeout} from '../../config/types';
 import styles from './styles';
 
