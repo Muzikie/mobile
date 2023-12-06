@@ -17,6 +17,7 @@ const styles = {
   title: {
     fontWeight: 500,
     height: 40,
+    lineHeight: 40,
   },
   box: {
     width: 40,

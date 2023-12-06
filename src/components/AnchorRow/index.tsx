@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
-import {fonts} from '../../config/stylesGuides';
 import Icon from '../Icon';
+import VoteConfirmation from '../VoteConfirmation';
 import {truncateText} from '../../utils/helpers';
 import styles from './styles';
 import type {AnchorRowProps} from './types';
@@ -9,6 +9,9 @@ import type {AnchorRowProps} from './types';
 const AnchorRow = ({
   item,
   onVote,
+  show,
+  hide,
+  skipVoteConfirmation,
   address,
   votingEnabled = false,
 }: AnchorRowProps) => {
@@ -16,8 +19,21 @@ const AnchorRow = ({
   const {name, artists, submitter, votes, images} = item;
 
   const onPress = () => {
-    setVoted(true);
-    onVote();
+    if (skipVoteConfirmation) {
+      onVote();
+      setVoted(true);
+    } else {
+      show({
+        title: 'Vote',
+        description: 'You’re about to vote a tune',
+        content: <VoteConfirmation />,
+        onPrimaryPress: () => {
+          setVoted(true);
+          onVote();
+          hide();
+        },
+      });
+    }
   };
 
   const openSpotifyLink = async (songID: string) => {

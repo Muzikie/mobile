@@ -13,8 +13,11 @@ export interface ModalContent {
   onSecondaryPress?: () => void;
 }
 
+export type Show = (content: ModalContent) => void;
+export type Hide = () => void;
+
 export interface ModalContextType {
-  show: (content: ModalContent) => void;
-  hide: () => void;
+  show: Show;
+  hide: Hide;
   isVisible: boolean;
 }

@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, RefreshControl, View, LayoutChangeEvent} from 'react-native';
 import {COMMANDS, MODULES} from '../../config/constants';
+import {useModal} from '../../hooks/useModal';
 import {useAccount} from '../../hooks/useAccount';
 import {useTransaction} from '../../hooks/useTransaction';
 import {useFetchAnchors} from '../../hooks/useFetchAnchors';
+import {usePresets} from '../../hooks/usePresets';
 import {FetchStatus} from '../../config/types';
 import {bufferize, calculateItemsToDisplay} from '../../utils/helpers';
 import AnchorRow from '../AnchorRow';
@@ -14,8 +16,10 @@ import styles from './styles';
 const AnchorsList = ({filter, header}: AnchorListProps) => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
+  const {presets} = usePresets();
   const {signAndBroadcast} = useTransaction();
   const {anchors, feedback, retrieve} = useFetchAnchors(filter);
+  const {show, hide} = useModal();
 
   const onRefresh = async () => {
     await retrieve(null, true);
@@ -51,7 +55,10 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
         renderItem={({item}) => (
           <AnchorRow
             item={item}
+            skipVoteConfirmation={presets.skipVoteConfirmation}
             onVote={() => onVote(item.anchorID)}
+            show={show}
+            hide={hide}
             address={account?.address ?? ''}
             votingEnabled={filter === 'all'}
           />
