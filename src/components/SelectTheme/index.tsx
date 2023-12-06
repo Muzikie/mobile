@@ -8,8 +8,7 @@ const SelectTheme = () => {
   const {presets, storePresets} = usePresets();
 
   const onSelect = async (theme: Themes) => {
-    const result = await storePresets({theme});
-    console.log(result);
+    await storePresets({theme});
   };
 
   return (

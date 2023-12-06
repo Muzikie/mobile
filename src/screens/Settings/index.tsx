@@ -59,10 +59,6 @@ const SettingsScreen = () => {
     });
   };
 
-  useEffect(() => {
-    console.log('Preset changed', presets.theme);
-  }, [presets.theme]);
-
   return (
     <View style={[styles.screenContainer, styles.settingsScreen]}>
       <Text style={[fonts.h2, styles.title]}>Account</Text>
