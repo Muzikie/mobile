@@ -17,6 +17,7 @@ export const useTransaction = () => {
       status: FetchStatus.pending,
       message: 'Hang tight ...',
     });
+    console.log('signAndBroadcast', data);
 
     if (!account) {
       setBroadcastStatus({
@@ -28,6 +29,7 @@ export const useTransaction = () => {
         ...data,
         account,
       });
+      console.log('result', result);
 
       if (result.error) {
         setBroadcastStatus({

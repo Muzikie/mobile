@@ -6,6 +6,7 @@ import {BADGE_TITLES, FetchStatus} from '../../config/types';
 import {fonts} from '../../config/stylesGuides';
 import type {UnclaimedBadgeProps} from './types';
 import {Button, ButtonThemes} from '../Elements';
+import {ClaimHint} from '../Hints';
 import {COMMANDS, MODULES} from '../../config/constants';
 import {bufferize} from '../../utils/helpers';
 import styles from './styles';
@@ -22,8 +23,6 @@ const UnclaimedBadge = ({
       ? '0 MZK'
       : fromBaseToken(badge.prize.toString(), 'MZK', 2);
   const badgeTitle = `${BADGE_TITLES[badge.type]} #${badge.rank}`;
-  const title = 'Claim you badge and prize';
-  const description = `You are about to claim your ${badgeTitle} badge and ${formattedPrize} prize.\nYou will pay a network fee of 0.0015 MZK.`;
   const tx = {
     params: {
       badgeID: bufferize(badge.badgeID),
@@ -65,8 +64,14 @@ const UnclaimedBadge = ({
             title="Claim"
             onPress={() => {
               show({
-                title,
-                description,
+                title: 'Congratulations!',
+                description: '',
+                content: (
+                  <ClaimHint
+                    formattedPrize={formattedPrize}
+                    badgeTitle={badgeTitle}
+                  />
+                ),
                 onPrimaryPress: () => signAndBroadcast(tx),
               });
             }}

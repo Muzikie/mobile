@@ -198,6 +198,14 @@
       "sha1": "bcd0ea5f068120053b0d41eafd27399b06f278a7"
     },
     {
+      "path": "src/assets/images/party@2x.png",
+      "sha1": "ff6358510496a28e449f42739259f0dc4dcb66aa"
+    },
+    {
+      "path": "src/assets/images/party@3x.png",
+      "sha1": "b24e635f98dd68320eb10705a41bdb1ea5911766"
+    },
+    {
       "path": "src/assets/images/preview.png",
       "sha1": "fe572873d7db51df4142a59bbe13265fc3edecda"
     },
