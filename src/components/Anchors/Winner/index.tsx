@@ -43,10 +43,12 @@ const WinnerRow = ({item}: WinnerRowProps) => {
         </View>
         <View>
           <Text style={styles.date}>{shorten(item.createdAt)}</Text>
-          <View style={styles.rankWrapper}>
-            <Text style={styles.hashTag}>#</Text>
-            <Text style={styles.rank}>1</Text>
-          </View>
+          {item.rank && (
+            <View style={styles.rankWrapper}>
+              <Text style={styles.hashTag}>#</Text>
+              <Text style={styles.rank}>{item.rank}</Text>
+            </View>
+          )}
         </View>
       </>
     </TouchableHighlight>
