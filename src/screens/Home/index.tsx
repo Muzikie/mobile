@@ -7,6 +7,7 @@ import {IconButton} from '../../components/Elements';
 import SubmitForm from '../../components/SubmitForm';
 import {VoteHint} from '../../components/Hints';
 import {Timeout} from '../../config/types';
+import {useTheme} from '../../hooks/useTheme';
 import styles from './styles';
 
 const CURRENT_VOTE_HINT_VERSION = '0.1.0';
@@ -15,6 +16,7 @@ const HomeScreen = () => {
   const {show, isVisible} = useModal();
   const {presets, storePresets} = usePresets();
   const timer = useRef<Timeout>();
+  const styles = useTheme(themedStyles);
 
   const showAddSongModal = useCallback(() => {
     show({
