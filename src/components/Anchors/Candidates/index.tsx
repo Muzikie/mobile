@@ -1,24 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, RefreshControl, View, LayoutChangeEvent} from 'react-native';
-import {COMMANDS, MODULES} from '../../config/constants';
-import {useModal} from '../../hooks/useModal';
-import {useAccount} from '../../hooks/useAccount';
-import {useTransaction} from '../../hooks/useTransaction';
-import {useFetchAnchors} from '../../hooks/useFetchAnchors';
-import {usePresets} from '../../hooks/usePresets';
-import {FetchStatus} from '../../config/types';
-import {bufferize, calculateItemsToDisplay} from '../../utils/helpers';
-import AnchorRow from '../AnchorRow';
-import ListFooter from '../ListFooter';
-import {AnchorListProps} from './types';
+import {COMMANDS, MODULES} from '../../../config/constants';
+import {useModal} from '../../../hooks/useModal';
+import {useAccount} from '../../../hooks/useAccount';
+import {useTransaction} from '../../../hooks/useTransaction';
+import {useFetchAnchors} from '../../../hooks/useFetchAnchors';
+import {usePresets} from '../../../hooks/usePresets';
+import {FetchStatus} from '../../../config/types';
+import {bufferize, calculateItemsToDisplay} from '../../../utils/helpers';
+import AnchorRow from '../Candidate';
+import {HomeHeader} from '../../Headers';
+import ListFooter from '../../ListFooter';
 import styles from './styles';
 
-const AnchorsList = ({filter, header}: AnchorListProps) => {
+const AnchorsList = () => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
   const {presets} = usePresets();
   const {signAndBroadcast} = useTransaction();
-  const {anchors, feedback, retrieve} = useFetchAnchors(filter);
+  const {anchors, feedback, retrieve} = useFetchAnchors('all');
   const {show, hide} = useModal();
 
   const onRefresh = async () => {
@@ -51,7 +51,7 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
     <View onLayout={handleLayout} style={styles.wrapper}>
       <FlatList
         data={anchors}
-        ListHeaderComponent={header}
+        ListHeaderComponent={HomeHeader}
         renderItem={({item}) => (
           <AnchorRow
             item={item}
@@ -60,7 +60,6 @@ const AnchorsList = ({filter, header}: AnchorListProps) => {
             show={show}
             hide={hide}
             address={account?.address ?? ''}
-            votingEnabled={filter === 'all'}
           />
         )}
         keyExtractor={item => item.anchorID}

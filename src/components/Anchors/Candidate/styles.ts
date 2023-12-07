@@ -1,5 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {boxes, colors, fontFamilies, fontSizes} from '../../config/stylesGuides';
+import {
+  boxes,
+  colors,
+  fontFamilies,
+  fontSizes,
+} from '../../../config/stylesGuides';
 
 const styles = {
   container: {

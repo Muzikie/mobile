@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
-import {Icon} from '../Elements';
-import VoteConfirmation from '../VoteConfirmation';
-import {truncateText} from '../../utils/helpers';
+import {Icon} from '../../Elements';
+import VoteConfirmation from '../../VoteConfirmation';
+import {truncateText} from '../../../utils/helpers';
 import styles from './styles';
 import type {AnchorRowProps} from './types';
 
@@ -13,7 +13,6 @@ const AnchorRow = ({
   hide,
   skipVoteConfirmation,
   address,
-  votingEnabled = false,
 }: AnchorRowProps) => {
   const [voted, setVoted] = useState(false);
   const {name, artists, submitter, votes, images} = item;
@@ -65,7 +64,6 @@ const AnchorRow = ({
         </>
       </TouchableHighlight>
       {!voted &&
-      votingEnabled &&
       votes.findIndex(voter => voter.senderAddress === address) === -1 ? (
         <TouchableHighlight
           onPress={onPress}
