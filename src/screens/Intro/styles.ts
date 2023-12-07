@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {
   boxes,
   colors,
@@ -6,7 +6,7 @@ import {
   fontSizes,
 } from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   screenContainer: {
     height: '100%',
     width: '100%',
@@ -24,7 +24,7 @@ const styles = {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.light.opaqueWhite,
+    backgroundColor: colors[theme].opaqueWhite,
     borderRadius: boxes.avatarRadius,
   },
   titleContainer: {
@@ -37,11 +37,11 @@ const styles = {
     height: 150,
   },
   title: {
-    color: colors.light.purple,
+    color: colors[theme].purple,
     textAlign: 'center',
   },
   subtitle: {
-    color: colors.light.purple,
+    color: colors[theme].purple,
     textAlign: 'center',
     paddingTop: boxes.boxPadding,
     paddingRight: boxes.doublePadding,
@@ -52,12 +52,12 @@ const styles = {
   buttonContainer: {
     width: 80,
     height: 80,
-    backgroundColor: colors.light.white,
+    backgroundColor: colors[theme].white,
     borderRadius: boxes.boxBorderRadius,
     paddingLeft: 15,
     paddingRight: 5,
     paddingTop: 15,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

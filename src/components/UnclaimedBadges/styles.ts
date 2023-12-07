@@ -1,11 +1,10 @@
-import {StyleSheet} from 'react-native';
 import {boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = () => ({
   wrapper: {
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

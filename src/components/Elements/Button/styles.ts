@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 import {
   fontSizes,
   colors,
@@ -6,7 +6,7 @@ import {
   fontFamilies,
 } from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     width: '100%',
     height: boxes.buttonHeight + boxes.shadowHeight,
@@ -21,7 +21,7 @@ const styles = {
     borderRadius: boxes.buttonBorderRadius,
   },
   shadow: {
-    shadowColor: colors.light.purple,
+    shadowColor: colors[theme].purple,
     shadowOffset: {
       width: 0,
       height: (-1 * boxes.shadowHeight) / 2,
@@ -43,17 +43,17 @@ const styles = {
     marginBottom: 0,
   },
   purple: {
-    color: colors.light.white,
-    backgroundColor: colors.light.purple,
+    color: colors[theme].white,
+    backgroundColor: colors[theme].purple,
   },
   white: {
-    color: colors.light.purple,
-    backgroundColor: colors.light.white,
+    color: colors[theme].purple,
+    backgroundColor: colors[theme].white,
   },
   disabled: {
-    color: colors.light.lightGrey,
-    backgroundColor: colors.light.darkGrey,
+    color: colors[theme].lightGrey,
+    backgroundColor: colors[theme].darkGrey,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {colors, fonts, boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   screenContainer: {
     height: '100%',
     width: '100%',
   },
   topTunesScreen: {
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors[theme].beige,
   },
   pageTitle: {
     ...fonts.h2,
@@ -15,6 +15,6 @@ const styles = {
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

@@ -1,7 +1,6 @@
-import {StyleSheet} from 'react-native';
 import {boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = () => ({
   wrapper: {
     width: boxes.avatarSize,
     height: boxes.avatarSize,
@@ -12,6 +11,6 @@ const styles = {
     width: '100%',
     height: '100%',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

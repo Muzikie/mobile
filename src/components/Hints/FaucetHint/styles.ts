@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 import {boxes, colors, fontSizes} from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -13,10 +13,10 @@ const styles = {
   },
   description: {
     fontSize: fontSizes.h3,
-    color: colors.light.grey,
+    color: colors[theme].grey,
     paddingBottom: boxes.boxPadding,
   },
   button: {},
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

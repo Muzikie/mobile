@@ -1,25 +1,25 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   container: {
     width: '100%',
     marginTop: boxes.boxPadding * 2,
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
-    backgroundColor: colors.light.fadeBeige,
+    backgroundColor: colors[theme].fadeBeige,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     borderWidth: 1,
-    borderColor: colors.light.fadeBeige,
+    borderColor: colors[theme].fadeBeige,
     paddingBottom: boxes.boxPadding,
     borderRadius: boxes.thumbnailRadius,
   },
   info: {
     flex: 1,
     borderWidth: 1,
-    borderColor: colors.light.fadeBeige,
+    borderColor: colors[theme].fadeBeige,
     height: 85 + boxes.boxPadding,
   },
   awardDate: {
@@ -31,7 +31,7 @@ const styles = {
     height: 85,
   },
   grey: {
-    color: colors.light.grey,
+    color: colors[theme].grey,
   },
   badge: {
     marginTop: -1 * boxes.boxPadding,
@@ -57,6 +57,6 @@ const styles = {
     width: 120,
     paddingLeft: 40,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

@@ -1,9 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors, fonts} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
-    backgroundColor: colors.light.errorFade,
+    backgroundColor: colors[theme].errorFade,
     padding: boxes.boxPadding,
     paddingVertical: boxes.doublePadding,
     marginBottom: boxes.boxPadding,
@@ -13,14 +13,14 @@ const styles = {
     position: 'absolute',
     top: boxes.boxPadding - 1,
     right: boxes.boxPadding,
-    color: colors.light.purple,
+    color: colors[theme].purple,
     opacity: 0,
   },
   visible: {
     opacity: 1,
   },
   passphrase: {
-    color: colors.light.white,
+    color: colors[theme].white,
     ...fonts.passphrase,
   },
   hiddenPassphrase: {
@@ -30,10 +30,10 @@ const styles = {
     position: 'absolute',
     bottom: -1 * boxes.boxPadding,
     right: boxes.boxPadding,
-    backgroundColor: colors.light.fadeSuccess,
+    backgroundColor: colors[theme].fadeSuccess,
     padding: boxes.elementPadding,
     borderRadius: boxes.thumbnailRadius,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

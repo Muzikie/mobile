@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 import {
   boxes,
   colors,
@@ -6,21 +6,21 @@ import {
   fontSizes,
 } from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     paddingBottom: boxes.doublePadding,
   },
   description: {
     fontFamily: fontFamilies.poppinsRegular,
     fontSize: fontSizes.h3,
-    color: colors.light.grey,
+    color: colors[theme].grey,
     paddingTop: boxes.elementPadding,
   },
   punchline: {
     fontFamily: fontFamilies.poppinsRegular,
     fontSize: fontSizes.h2,
-    color: colors.light.purple,
+    color: colors[theme].purple,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

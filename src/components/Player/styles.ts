@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     width: '50%',
     height: '100%',
@@ -19,11 +19,11 @@ const styles = {
     paddingLeft: boxes.elementPadding,
   },
   songTitle: {
-    color: colors.light.purple,
+    color: colors[theme].purple,
   },
   artist: {
-    color: colors.light.grey,
+    color: colors[theme].grey,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

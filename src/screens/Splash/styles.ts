@@ -1,12 +1,12 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   splashContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors[theme].beige,
   },
   splashImageContainer: {
     height: 75,
@@ -16,6 +16,6 @@ const styles = {
     height: '100%',
     width: '100%',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

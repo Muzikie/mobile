@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 import {boxes, colors} from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   container: {
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
@@ -25,13 +25,13 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: boxes.thumbnailRadius,
-    borderColor: colors.light.paleGrey,
+    borderColor: colors[theme].paleGrey,
     borderWidth: 8,
   },
   selected: {
-    backgroundColor: colors.light.fadeSuccess,
-    borderColor: colors.light.fadeSuccess,
+    backgroundColor: colors[theme].fadeSuccess,
+    borderColor: colors[theme].fadeSuccess,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

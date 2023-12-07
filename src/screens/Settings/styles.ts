@@ -1,17 +1,17 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {colors, boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   screenContainer: {
     height: '100%',
     width: '100%',
   },
   settingsScreen: {
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors[theme].beige,
   },
   title: {
     padding: boxes.boxPadding,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

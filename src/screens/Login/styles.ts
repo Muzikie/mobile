@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   screenContainer: {
     height: '100%',
     width: '100%',
   },
   loginScreen: {
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors[theme].beige,
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'nowrap',
@@ -66,6 +66,6 @@ const styles = {
     paddingRight: boxes.boxPadding,
     paddingLeft: boxes.boxPadding,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

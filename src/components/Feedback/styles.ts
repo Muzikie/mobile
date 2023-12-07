@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     borderWidth: 1,
     borderColor: 'transparent',
@@ -10,11 +10,11 @@ const styles = {
     marginTop: boxes.boxPadding,
   },
   success: {
-    color: colors.light.success,
+    color: colors[theme].success,
   },
   error: {
-    color: colors.light.error,
+    color: colors[theme].error,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

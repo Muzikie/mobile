@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     width: '100%',
     height: '100%',
@@ -30,7 +30,7 @@ const styles = {
     right: 0,
   },
   button: {
-    backgroundColor: colors.light.fadeBeige,
+    backgroundColor: colors[theme].fadeBeige,
     borderRadius: boxes.thumbnailRadius,
     width: 40,
     height: 40,
@@ -48,12 +48,12 @@ const styles = {
   },
   dotActive: {
     height: 20,
-    backgroundColor: colors.light.purple,
+    backgroundColor: colors[theme].purple,
   },
   dotInactive: {
     height: 14,
-    backgroundColor: colors.light.fadeBeige,
+    backgroundColor: colors[theme].fadeBeige,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

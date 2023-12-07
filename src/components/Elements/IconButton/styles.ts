@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     position: 'relative',
     display: 'flex',
@@ -23,6 +23,6 @@ const styles = {
     height: 1,
     fontSize: 1,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

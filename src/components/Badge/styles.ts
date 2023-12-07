@@ -1,14 +1,14 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     width: boxes.badgeSize,
     height: boxes.badgeSize,
-    backgroundColor: colors.light.iceberg,
+    backgroundColor: colors[theme].iceberg,
     borderWidth: 1,
     borderColor: 'transparent',
     borderRadius: boxes.thumbnailRadius,
@@ -18,6 +18,6 @@ const styles = {
     width: '90%',
     height: '90%',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

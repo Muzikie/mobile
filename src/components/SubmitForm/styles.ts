@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {
   boxes,
   colors,
@@ -6,12 +6,12 @@ import {
   fontSizes,
 } from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   input: {
     width: '100%',
     height: boxes.buttonHeight,
     borderRadius: boxes.thumbnailRadius,
-    backgroundColor: colors.light.paleGrey,
+    backgroundColor: colors[theme].paleGrey,
     paddingLeft: boxes.elementPadding,
     paddingRight: boxes.elementPadding,
   },
@@ -20,13 +20,13 @@ const styles = {
     paddingBottom: boxes.boxPadding,
   },
   text: {
-    color: colors.light.darkGrey,
+    color: colors[theme].darkGrey,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsRegular,
   },
   icon: {
     marginBottom: boxes.boxPadding,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

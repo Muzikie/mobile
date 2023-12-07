@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   container: {
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
@@ -25,10 +25,10 @@ const styles = {
   state: {
     textAlign: 'right',
     paddingRight: boxes.elementPadding,
-    color: colors.light.darkGrey,
+    color: colors[theme].darkGrey,
   },
   iconWrapper: {
-    backgroundColor: colors.light.paleGrey,
+    backgroundColor: colors[theme].paleGrey,
     width: 40,
     height: 40,
     justifyContent: 'center',
@@ -36,6 +36,6 @@ const styles = {
     borderRadius: boxes.thumbnailRadius,
   },
   icon: {},
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

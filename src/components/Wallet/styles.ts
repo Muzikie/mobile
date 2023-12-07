@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     width: '100%',
     paddingLeft: boxes.boxPadding,
@@ -11,21 +11,21 @@ const styles = {
   },
   info: {
     flex: 1,
-    backgroundColor: colors.light.white,
+    backgroundColor: colors[theme].white,
     borderRadius: boxes.boxBorderRadius,
   },
   copied: {
     position: 'absolute',
     top: boxes.boxPadding - 1,
     right: boxes.boxPadding,
-    color: colors.light.purple,
+    color: colors[theme].purple,
     opacity: 0,
   },
   visible: {
     opacity: 1,
   },
   label: {
-    color: colors.light.grey,
+    color: colors[theme].grey,
     paddingBottom: boxes.elementPadding,
     textAlign: 'center',
   },
@@ -38,7 +38,7 @@ const styles = {
     paddingBottom: boxes.doublePadding,
   },
   address: {
-    color: colors.light.purple,
+    color: colors[theme].purple,
     letterSpacing: 1,
     textAlign: 'center',
   },
@@ -47,9 +47,9 @@ const styles = {
     paddingBottom: boxes.elementPadding,
   },
   balance: {
-    color: colors.light.purple,
+    color: colors[theme].purple,
     textAlign: 'center',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

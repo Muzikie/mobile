@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {
   boxes,
   colors,
@@ -6,7 +6,7 @@ import {
   fontFamilies,
 } from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     borderWidth: 1,
     borderColor: 'transparent',
@@ -33,7 +33,7 @@ const styles = {
     height: 70,
     width: 70,
     borderWidth: 1,
-    borderColor: colors.light.white,
+    borderColor: colors[theme].white,
     borderRadius: boxes.thumbnailRadius,
     overflow: 'hidden',
   },
@@ -43,23 +43,23 @@ const styles = {
   },
   title: {
     width: '100%',
-    color: colors.light.purple,
+    color: colors[theme].purple,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsMedium,
     paddingBottom: 4,
   },
   album: {
-    color: colors.light.lightGrey,
+    color: colors[theme].lightGrey,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
     paddingLeft: boxes.elementPadding / 2,
   },
   artist: {
-    color: colors.light.darkGrey,
+    color: colors[theme].darkGrey,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
     paddingLeft: boxes.elementPadding / 2,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

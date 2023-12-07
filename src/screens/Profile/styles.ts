@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {boxes, fonts, colors} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   screenContainer: {
     height: '100%',
     width: '100%',
@@ -13,7 +13,7 @@ const styles = {
     paddingRight: boxes.boxPadding,
   },
   profileScreen: {
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors[theme].beige,
   },
   details: {
     display: 'flex',
@@ -24,7 +24,7 @@ const styles = {
   },
   label: {
     paddingTop: boxes.elementPadding,
-    color: colors.light.grey,
+    color: colors[theme].grey,
   },
   name: {
     fontFamily: fonts.body,
@@ -34,6 +34,6 @@ const styles = {
     letterSpacing: 0.5,
     textAlign: 'center',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

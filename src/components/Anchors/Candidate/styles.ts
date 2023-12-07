@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../../context/presetsContext/types';
 import {
   boxes,
   colors,
@@ -6,7 +6,7 @@ import {
   fontSizes,
 } from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   container: {
     width: '100%',
     marginTop: boxes.boxPadding,
@@ -24,18 +24,18 @@ const styles = {
   },
   title: {
     width: '100%',
-    color: colors.light.purple,
+    color: colors[theme].purple,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsMedium,
     paddingBottom: 4,
   },
   submitter: {
-    color: colors.light.lightGrey,
+    color: colors[theme].lightGrey,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
   artist: {
-    color: colors.light.darkGrey,
+    color: colors[theme].darkGrey,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
@@ -49,7 +49,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.light.fadeBeige,
+    backgroundColor: colors[theme].fadeBeige,
   },
   thumbnail: {
     width: 66,
@@ -59,6 +59,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

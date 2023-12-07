@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {Themes} from '../../context/presetsContext/types';
 import {colors, boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     width: boxes.playButtonSize,
     height: boxes.playButtonSize,
-    backgroundColor: colors.light.purple,
+    backgroundColor: colors[theme].purple,
     borderWidth: 1,
     borderColor: 'transparent',
     borderRadius: boxes.thumbnailRadius,
@@ -16,6 +16,6 @@ const styles = {
     width: 24,
     height: 24,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

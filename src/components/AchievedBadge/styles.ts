@@ -1,7 +1,6 @@
-import {StyleSheet} from 'react-native';
 import {boxes} from '../../config/stylesGuides';
 
-const styles = {
+const styles = () => ({
   container: {
     width: '100%',
     height: boxes.badgeSize,
@@ -30,6 +29,6 @@ const styles = {
   count: {
     width: '100%',
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;

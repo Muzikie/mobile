@@ -1,7 +1,12 @@
-import {StyleSheet} from 'react-native';
-import {boxes, colors, fontFamilies, fontSizes} from '../../../config/stylesGuides';
+import {Themes} from '../../../context/presetsContext/types';
+import {
+  boxes,
+  colors,
+  fontFamilies,
+  fontSizes,
+} from '../../../config/stylesGuides';
 
-const styles = {
+const styles = (theme: Themes) => ({
   wrapper: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -20,19 +25,19 @@ const styles = {
   },
   description: {
     fontSize: fontSizes.h3,
-    color: colors.light.grey,
+    color: colors[theme].grey,
     lineHeight: 30,
     marginBottom: 0,
     paddingBottom: 0,
   },
   bold: {
     fontSize: fontSizes.h3,
-    color: colors.light.purple,
+    color: colors[theme].purple,
     fontFamily: fontFamilies.poppinsMedium,
     lineHeight: 30,
     marginBottom: 0,
     paddingBottom: 0,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;
