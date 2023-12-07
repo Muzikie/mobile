@@ -4,9 +4,11 @@ import Badge from '../Badge';
 import {BADGE_TITLES} from '../../config/types';
 import {fonts} from '../../config/stylesGuides';
 import type {AchievedBadgeProps} from './types';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const AchievedBadge = ({item}: AchievedBadgeProps) => {
+  const styles = useTheme(themedStyles);
   const {count, type} = item;
 
   return (

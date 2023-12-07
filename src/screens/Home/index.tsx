@@ -8,7 +8,7 @@ import SubmitForm from '../../components/SubmitForm';
 import {VoteHint} from '../../components/Hints';
 import {Timeout} from '../../config/types';
 import {useTheme} from '../../hooks/useTheme';
-import styles from './styles';
+import themedStyles from './styles';
 
 const CURRENT_VOTE_HINT_VERSION = '0.1.0';
 

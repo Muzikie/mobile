@@ -9,7 +9,8 @@ import {Button, ButtonThemes} from '../Elements';
 import {ClaimHint} from '../Hints';
 import {COMMANDS, MODULES} from '../../config/constants';
 import {bufferize} from '../../utils/helpers';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const UnclaimedBadge = ({
   badge,
@@ -18,6 +19,7 @@ const UnclaimedBadge = ({
   signAndBroadcast,
   broadcastStatus,
 }: UnclaimedBadgeProps) => {
+  const styles = useTheme(themedStyles);
   const formattedPrize =
     badge.prize === null
       ? '0 MZK'

@@ -3,12 +3,14 @@ import React from 'react';
 import {View, Text, TouchableHighlight} from 'react-native';
 import {Icon} from '../Icon';
 import {fonts} from '../../../config/stylesGuides';
+import {useTheme} from '../../../hooks/useTheme';
 import {CheckboxProps} from './types';
-import styles from './styles';
+import themedStyles from './styles';
 
 const Checkbox = ({
   title, selected, onSelect, style,
 }: CheckboxProps) => {
+  const styles = useTheme(themedStyles);
   const selectedStyle = selected ? styles.selected : {};
 
   return (

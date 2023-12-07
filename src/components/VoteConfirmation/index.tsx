@@ -3,10 +3,12 @@ import {View, Text} from 'react-native';
 import {usePresets} from '../../hooks/usePresets';
 import {Icon} from '../Elements';
 import Checkbox from '../Elements/CheckBox';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const VoteConfirmation = () => {
   const {presets, storePresets} = usePresets();
+  const styles = useTheme(themedStyles);
 
   const onSelect = () => {
     storePresets({skipVoteConfirmation: !presets.skipVoteConfirmation});

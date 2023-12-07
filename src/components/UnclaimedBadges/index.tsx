@@ -4,11 +4,13 @@ import {Badge} from '../../config/types';
 import {useTransaction} from '../../hooks/useTransaction';
 import {useModal} from '../../hooks/useModal';
 import UnclaimedBadge from '../UnclaimedBadge';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const UnclaimedBadges = ({badges}: {badges: Badge[]}) => {
   const {show, hide} = useModal();
   const {signAndBroadcast, broadcastStatus} = useTransaction();
+  const styles = useTheme(themedStyles);
 
   return (
     <View style={styles.wrapper}>

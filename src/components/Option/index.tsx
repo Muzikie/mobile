@@ -4,11 +4,13 @@ import {View, Text, TouchableHighlight, Linking} from 'react-native';
 import {Icon} from '../Elements';
 import {fonts} from '../../config/stylesGuides';
 import {OptionProps} from './types';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const Option = ({
   title, state, href, onPress, style,
 }: OptionProps) => {
+  const styles = useTheme(themedStyles);
   const iconName = href ? 'link' : 'rightChev';
 
   if (href && !onPress) {

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, View, Image} from 'react-native';
 import {Button} from '../../components/Elements';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {fonts} from '../../config/stylesGuides';
 
 import muzikieLogo from '../../assets/images/muzikie-logo.png';
@@ -9,6 +10,7 @@ import appleMusicLogo from '../../assets/images/apple-music-logo.png';
 import spotifyLogo from '../../assets/images/spotify-logo.png';
 
 const LoginScreen = () => {
+  const styles = useTheme(themedStyles);
   const connectAppleMusic = () => {};
   const connectSpotify = () => {};
 

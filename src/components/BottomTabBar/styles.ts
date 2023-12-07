@@ -1,16 +1,16 @@
-import {Themes} from '../../context/presetsContext/types';
+import {StyleSheet} from 'react-native';
 import {colors} from '../../config/stylesGuides';
 
-const styles = (theme: Themes) => ({
+const styles = {
   tabBar: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors.light.beige,
     paddingBottom: 30,
   },
   wrapper: {
-    backgroundColor: colors[theme].white,
+    backgroundColor: colors.light.white,
     width: '90%',
     height: 60,
     borderRadius: 18,
@@ -38,6 +38,6 @@ const styles = (theme: Themes) => ({
   iconWrapper: {
     width: 27,
   },
-});
+};
 
-export default styles;
+export default StyleSheet.create(styles);

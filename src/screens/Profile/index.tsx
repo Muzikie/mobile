@@ -13,7 +13,8 @@ import {useAccount} from '../../hooks/useAccount';
 import {useModal} from '../../hooks/useModal';
 import {usePresets} from '../../hooks/usePresets';
 import {useFetchBadges} from '../../hooks/useFetchBadges';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const CURRENT_HINT_VERSION = '0.1.0';
 
@@ -22,6 +23,7 @@ const ProfileScreen = () => {
   const {show, isVisible} = useModal();
   const {presets, storePresets} = usePresets();
   const {badgesStats, unclaimed} = useFetchBadges();
+  const styles = useTheme(themedStyles);
   const balance = account?.balances?.length
     ? fromBaseToken(account?.balances[0].availableBalance, 'MZK', 2)
     : '0 MZK';

@@ -7,7 +7,8 @@ import Option from '../../components/Option';
 import SelectTheme from '../../components/SelectTheme';
 import About from '../../components/About';
 import BackupPassphrase from '../../components/BackupPassphrase';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const config = {
   backup: {
@@ -34,6 +35,7 @@ const THEME_TITLES = {
 const SettingsScreen = () => {
   const {presets} = usePresets();
   const {show} = useModal();
+  const styles = useTheme(themedStyles);
   const theme = THEME_TITLES[presets.theme];
 
   const backup = () => {

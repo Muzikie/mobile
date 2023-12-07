@@ -5,12 +5,14 @@ import muzikieLogo from '../../assets/images/splashScreen.png';
 import {usePresets} from '../../hooks/usePresets';
 import type {Timeout} from '../../config/types';
 import {CURRENT_INTRO_VERSION} from '../Intro';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const SplashScreen = () => {
   const {presets} = usePresets();
   const navigation = useNavigation();
   const timeout = useRef<Timeout>();
+  const styles = useTheme(themedStyles);
 
   useEffect(() => {
     timeout.current = setTimeout(() => {

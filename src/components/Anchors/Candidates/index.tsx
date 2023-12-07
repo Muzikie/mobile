@@ -11,7 +11,8 @@ import {bufferize, calculateItemsToDisplay} from '../../../utils/helpers';
 import AnchorRow from '../Candidate';
 import {HomeHeader} from '../../Headers';
 import ListFooter from '../../ListFooter';
-import styles from './styles';
+import {useTheme} from '../../../hooks/useTheme';
+import themedStyles from './styles';
 
 const AnchorsList = () => {
   const [displaySize, setDisplaySize] = useState(0);
@@ -20,6 +21,7 @@ const AnchorsList = () => {
   const {signAndBroadcast} = useTransaction();
   const {anchors, feedback, retrieve} = useFetchAnchors('all');
   const {show, hide} = useModal();
+  const styles = useTheme(themedStyles);
 
   const onRefresh = async () => {
     await retrieve(null, true);

@@ -1,5 +1,6 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
+import {usePresets} from '../../../hooks/usePresets';
 import {IconProps, IconsConfig} from './types';
 import {colors} from '../../../config/stylesGuides';
 
@@ -76,14 +77,13 @@ const icons: IconsConfig = {
   ],
 };
 
-export const Icon = ({
-  name,
-  color = colors.light.purple,
-  size = 28,
-  style = {},
-}: IconProps) => {
+export const Icon = ({name, color, size = 28, style = {}}: IconProps) => {
+  const {presets} = usePresets();
   if (!icons[name]) {
     name = 'Default';
+  }
+  if (!color) {
+    color = colors[presets.theme].purple;
   }
 
   return (

@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
 import {boxes} from '../../config/stylesGuides';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {IntroContentProps} from './types';
 
 const IntroContent = ({data}: IntroContentProps) => {
   const [imageBox, setImageBox] = useState(0);
+  const styles = useTheme(themedStyles);
   const {backgroundColor, image, description, color} = data;
 
   useEffect(() => {

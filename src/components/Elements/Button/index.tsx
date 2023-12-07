@@ -1,6 +1,7 @@
 import React from 'react';
 import {TouchableHighlight, Text, View} from 'react-native';
-import styles from './styles';
+import {useTheme} from '../../../hooks/useTheme';
+import themedStyles from './styles';
 import {ButtonProps, ButtonThemes} from './types';
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
   title,
   disabled,
 }: ButtonProps) => {
+  const styles = useTheme(themedStyles);
   const disabledTouchable = disabled ? styles.disabled : {};
   const disabledText = disabled
     ? styles.disabled

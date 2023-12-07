@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
 import {truncateText} from '../../../utils/helpers';
-import styles from './styles';
+import {useTheme} from '../../../hooks/useTheme';
+import themedStyles from './styles';
 import type {WinnerRowProps} from './types';
 
 const shorten = (date: string) => {
@@ -12,6 +13,7 @@ const shorten = (date: string) => {
 };
 
 const WinnerRow = ({item}: WinnerRowProps) => {
+  const styles = useTheme(themedStyles);
   const {name, artists, submitter, images} = item;
 
   const openSpotifyLink = async (songID: string) => {

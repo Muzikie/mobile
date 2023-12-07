@@ -3,7 +3,8 @@ import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
 import {Icon} from '../../Elements';
 import VoteConfirmation from '../../VoteConfirmation';
 import {truncateText} from '../../../utils/helpers';
-import styles from './styles';
+import {useTheme} from '../../../hooks/useTheme';
+import themedStyles from './styles';
 import type {AnchorRowProps} from './types';
 
 const AnchorRow = ({
@@ -15,6 +16,7 @@ const AnchorRow = ({
   address,
 }: AnchorRowProps) => {
   const [voted, setVoted] = useState(false);
+  const styles = useTheme(themedStyles);
   const {name, artists, submitter, votes, images} = item;
 
   const onPress = () => {

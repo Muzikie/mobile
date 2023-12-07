@@ -5,10 +5,12 @@ import {colors, fonts} from '../../config/stylesGuides';
 import {IconButton} from '../Elements';
 import {Button} from '../Elements';
 import {ModalProps} from './types';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const ModalHolder = ({data, hide, isVisible}: ModalProps) => {
   const [primaryPressed, setPrimaryPressed] = useState(false);
+  const styles = useTheme(themedStyles);
 
   return (
     <Modal

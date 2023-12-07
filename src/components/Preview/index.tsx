@@ -5,9 +5,11 @@ import {colors} from '../../config/stylesGuides';
 import {Icon} from '../Elements';
 import previewPlaceholder from '../../assets/images/preview.png';
 import type {PreviewProps} from './types';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 
 const Preview = ({style, fetchStatus, data}: PreviewProps) => {
+  const styles = useTheme(themedStyles);
   if (fetchStatus !== FetchStatus.success || !data) {
     return <Image source={previewPlaceholder} style={styles.placeholder} />;
   }

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {TextInput, View, Keyboard} from 'react-native';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {Button} from '../Elements';
 import {ButtonThemes} from '../Elements/Button/types';
 import Feedback from '../Feedback';
@@ -31,6 +32,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     reset: resetTransaction,
   } = useTransaction();
   const {show, hide} = useModal();
+  const styles = useTheme(themedStyles);
 
   const onSubmit = async () => {
     Keyboard.dismiss();

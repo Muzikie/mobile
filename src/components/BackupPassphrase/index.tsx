@@ -4,7 +4,8 @@ import {View, Text} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {useAccount} from '../../hooks/useAccount';
 import {IconButton} from '../Elements';
 
@@ -14,6 +15,7 @@ const BackupPassphrase = () => {
   const [copied, setCopied] = useState(false);
   const [visible, setVisible] = useState(false);
   const timeout = useRef<Timeout>();
+  const styles = useTheme(themedStyles);
 
   const copyToClipboard = () => {
     setCopied(true);

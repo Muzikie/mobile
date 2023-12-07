@@ -4,13 +4,15 @@ import {useClipboard} from '@react-native-community/clipboard';
 import {fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
 import carrot from '../../assets/images/carrot.png';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import type {WalletProps} from './types';
 
 const Wallet = ({style, address, balance}: WalletProps) => {
   const [_, setString] = useClipboard();
   const [copied, setCopied] = useState(false);
   const timeout = useRef<Timeout>();
+  const styles = useTheme(themedStyles);
 
   const copyToClipboard = () => {
     setCopied(true);

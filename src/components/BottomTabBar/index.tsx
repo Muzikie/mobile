@@ -1,61 +1,27 @@
 import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import {View, TouchableHighlight} from 'react-native';
+import {View} from 'react-native';
 import styles from './styles';
 // import Player from '../Player';
-import {Icon} from '../Elements';
-import {colors} from '../../config/stylesGuides';
+import RouteButton from './RouteButton';
 
-const RouteButton = ({route, navigation, stateIndex, index}: any) => {
-  const isFocused = stateIndex === index;
-
-  const onPress = () => {
-    const event = navigation.emit({
-      type: 'tabPress',
-      target: route.key,
-      canPreventDefault: true,
-    });
-
-    if (!isFocused && !event.defaultPrevented) {
-      // Navigate to the tab if it's not focused already
-      navigation.navigate(route.name);
-    }
-  };
-
-  const iconColor = isFocused ? colors.light.purple : colors.light.grey;
-
-  return (
-    <TouchableHighlight
-      onPress={onPress}
-      key={route.key}
-      underlayColor="transparent"
-      style={styles.tab}>
-      <View style={styles.iconWrapper}>
-        <Icon name={route.name.replace(' ', '')} color={iconColor} />
-      </View>
-    </TouchableHighlight>
-  );
-};
-
-const BottomTabBar = ({state, navigation}: BottomTabBarProps) => {
-  return (
-    <View style={styles.tabBar}>
-      <View style={styles.wrapper}>
-        {/* <Player /> */}
-        <View style={styles.tabs}>
-          {state.routes.map((route, index: number) => (
-            <RouteButton
-              navigation={navigation}
-              route={route}
-              stateIndex={state.index}
-              index={index}
-              key={index}
-            />
-          ))}
-        </View>
+const BottomTabBar = ({state, navigation}: BottomTabBarProps) => (
+  <View style={styles.tabBar}>
+    <View style={styles.wrapper}>
+      {/* <Player /> */}
+      <View style={styles.tabs}>
+        {state.routes.map((route, index: number) => (
+          <RouteButton
+            navigation={navigation}
+            route={route}
+            stateIndex={state.index}
+            index={index}
+            key={index}
+          />
+        ))}
       </View>
     </View>
-  );
-};
+  </View>
+);
 
 export default BottomTabBar;

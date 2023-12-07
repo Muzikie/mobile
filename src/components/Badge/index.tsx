@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {Badges} from '../../config/types';
 import {BadgeProps} from './types';
 
@@ -14,10 +15,12 @@ const badges = {
   [Badges.AOTW]: monthBadge,
 };
 
-const Badge = ({style, name}: BadgeProps) => (
-  <View style={[styles.wrapper, style]}>
-    <Image source={badges[name]} style={styles.badge} />
-  </View>
-);
-
+const Badge = ({style, name}: BadgeProps) => {
+  const styles = useTheme(themedStyles);
+  return (
+    <View style={[styles.wrapper, style]}>
+      <Image source={badges[name]} style={styles.badge} />
+    </View>
+  );
+};
 export default Badge;
