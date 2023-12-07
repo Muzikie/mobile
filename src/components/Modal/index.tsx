@@ -1,54 +1,64 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
-import {fonts} from '../../config/stylesGuides';
+import Modal from 'react-native-modal';
+import {colors, fonts} from '../../config/stylesGuides';
 import {IconButton} from '../Elements';
 import {Button} from '../Elements';
 import {ModalProps} from './types';
 import styles from './styles';
 
-const Modal = ({data, hide}: ModalProps) => {
+const ModalHolder = ({data, hide, isVisible}: ModalProps) => {
   const [primaryPressed, setPrimaryPressed] = useState(false);
 
   return (
-    <View style={styles.wrapper}>
-      <View style={[styles.container, styles.shadow]}>
-        <View style={styles.closeButtonWrapper}>
-          <Text style={[fonts.h2, styles.title]}>{data.title}</Text>
-          <IconButton
-            onPress={hide}
-            style={styles.closeButton}
-            iconSize={24}
-            iconName="cross"
-          />
-        </View>
-        <Text style={[fonts.h4, styles.description]}>{data.description}</Text>
-        {data?.image && <Image source={data.image} style={styles.image} />}
-        {data?.content}
-        <View style={styles.actionBar}>
-          {typeof data?.onSecondaryPress === 'function' && (
-            <Button
-              onPress={data.onSecondaryPress}
-              title="Cancel"
-              wrapperStyle={styles.secondaryButton}
+    <Modal
+      useNativeDriver={true}
+      isVisible={isVisible}
+      backdropColor={colors.light.backdrop}
+      onBackdropPress={hide}
+      animationOutTiming={300}
+      avoidKeyboard={true}
+      style={styles.modal}>
+      <View style={styles.wrapper}>
+        <View style={[styles.container, styles.shadow]}>
+          <View style={styles.closeButtonWrapper}>
+            <Text style={[fonts.h2, styles.title]}>{data?.title}</Text>
+            <IconButton
+              onPress={hide}
+              style={styles.closeButton}
+              iconSize={24}
+              iconName="cross"
             />
-          )}
-          {typeof data?.onPrimaryPress === 'function' && (
-            <Button
-              onPress={() => {
-                setPrimaryPressed(true);
-                if (data.onPrimaryPress) {
-                  data.onPrimaryPress();
-                }
-              }}
-              title="Confirm"
-              wrapperStyle={styles.primaryButton}
-              disabled={primaryPressed}
-            />
-          )}
+          </View>
+          <Text style={[fonts.h4, styles.description]}>{data?.description}</Text>
+          {data?.image && <Image source={data?.image} style={styles.image} />}
+          {data?.content}
+          <View style={styles.actionBar}>
+            {typeof data?.onSecondaryPress === 'function' && (
+              <Button
+                onPress={data.onSecondaryPress}
+                title="Cancel"
+                wrapperStyle={styles.secondaryButton}
+              />
+            )}
+            {typeof data?.onPrimaryPress === 'function' && (
+              <Button
+                onPress={() => {
+                  setPrimaryPressed(true);
+                  if (data.onPrimaryPress) {
+                    data.onPrimaryPress();
+                  }
+                }}
+                title="Confirm"
+                wrapperStyle={styles.primaryButton}
+                disabled={primaryPressed}
+              />
+            )}
+          </View>
         </View>
       </View>
-    </View>
+    </Modal>
   );
 };
 
-export default Modal;
+export default ModalHolder;

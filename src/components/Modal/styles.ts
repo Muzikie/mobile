@@ -2,14 +2,20 @@ import {StyleSheet} from 'react-native';
 import {boxes, colors, fontFamilies} from '../../config/stylesGuides';
 
 const styles = {
+  modal: {
+    margin: 0,
+    position: 'relative',
+    width: '100%',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
   wrapper: {
     width: '100%',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    zIndex: 100,
   },
   container: {
+    width: '100%',
     paddingVertical: boxes.boxPadding,
     paddingHorizontal: boxes.boxPadding * 1.5,
     borderTopLeftRadius: boxes.boxBorderRadius,

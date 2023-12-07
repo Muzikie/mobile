@@ -17,6 +17,7 @@ const common = {
   lemon: '#FDE8B2',
   navyBlue: '#88A4C9',
   opaqueWhite: 'rgba(255, 255, 255, 0.5)',
+  backdrop: 'transparent',
 };
 
 const light = {
