@@ -45,6 +45,7 @@ export interface Anchor {
   }[];
   submitter: string;
   anchorID: string;
+  createdAt: string;
   votes?: {senderAddress: string}[];
 }
 

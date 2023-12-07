@@ -5,8 +5,6 @@ const styles = {
   wrapper: {
     width: boxes.avatarSize,
     height: boxes.avatarSize,
-    borderWidth: 1,
-    borderColor: 'transparent',
     borderRadius: boxes.avatarRadius,
     overflow: 'hidden',
   },
