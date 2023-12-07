@@ -5,7 +5,6 @@ import {FetchStatus} from '../../../config/types';
 import {calculateItemsToDisplay} from '../../../utils/helpers';
 import Winner from '../Winner';
 import ListFooter from '../../ListFooter';
-import {WinnersHeader} from '../../Headers';
 import styles from './styles';
 
 const AnchorsList = () => {
@@ -32,7 +31,6 @@ const AnchorsList = () => {
     <View onLayout={handleLayout} style={styles.wrapper}>
       <FlatList
         data={anchors}
-        ListHeaderComponent={WinnersHeader}
         renderItem={Winner}
         keyExtractor={item => item.anchorID}
         ListFooterComponent={

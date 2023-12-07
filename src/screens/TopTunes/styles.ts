@@ -1,7 +1,14 @@
 import {StyleSheet} from 'react-native';
-import {boxes, fonts} from '../../../config/stylesGuides';
+import {colors, fonts, boxes} from '../../config/stylesGuides';
 
 const styles = {
+  screenContainer: {
+    height: '100%',
+    width: '100%',
+  },
+  topTunesScreen: {
+    backgroundColor: colors.light.beige,
+  },
   pageTitle: {
     ...fonts.h2,
     paddingTop: boxes.boxPadding,

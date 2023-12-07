@@ -2,11 +2,10 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import {View} from 'react-native';
 import {useModal} from '../../hooks/useModal';
 import {usePresets} from '../../hooks/usePresets';
-import AnchorsList from '../../components/AnchorsList';
+import {Candidates} from '../../components/Anchors';
 import {IconButton} from '../../components/Elements';
 import SubmitForm from '../../components/SubmitForm';
 import {VoteHint} from '../../components/Hints';
-import {HomeHeader} from '../../components/Headers';
 import {Timeout} from '../../config/types';
 import styles from './styles';
 
@@ -49,7 +48,7 @@ const HomeScreen = () => {
 
   return (
     <View style={[styles.screenContainer, styles.homeScreen]}>
-      <AnchorsList filter="all" header={HomeHeader} />
+      <Candidates />
       <IconButton
         iconName="plus"
         iconSize={28}

@@ -31,7 +31,7 @@ const RouteButton = ({route, navigation, stateIndex, index}: any) => {
       underlayColor="transparent"
       style={styles.tab}>
       <View style={styles.iconWrapper}>
-        <Icon name={route.name} color={iconColor} />
+        <Icon name={route.name.replace(' ', '')} color={iconColor} />
       </View>
     </TouchableHighlight>
   );
