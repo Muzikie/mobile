@@ -21,7 +21,7 @@ const FaucetHint = () => {
     <View style={styles.wrapper}>
       <Image source={coin} style={styles.image} />
       <Text style={styles.description}>
-        You need tokens to to use the app. You can receive free tokens from the
+        You need tokens to use the app. You can receive free tokens from the
         Testnet faucet. Simply copy your address and visit to the Faucet.
       </Text>
       <Button

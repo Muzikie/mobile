@@ -1,12 +1,14 @@
 import React from 'react';
 import {View, TouchableHighlight} from 'react-native';
 import {usePresets} from '../../hooks/usePresets';
-import styles from './styles';
+import {useTheme} from '../../hooks/useTheme';
+import themedStyles from './styles';
 import {Icon} from '../Elements';
 import {colors} from '../../config/stylesGuides';
 
 const RouteButton = ({route, navigation, stateIndex, index}: any) => {
   const {presets} = usePresets();
+  const styles = useTheme(themedStyles);
   const isFocused = stateIndex === index;
 
   const onPress = () => {

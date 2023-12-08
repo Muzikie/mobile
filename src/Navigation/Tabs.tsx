@@ -22,8 +22,12 @@ const Navigation = (): JSX.Element => {
     },
   };
 
+  const ThemedBottomTabBar = (props: any) => (
+    <BottomTabBar theme={presets.theme} {...props} />
+  );
+
   return (
-    <Tab.Navigator initialRouteName="Home" tabBar={BottomTabBar}>
+    <Tab.Navigator initialRouteName="Home" tabBar={ThemedBottomTabBar}>
       <Tab.Screen name="Home" component={Home} options={tabBarOptions} />
       <Tab.Screen
         name="Top Tunes"

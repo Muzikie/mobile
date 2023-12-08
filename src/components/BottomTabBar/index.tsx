@@ -1,13 +1,17 @@
 import React from 'react';
-import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {View} from 'react-native';
 import styles from './styles';
 // import Player from '../Player';
-import RouteButton from './RouteButton';
+import RouteButton from '../RouteButton';
+import {EnhancedBottomTabBarProps} from './types';
 
-const BottomTabBar = ({state, navigation}: BottomTabBarProps) => (
-  <View style={styles.tabBar}>
-    <View style={styles.wrapper}>
+const BottomTabBar = ({
+  state,
+  navigation,
+  theme,
+}: EnhancedBottomTabBarProps) => (
+  <View style={[styles.tabBar, styles[`${theme}TabBar`]]}>
+    <View style={[styles.wrapper, styles[`${theme}Wrapper`]]}>
       {/* <Player /> */}
       <View style={styles.tabs}>
         {state.routes.map((route, index: number) => (

@@ -1,20 +1,16 @@
-import {StyleSheet} from 'react-native';
 import {colors} from '../../config/stylesGuides';
+import {Themes} from '../../context/presetsContext/types';
 
-const styles = {
+const styles = (theme: Themes) => ({
   tabBar: {
+    backgroundColor: colors[theme].beige,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 30,
   },
-  darkTabBar: {
-    backgroundColor: colors.dark.beige,
-  },
-  lightTabBar: {
-    backgroundColor: colors.light.beige,
-  },
   wrapper: {
+    backgroundColor: colors[theme].white,
     width: '90%',
     height: 60,
     borderRadius: 18,
@@ -27,12 +23,6 @@ const styles = {
     shadowRadius: 10,
     display: 'flex',
     flexDirection: 'row',
-  },
-  darkWrapper: {
-    backgroundColor: colors.dark.white,
-  },
-  lightWrapper: {
-    backgroundColor: colors.light.white,
   },
   tabs: {
     width: '100%',
@@ -48,6 +38,6 @@ const styles = {
   iconWrapper: {
     width: 27,
   },
-};
+});
 
-export default StyleSheet.create(styles);
+export default styles;
