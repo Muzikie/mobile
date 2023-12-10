@@ -18,7 +18,7 @@ const AnchorsList = () => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
   const {presets} = usePresets();
-  const {signAndBroadcast} = useTransaction();
+  const {signAndBroadcast, broadcastStatus} = useTransaction();
   const {anchors, feedback, retrieve} = useFetchAnchors('all');
   const {show, hide} = useModal();
   const styles = useTheme(themedStyles);
@@ -48,6 +48,18 @@ const AnchorsList = () => {
       retrieve(null, false);
     }
   }, [feedback, retrieve]);
+
+  useEffect(() => {
+    if (broadcastStatus.status === FetchStatus.error) {
+      show({
+        title: 'Error!',
+        description: account?.balances.length
+          ? 'Error voting for the anchor'
+          : 'You need tokens',
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [broadcastStatus, account?.balances]);
 
   return (
     <View onLayout={handleLayout} style={styles.wrapper}>
