@@ -30,7 +30,7 @@ const styles = (theme: Themes) => ({
     right: 0,
   },
   button: {
-    backgroundColor: colors[theme].fadeBeige,
+    backgroundColor: colors[theme].neutralZero,
     borderRadius: boxes.thumbnailRadius,
     width: 40,
     height: 40,
@@ -48,11 +48,11 @@ const styles = (theme: Themes) => ({
   },
   dotActive: {
     height: 20,
-    backgroundColor: colors[theme].purple,
+    backgroundColor: colors[theme].primaryStrong,
   },
   dotInactive: {
     height: 14,
-    backgroundColor: colors[theme].fadeBeige,
+    backgroundColor: colors[theme].neutralZero,
   },
 });
 

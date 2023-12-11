@@ -14,6 +14,7 @@ const IconButton = ({
   onPress,
   style,
   iconSize,
+  iconColor,
   iconName,
   disabled,
 }: IconButtonProps) => {
@@ -21,7 +22,12 @@ const IconButton = ({
   return (
     <TouchableWithoutFeedback onPress={onPress} disabled={disabled}>
       <View style={[styles.wrapper, style]}>
-        <Icon name={iconName} size={iconSize} style={styles.icon} />
+        <Icon
+          name={iconName}
+          size={iconSize}
+          style={styles.icon}
+          color={iconColor}
+        />
         <TouchableHighlight
           onPress={onPress}
           underlayColor="transparent"

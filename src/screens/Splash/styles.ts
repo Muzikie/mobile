@@ -6,7 +6,7 @@ const styles = (theme: Themes) => ({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
   },
   splashImageContainer: {
     height: 75,

@@ -16,14 +16,16 @@ const styles = (theme: Themes) => ({
   },
   container: {
     width: '100%',
-    paddingVertical: boxes.boxPadding,
+    paddingBottom: boxes.boxPadding,
     paddingHorizontal: boxes.boxPadding * 1.5,
     borderTopLeftRadius: boxes.boxBorderRadius,
     borderTopRightRadius: boxes.boxBorderRadius,
-    backgroundColor: colors[theme].white,
+    backgroundColor: colors[theme].neutralZero,
+    borderTopWidth: 1,
+    borderTopColor: colors[theme].neutralZero,
   },
   shadow: {
-    shadowColor: colors[theme].purple,
+    shadowColor: colors[theme].primaryStrong,
     shadowOffset: {
       width: 0,
       height: (-1 * boxes.shadowHeight) / 2,
@@ -31,16 +33,16 @@ const styles = (theme: Themes) => ({
     shadowOpacity: 0.3,
     shadowRadius: boxes.shadowHeight,
   },
-  closeButtonWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-  },
   closeButton: {
     width: 35,
     height: 35,
-    backgroundColor: colors[theme].fadeBeige,
+    backgroundColor: colors[theme].secondaryMild,
     borderRadius: boxes.thumbnailRadius,
+    marginTop: boxes.elementPadding,
+    position: 'absolute',
+    top: boxes.elementPadding,
+    right: boxes.boxPadding,
+    zIndex: 10,
   },
   image: {
     width: 50,
@@ -48,35 +50,13 @@ const styles = (theme: Themes) => ({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  title: {
-    textAlign: 'left',
-    marginBottom: 5,
-    marginTop: boxes.elementPadding,
-    color: colors[theme].purple,
-    fontFamily: fontFamilies.poppinsSemiBold,
-    maxWidth: '90%',
-  },
-  description: {
-    textAlign: 'left',
-    marginBottom: 20,
-    lineHeight: 20,
-    color: colors[theme].darkGrey,
-    maxWidth: '100%',
-  },
   actionBar: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
-  },
-  secondaryButton: {
-    maxWidth: '40%',
-    width: 120,
-  },
-  primaryButton: {
-    maxWidth: '40%',
-    width: 120,
+    gap: 10,
   },
 });
 

@@ -1,14 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {useTheme} from '../../../hooks/useTheme';
+import SectionHeader from '../../SectionHeader';
 import themedStyles from './styles';
 
 const HomeHeader = () => {
   const styles = useTheme(themedStyles);
   return (
-    <View>
-      <Text style={styles.pageTitle}>Songs of the day</Text>
-    </View>
+    <SectionHeader title="Songs of the day" style={styles.sectionHeader} />
   );
 };
 

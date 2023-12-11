@@ -16,28 +16,28 @@ const entries = [
   {
     image: whyImage,
     description: 'Muzikie helps you discover wonderful tunes',
-    backgroundColor: colors.light.navyBlue,
-    color: colors.light.white,
+    backgroundColor: colors.light.primaryMild,
+    color: colors.light.neutralZero,
   },
   {
     image: howImage,
     description:
       'Share the music you loved or upvote tunes shared by others to help everyone find wonderful music',
-    backgroundColor: colors.light.fadeSuccess,
-    color: colors.light.purple,
+    backgroundColor: colors.light.reassureMild,
+    color: colors.light.primaryStrong,
   },
   {
     image: whatImage,
     description:
       'Three most popular tunes of each day receive a badge and prize',
-    backgroundColor: colors.light.errorFade,
-    color: colors.light.white,
+    backgroundColor: colors.light.warnMild,
+    color: colors.light.neutralZero,
   },
   {
     image: corpsImage,
     description: 'Listen and share songs directly from Spotify and Apple Music',
-    backgroundColor: colors.light.lemon,
-    color: colors.light.purple,
+    backgroundColor: colors.light.warnStrong,
+    color: colors.light.primaryStrong,
   },
 ];
 

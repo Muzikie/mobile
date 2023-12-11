@@ -8,13 +8,13 @@ import Wallet from '../../components/Wallet';
 import UnclaimedBadges from '../../components/UnclaimedBadges';
 import {FaucetHint} from '../../components/Hints';
 import {EmptyBadgeList} from '../../components/EmptyStates';
-import {BadgesHeader} from '../../components/Headers';
 import {useAccount} from '../../hooks/useAccount';
 import {useModal} from '../../hooks/useModal';
 import {usePresets} from '../../hooks/usePresets';
 import {useFetchBadges} from '../../hooks/useFetchBadges';
 import {useTheme} from '../../hooks/useTheme';
 import themedStyles from './styles';
+import SectionHeader from '../../components/SectionHeader';
 
 const CURRENT_HINT_VERSION = '0.1.0';
 
@@ -53,12 +53,19 @@ const ProfileScreen = () => {
       </View>
 
       <View>
-        {badgesStats.length > 0 && <BadgesHeader title="Badges" />}
+        {badgesStats.length > 0 && (
+          <SectionHeader title="Badges" style={styles.sectionHeader} />
+        )}
         {badgesStats.map(item => (
           <AchievedBadge item={item} key={item.type} />
         ))}
         {badgesStats.length === 0 && <EmptyBadgeList />}
-        {unclaimed.length > 0 && <BadgesHeader title="Claim your prize" />}
+        {unclaimed.length > 0 && (
+          <SectionHeader
+            title="Claim your prize"
+            style={styles.sectionHeader}
+          />
+        )}
         {unclaimed.length > 0 && <UnclaimedBadges badges={unclaimed} />}
       </View>
     </ScrollView>

@@ -18,6 +18,7 @@ const styles = (theme: Themes) => ({
     fontWeight: 500,
     height: 40,
     lineHeight: 40,
+    color: colors[theme].neutralMighty,
   },
   box: {
     width: 40,
@@ -25,12 +26,12 @@ const styles = (theme: Themes) => ({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: boxes.thumbnailRadius,
-    borderColor: colors[theme].paleGrey,
+    borderColor: colors[theme].neutralTender,
     borderWidth: 8,
   },
   selected: {
-    backgroundColor: colors[theme].fadeSuccess,
-    borderColor: colors[theme].fadeSuccess,
+    backgroundColor: colors[theme].reassureStrong,
+    borderColor: colors[theme].reassureStrong,
   },
 });
 

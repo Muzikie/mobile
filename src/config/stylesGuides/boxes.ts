@@ -3,7 +3,7 @@ export default {
   buttonHeight: 50,
   menuHeight: 60,
   avatarSize: 124,
-  badgeSize: 58,
+  badgeSize: 70,
   playButtonSize: 40,
 
   // paddings

@@ -7,10 +7,10 @@ const styles = (theme: Themes) => ({
     width: '100%',
   },
   settingsScreen: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
   },
-  title: {
-    padding: boxes.boxPadding,
+  sectionHeader: {
+    paddingHorizontal: boxes.boxPadding,
   },
 });
 

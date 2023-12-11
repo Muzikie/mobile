@@ -8,6 +8,7 @@ import Feedback from '../Feedback';
 import Preview from '../Preview';
 import {useFetchTrack} from '../../hooks/useFetchTrack';
 import {useTransaction} from '../../hooks/useTransaction';
+import {usePresets} from '../../hooks/usePresets';
 import {useModal} from '../../hooks/useModal';
 import {useAccount} from '../../hooks/useAccount';
 import {FetchStatus, Timeout} from '../../config/types';
@@ -15,6 +16,7 @@ import {getStatus} from './utils';
 import type {SubmitFormProps} from './types';
 import Confirm from './Confirm';
 import {COMMANDS, MODULES} from '../../config/constants';
+import {colors} from '../../config/stylesGuides';
 
 const SubmitForm = ({style}: SubmitFormProps) => {
   const timer = useRef<Timeout>();
@@ -33,6 +35,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
   } = useTransaction();
   const {show, hide} = useModal();
   const styles = useTheme(themedStyles);
+  const {presets} = usePresets();
 
   const onSubmit = async () => {
     Keyboard.dismiss();
@@ -85,14 +88,17 @@ const SubmitForm = ({style}: SubmitFormProps) => {
         placeholder="Spotify URL"
         onChangeText={updateUrl}
         value={url.value}
+        placeholderTextColor={colors[presets.theme].neutralStrong}
       />
       <Preview fetchStatus={fetchFeedback.status} data={anchor} />
-      <Button
-        title="Submit"
-        theme={ButtonThemes.purple}
-        onPress={onSubmit}
-        disabled={fetchFeedback.status !== FetchStatus.success}
-      />
+      <View style={styles.actionBar}>
+        <Button
+          title="Continue"
+          theme={ButtonThemes.primary}
+          onPress={onSubmit}
+          disabled={fetchFeedback.status !== FetchStatus.success}
+        />
+      </View>
       <Feedback
         status={status}
         message={broadcastStatus.message || fetchFeedback.message}

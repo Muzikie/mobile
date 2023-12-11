@@ -17,11 +17,11 @@ const PlayButton = ({onPress, status, style}: PlayButtonProps) => {
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={colors.light.purple}
+      underlayColor={colors.light.primaryStrong}
       style={[styles.wrapper, style]}>
       <Icon
         name={icons[status]}
-        color={colors.light.white}
+        color={colors.light.neutralZero}
         style={styles.icon}
       />
     </TouchableHighlight>

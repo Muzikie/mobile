@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {fonts} from '../../config/stylesGuides';
+import {View} from 'react-native';
 import {usePresets} from '../../hooks/usePresets';
 import {useModal} from '../../hooks/useModal';
 import Option from '../../components/Option';
 import SelectTheme from '../../components/SelectTheme';
+import SectionHeader from '../../components/SectionHeader';
 import About from '../../components/About';
 import BackupPassphrase from '../../components/BackupPassphrase';
 import {useTheme} from '../../hooks/useTheme';
@@ -63,10 +63,10 @@ const SettingsScreen = () => {
 
   return (
     <View style={[styles.screenContainer, styles.settingsScreen]}>
-      <Text style={[fonts.h2, styles.title]}>Account</Text>
+      <SectionHeader title="Account" style={styles.sectionHeader} />
       <Option title="Backup" onPress={backup} />
       <Option title="Connect" state="Coming soon" onPress={connect} />
-      <Text style={[fonts.h2, styles.title]}>Other settings</Text>
+      <SectionHeader title="Other settings" style={styles.sectionHeader} />
       <Option title="Theme" state={theme} onPress={setTheme} />
       <Option title="Terms of use" href="https://muzikie.com/terms" />
       <Option title="About" onPress={showAbout} />

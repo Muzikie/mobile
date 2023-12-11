@@ -24,18 +24,18 @@ const styles = (theme: Themes) => ({
   },
   title: {
     width: '100%',
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsMedium,
     paddingBottom: 4,
   },
   submitter: {
-    color: colors[theme].lightGrey,
+    color: colors[theme].neutralMild,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
   artist: {
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralStrong,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
@@ -49,7 +49,7 @@ const styles = (theme: Themes) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors[theme].fadeBeige,
+    backgroundColor: colors[theme].secondaryStrong,
   },
   thumbnail: {
     width: 66,

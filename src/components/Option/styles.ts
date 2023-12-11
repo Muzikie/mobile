@@ -21,14 +21,15 @@ const styles = (theme: Themes) => ({
   },
   title: {
     fontWeight: 500,
+    color: colors[theme].neutralMighty,
   },
   state: {
     textAlign: 'right',
     paddingRight: boxes.elementPadding,
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralMild,
   },
   iconWrapper: {
-    backgroundColor: colors[theme].paleGrey,
+    backgroundColor: colors[theme].neutralTender,
     width: 40,
     height: 40,
     justifyContent: 'center',

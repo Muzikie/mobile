@@ -83,7 +83,7 @@ export const Icon = ({name, color, size = 28, style = {}}: IconProps) => {
     name = 'Default';
   }
   if (!color) {
-    color = colors[presets.theme].purple;
+    color = colors[presets.theme].primaryStrong;
   }
 
   return (

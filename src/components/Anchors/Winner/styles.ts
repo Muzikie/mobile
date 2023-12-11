@@ -24,18 +24,18 @@ const styles = (theme: Themes) => ({
   },
   title: {
     width: '100%',
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsMedium,
     paddingBottom: 4,
   },
   submitter: {
-    color: colors[theme].lightGrey,
+    color: colors[theme].neutralMild,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
   artist: {
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralStrong,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
@@ -52,7 +52,7 @@ const styles = (theme: Themes) => ({
     alignItems: 'center',
   },
   date: {
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralStrong,
     fontSize: fontSizes.base,
     fontFamily: fontFamilies.poppinsRegular,
   },
@@ -63,14 +63,14 @@ const styles = (theme: Themes) => ({
     alignItems: 'flex-start',
   },
   hashTag: {
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsRegular,
     paddingTop: 3,
     paddingRight: 2,
   },
   rank: {
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     fontSize: fontSizes.h1,
     fontFamily: fontFamilies.poppinsRegular,
   },

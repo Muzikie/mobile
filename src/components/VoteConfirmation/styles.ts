@@ -12,7 +12,7 @@ const styles = (theme: Themes) => ({
   },
   description: {
     paddingTop: boxes.elementPadding,
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralStrong,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsRegular,
   },

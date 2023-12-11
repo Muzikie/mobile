@@ -8,7 +8,6 @@ const Button = ({
   onPress,
   style,
   wrapperStyle,
-  shadow,
   theme,
   title,
   disabled,
@@ -17,22 +16,16 @@ const Button = ({
   const disabledTouchable = disabled ? styles.disabled : {};
   const disabledText = disabled
     ? styles.disabled
-    : styles[theme || ButtonThemes.purple];
+    : styles[theme || ButtonThemes.primary];
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
-      <View
-        style={[
-          styles.shadowWrapper,
-          shadow === false || disabled ? {} : styles.shadow,
-        ]}>
-        <TouchableHighlight
-          disabled={disabled}
-          onPress={onPress}
-          underlayColor="transparent"
-          style={[styles.touchable, disabledTouchable, style]}>
-          <Text style={[styles.title, disabledText]}>{title}</Text>
-        </TouchableHighlight>
-      </View>
+      <TouchableHighlight
+        disabled={disabled}
+        onPress={onPress}
+        underlayColor="transparent"
+        style={[styles.touchable, disabledTouchable, style]}>
+        <Text style={[styles.title, disabledText]}>{title}</Text>
+      </TouchableHighlight>
     </View>
   );
 };

@@ -6,22 +6,25 @@ import themedStyles from './styles';
 import {IntroContentProps} from './types';
 
 const IntroContent = ({data}: IntroContentProps) => {
-  const [imageBox, setImageBox] = useState(0);
+  const [dimensions, setDimensions] = useState([0, 0]);
   const styles = useTheme(themedStyles);
   const {backgroundColor, image, description, color} = data;
 
   useEffect(() => {
-    const {width} = Dimensions.get('window');
-    setImageBox(width - boxes.boxPadding * 2);
+    const {width, height} = Dimensions.get('window');
+    setDimensions([
+      width - boxes.boxPadding * 2,
+      height - width - boxes.boxPadding * 3,
+    ]);
   }, []);
 
   return (
     <View style={[styles.stepContainer, {backgroundColor}]}>
-      <View style={[styles.imageContainer, {height: imageBox}]}>
+      <View style={[styles.imageContainer, {height: dimensions[0]}]}>
         <Image style={styles.image} source={image} />
       </View>
-      <View style={[styles.titleContainer, {height: imageBox * 0.6}]}>
-        <Text style={[styles.subtitle, {color}]}>{description}</Text>
+      <View style={[styles.descriptionContainer, {height: dimensions[1]}]}>
+        <Text style={[styles.description, {color}]}>{description}</Text>
       </View>
     </View>
   );

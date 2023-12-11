@@ -3,7 +3,7 @@ import {boxes, colors, fonts} from '../../config/stylesGuides';
 
 const styles = (theme: Themes) => ({
   wrapper: {
-    backgroundColor: colors[theme].errorFade,
+    backgroundColor: colors[theme].warnMild,
     padding: boxes.boxPadding,
     paddingVertical: boxes.doublePadding,
     marginBottom: boxes.boxPadding,
@@ -13,14 +13,14 @@ const styles = (theme: Themes) => ({
     position: 'absolute',
     top: boxes.boxPadding - 1,
     right: boxes.boxPadding,
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     opacity: 0,
   },
   visible: {
     opacity: 1,
   },
   passphrase: {
-    color: colors[theme].white,
+    color: colors[theme].neutralZero,
     ...fonts.passphrase,
   },
   hiddenPassphrase: {
@@ -30,7 +30,7 @@ const styles = (theme: Themes) => ({
     position: 'absolute',
     bottom: -1 * boxes.boxPadding,
     right: boxes.boxPadding,
-    backgroundColor: colors[theme].fadeSuccess,
+    backgroundColor: colors[theme].reassureStrong,
     padding: boxes.elementPadding,
     borderRadius: boxes.thumbnailRadius,
   },

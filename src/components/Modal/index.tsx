@@ -1,16 +1,25 @@
-import React, {useState} from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Image} from 'react-native';
 import Modal from 'react-native-modal';
-import {colors, fonts} from '../../config/stylesGuides';
+import {colors} from '../../config/stylesGuides';
 import {IconButton} from '../Elements';
 import {Button} from '../Elements';
 import {ModalProps} from './types';
 import {useTheme} from '../../hooks/useTheme';
 import themedStyles from './styles';
+import SectionHeader from '../SectionHeader';
 
 const ModalHolder = ({data, hide, isVisible}: ModalProps) => {
   const [primaryPressed, setPrimaryPressed] = useState(false);
   const styles = useTheme(themedStyles);
+
+  useEffect(() => {
+    if (primaryPressed) {
+      setTimeout(() => {
+        setPrimaryPressed(false);
+      }, 100);
+    }
+  }, [data, primaryPressed, setPrimaryPressed]);
 
   return (
     <Modal
@@ -23,16 +32,16 @@ const ModalHolder = ({data, hide, isVisible}: ModalProps) => {
       style={styles.modal}>
       <View style={styles.wrapper}>
         <View style={[styles.container, styles.shadow]}>
-          <View style={styles.closeButtonWrapper}>
-            <Text style={[fonts.h2, styles.title]}>{data?.title}</Text>
-            <IconButton
-              onPress={hide}
-              style={styles.closeButton}
-              iconSize={24}
-              iconName="cross"
-            />
-          </View>
-          <Text style={[fonts.h4, styles.description]}>{data?.description}</Text>
+          <SectionHeader
+            title={data?.title as string}
+            subtitle={data?.description}
+          />
+          <IconButton
+            onPress={hide}
+            style={styles.closeButton}
+            iconSize={24}
+            iconName="cross"
+          />
           {data?.image && <Image source={data?.image} style={styles.image} />}
           {data?.content}
           <View style={styles.actionBar}>

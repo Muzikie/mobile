@@ -4,6 +4,7 @@ const styles = () => ({
   wrapper: {
     paddingLeft: boxes.boxPadding,
     paddingRight: boxes.boxPadding,
+    paddingBottom: boxes.boxPadding,
   },
 });
 

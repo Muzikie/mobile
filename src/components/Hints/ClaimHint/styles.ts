@@ -13,7 +13,6 @@ const styles = (theme: Themes) => ({
     paddingBottom: boxes.doublePadding,
   },
   image: {
-    marginTop: -1 * boxes.boxPadding,
     marginBottom: boxes.boxPadding,
   },
   descriptionWrapper: {
@@ -25,14 +24,14 @@ const styles = (theme: Themes) => ({
   },
   description: {
     fontSize: fontSizes.h3,
-    color: colors[theme].grey,
+    color: colors[theme].neutralStrong,
     lineHeight: 30,
     marginBottom: 0,
     paddingBottom: 0,
   },
   bold: {
     fontSize: fontSizes.h3,
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     fontFamily: fontFamilies.poppinsMedium,
     lineHeight: 30,
     marginBottom: 0,

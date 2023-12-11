@@ -5,9 +5,9 @@ import themedStyles from './styles';
 import {Badges} from '../../config/types';
 import {BadgeProps} from './types';
 
-import dayBadge from '../../assets/images/badges/day-badge.png';
-import weekBadge from '../../assets/images/badges/week-badge.png';
-import monthBadge from '../../assets/images/badges/month-badge.png';
+import dayBadge from '../../assets/images/badges/daybadge.png';
+import weekBadge from '../../assets/images/badges/weekbadge.png';
+import monthBadge from '../../assets/images/badges/monthbadge.png';
 
 const badges = {
   [Badges.AOTD]: dayBadge,

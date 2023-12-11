@@ -13,13 +13,13 @@ const styles = (theme: Themes) => ({
   description: {
     fontFamily: fontFamilies.poppinsRegular,
     fontSize: fontSizes.h3,
-    color: colors[theme].grey,
+    color: colors[theme].neutralStrong,
     paddingTop: boxes.elementPadding,
   },
   punchline: {
     fontFamily: fontFamilies.poppinsRegular,
     fontSize: fontSizes.h2,
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
   },
 });
 

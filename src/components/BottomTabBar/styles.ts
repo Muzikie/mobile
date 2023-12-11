@@ -9,10 +9,10 @@ const styles = {
     paddingBottom: 30,
   },
   darkTabBar: {
-    backgroundColor: colors.dark.beige,
+    backgroundColor: colors.dark.secondaryStrong,
   },
   lightTabBar: {
-    backgroundColor: colors.light.beige,
+    backgroundColor: colors.light.secondaryStrong,
   },
   wrapper: {
     width: '90%',
@@ -29,10 +29,10 @@ const styles = {
     flexDirection: 'row',
   },
   darkWrapper: {
-    backgroundColor: colors.dark.white,
+    backgroundColor: colors.dark.neutralZero,
   },
   lightWrapper: {
-    backgroundColor: colors.light.white,
+    backgroundColor: colors.light.neutralZero,
   },
   tabs: {
     width: '100%',

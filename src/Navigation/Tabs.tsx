@@ -16,7 +16,7 @@ const Navigation = (): JSX.Element => {
   const tabBarOptions = {
     tabBarShowLabel: false,
     headerStyle: {
-      backgroundColor: colors[presets.theme].beige,
+      backgroundColor: colors[presets.theme].secondaryStrong,
       shadowColor: 'transparent',
       elevation: 0,
     },

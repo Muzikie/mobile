@@ -126,32 +126,16 @@
       "sha1": "219c15d3e0e8cdad614501a5dd3f00c54f319271"
     },
     {
-      "path": "src/assets/images/badges/day-badge.png",
-      "sha1": "b1e903c5d74c86b2487364248aab707208417d8e"
+      "path": "src/assets/images/badges/daybadge@2x.png",
+      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
     },
     {
-      "path": "src/assets/images/badges/month-badge.png",
-      "sha1": "c696e32baaa0ab161957b7beda7f4b8345c0c1b0"
+      "path": "src/assets/images/badges/monthbadge@2x.png",
+      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
     },
     {
-      "path": "src/assets/images/badges/super-link-badge.png",
-      "sha1": "2f3db7d7386c5213fbf44a1efea869a052bbc782"
-    },
-    {
-      "path": "src/assets/images/badges/video-badge.png",
-      "sha1": "e4c651a8e11af976c7ce6bf75f5d2dcbbc8cb110"
-    },
-    {
-      "path": "src/assets/images/badges/week-badge.png",
-      "sha1": "1e46a7e76a398e04c3827c7fbac9493ab85add7f"
-    },
-    {
-      "path": "src/assets/images/carrot@2x.png",
-      "sha1": "87ab8300637d07f09718a16995c561a490b416bb"
-    },
-    {
-      "path": "src/assets/images/carrot@3x.png",
-      "sha1": "f88732fdf5cd2eefdd4e52cdf837260e631e47b7"
+      "path": "src/assets/images/badges/weekbadge@2x.png",
+      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
     },
     {
       "path": "src/assets/images/coin@2x.png",
@@ -166,6 +150,14 @@
       "sha1": "016847b3cc4181c8a5ba353266280180f49c0e4c"
     },
     {
+      "path": "src/assets/images/darkcarrot@2x.png",
+      "sha1": "03fdbc94f21d540158ae46d89852dfeccc8fec0b"
+    },
+    {
+      "path": "src/assets/images/darkcarrot@3x.png",
+      "sha1": "18f718fac3dffa78ef456934885efd019b86005d"
+    },
+    {
       "path": "src/assets/images/heart@2x.png",
       "sha1": "d3b4da67e00b25b30bf6e5b186ffe0e4cb900a95"
     },
@@ -176,6 +168,14 @@
     {
       "path": "src/assets/images/how.png",
       "sha1": "3a0f18aacb1597b6d178685772e965cb6c2ff221"
+    },
+    {
+      "path": "src/assets/images/lightcarrot@2x.png",
+      "sha1": "87ab8300637d07f09718a16995c561a490b416bb"
+    },
+    {
+      "path": "src/assets/images/lightcarrot@3x.png",
+      "sha1": "f88732fdf5cd2eefdd4e52cdf837260e631e47b7"
     },
     {
       "path": "src/assets/images/motivation1.png",
@@ -206,16 +206,12 @@
       "sha1": "b24e635f98dd68320eb10705a41bdb1ea5911766"
     },
     {
-      "path": "src/assets/images/preview.png",
-      "sha1": "fe572873d7db51df4142a59bbe13265fc3edecda"
-    },
-    {
       "path": "src/assets/images/preview@2x.png",
-      "sha1": "fad93b292afed85bb670ee1c083bdb6f0ee68ded"
+      "sha1": "057d1555550924b17e12045c6a1c4673553d4e2c"
     },
     {
       "path": "src/assets/images/preview@3x.png",
-      "sha1": "f7e9014cd6f59ff5a0a492255e441bee97f21c57"
+      "sha1": "5c15a809f63f10b661d663a7517d5997ef473fee"
     },
     {
       "path": "src/assets/images/splashScreen.png",

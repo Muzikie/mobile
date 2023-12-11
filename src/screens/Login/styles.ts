@@ -7,7 +7,7 @@ const styles = (theme: Themes) => ({
     width: '100%',
   },
   loginScreen: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'nowrap',

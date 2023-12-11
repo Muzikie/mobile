@@ -13,7 +13,7 @@ const styles = (theme: Themes) => ({
   },
   description: {
     fontSize: fontSizes.h3,
-    color: colors[theme].grey,
+    color: colors[theme].neutralMild,
     paddingBottom: boxes.boxPadding,
   },
   button: {},

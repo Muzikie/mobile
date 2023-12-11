@@ -19,10 +19,10 @@ const styles = (theme: Themes) => ({
     paddingLeft: boxes.elementPadding,
   },
   songTitle: {
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
   },
   artist: {
-    color: colors[theme].grey,
+    color: colors[theme].neutralMild,
   },
 });
 

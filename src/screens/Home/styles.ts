@@ -7,7 +7,7 @@ const styles = (theme: Themes) => ({
     width: '100%',
   },
   homeScreen: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
   },
   pageTitle: {
     ...fonts.h2,
@@ -19,13 +19,13 @@ const styles = (theme: Themes) => ({
     position: 'absolute',
     bottom: boxes.boxPadding,
     right: boxes.boxPadding,
-    backgroundColor: colors[theme].white,
+    backgroundColor: colors[theme].neutralZero,
     width: 44,
     height: 44,
     borderRadius: 22,
   },
   shadow: {
-    shadowColor: colors[theme].purple,
+    shadowColor: colors[theme].primaryStrong,
     shadowOffset: {
       width: 0,
       height: (-1 * boxes.shadowHeight) / 2,

@@ -5,7 +5,7 @@ const styles = (theme: Themes) => ({
   wrapper: {
     width: boxes.playButtonSize,
     height: boxes.playButtonSize,
-    backgroundColor: colors[theme].purple,
+    backgroundColor: colors[theme].primaryStrong,
     borderWidth: 1,
     borderColor: 'transparent',
     borderRadius: boxes.thumbnailRadius,

@@ -13,7 +13,10 @@ const styles = (theme: Themes) => ({
     paddingRight: boxes.boxPadding,
   },
   profileScreen: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
+  },
+  sectionHeader: {
+    paddingHorizontal: boxes.boxPadding,
   },
   details: {
     display: 'flex',
@@ -24,7 +27,7 @@ const styles = (theme: Themes) => ({
   },
   label: {
     paddingTop: boxes.elementPadding,
-    color: colors[theme].grey,
+    color: colors[theme].neutralMild,
   },
   name: {
     fontFamily: fonts.body,

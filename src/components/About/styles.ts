@@ -1,5 +1,11 @@
 import {Themes} from '../../context/presetsContext/types';
-import {boxes, colors, fonts} from '../../config/stylesGuides';
+import {
+  boxes,
+  colors,
+  fontFamilies,
+  fontSizes,
+  fonts,
+} from '../../config/stylesGuides';
 
 const styles = (theme: Themes) => ({
   wrapper: {
@@ -13,9 +19,17 @@ const styles = (theme: Themes) => ({
   },
   title: {
     paddingTop: boxes.boxPadding,
+    color: colors[theme].neutralMighty,
+    fontSize: fontSizes.h1,
+    fontFamily: fontFamilies.poppinsBold,
+  },
+  version: {
+    color: colors[theme].neutralMighty,
+    fontSize: fontSizes.h3,
+    fontFamily: fontFamilies.poppinsRegular,
   },
   passphrase: {
-    color: colors[theme].white,
+    color: colors[theme].neutralZero,
     ...fonts.passphrase,
   },
   hiddenPassphrase: {
@@ -25,7 +39,7 @@ const styles = (theme: Themes) => ({
     position: 'absolute',
     bottom: -1 * boxes.boxPadding,
     right: boxes.boxPadding,
-    backgroundColor: colors[theme].fadeSuccess,
+    backgroundColor: colors[theme].reassureStrong,
     padding: boxes.elementPadding,
     borderRadius: boxes.thumbnailRadius,
   },

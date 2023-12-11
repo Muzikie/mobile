@@ -3,7 +3,6 @@ import {Text, View} from 'react-native';
 import {fromBaseToken} from '../../utils/formatters';
 import BadgeIcon from '../Badge';
 import {BADGE_TITLES, FetchStatus} from '../../config/types';
-import {fonts} from '../../config/stylesGuides';
 import type {UnclaimedBadgeProps} from './types';
 import {Button, ButtonThemes} from '../Elements';
 import {ClaimHint} from '../Hints';
@@ -49,17 +48,13 @@ const UnclaimedBadge = ({
     <View style={styles.container}>
       <View style={styles.info}>
         <BadgeIcon style={styles.badge} name={badge.type} />
-        <Text style={[fonts.h4, styles.title]}>{badgeTitle}</Text>
-        <Text style={[fonts.base, styles.grey, styles.awardDate]}>
-          {`Awarded on ${badge.awardDate}`}
-        </Text>
+        <Text style={styles.badgeName}>{badgeTitle}</Text>
+        <Text style={styles.awardDate}>{`Awarded on ${badge.awardDate}`}</Text>
       </View>
       <View style={styles.action}>
         <View style={styles.prizeWrapper}>
-          <Text style={[fonts.base, styles.grey, styles.prizeTitle]}>
-            Prize
-          </Text>
-          <Text style={[fonts.h4, styles.title]}>{formattedPrize}</Text>
+          <Text style={styles.prizeTitle}>Prize</Text>
+          <Text style={styles.titleValue}>{formattedPrize}</Text>
         </View>
         <View style={styles.buttonWrapper}>
           <Button
@@ -77,8 +72,7 @@ const UnclaimedBadge = ({
                 onPrimaryPress: () => signAndBroadcast(tx),
               });
             }}
-            shadow={false}
-            theme={ButtonThemes.white}
+            theme={ButtonThemes.secondary}
             style={styles.claim}
           />
         </View>

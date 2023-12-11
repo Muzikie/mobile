@@ -30,32 +30,26 @@ const styles = {
   },
   h1: {
     fontSize: fontSizes.h1,
-    color: colors.light.purple,
     fontFamily: fontFamilies.poppinsBlack,
     fontWeight: '900',
   },
   h2: {
     fontSize: fontSizes.h2,
-    color: colors.light.grey,
     fontFamily: fontFamilies.poppinsMedium,
   },
   h3: {
     fontSize: fontSizes.h3,
-    color: colors.light.purple,
   },
   h4: {
     fontSize: fontSizes.h4,
-    color: colors.light.purple,
     fontFamily: fontFamilies.poppinsRegular,
     marginBottom: 4,
   },
   base: {
     fontSize: fontSizes.base,
-    color: colors.light.grey,
     fontFamily: fontFamilies.poppinsRegular,
   },
   small: {
-    color: colors.light.purple,
     fontSize: fontSizes.small,
   },
   passphrase: {

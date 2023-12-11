@@ -25,8 +25,8 @@ const RouteButton = ({route, navigation, stateIndex, index}: any) => {
   };
 
   const iconColor = isFocused
-    ? colors[presets.theme].purple
-    : colors[presets.theme].grey;
+    ? colors[presets.theme].primaryStrong
+    : colors[presets.theme].neutralTender;
 
   return (
     <TouchableHighlight

@@ -7,7 +7,7 @@ const styles = (theme: Themes) => ({
     width: '100%',
   },
   topTunesScreen: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
   },
   pageTitle: {
     ...fonts.h2,

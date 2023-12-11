@@ -3,14 +3,14 @@ import {Themes} from '../../context/presetsContext/types';
 
 const styles = (theme: Themes) => ({
   tabBar: {
-    backgroundColor: colors[theme].beige,
+    backgroundColor: colors[theme].secondaryStrong,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 30,
   },
   wrapper: {
-    backgroundColor: colors[theme].white,
+    backgroundColor: colors[theme].neutralZero,
     width: '90%',
     height: 60,
     borderRadius: 18,

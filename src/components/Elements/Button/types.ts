@@ -1,6 +1,6 @@
 export enum ButtonThemes {
-  purple = 'purple',
-  white = 'white',
+  primary = 'primary',
+  secondary = 'secondary',
 }
 
 export interface ButtonProps {

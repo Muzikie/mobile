@@ -10,10 +10,10 @@ const styles = (theme: Themes) => ({
     marginTop: boxes.boxPadding,
   },
   success: {
-    color: colors[theme].success,
+    color: colors[theme].reassureStrong,
   },
   error: {
-    color: colors[theme].error,
+    color: colors[theme].warnStrong,
   },
 });
 

@@ -1,18 +1,27 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, Image} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
+import {Themes} from '../../context/presetsContext/types';
 import {fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
-import carrot from '../../assets/images/carrot.png';
+import lightCarrot from '../../assets/images/lightcarrot.png';
+import darkCarrot from '../../assets/images/darkcarrot.png';
+import {usePresets} from '../../hooks/usePresets';
 import {useTheme} from '../../hooks/useTheme';
 import themedStyles from './styles';
 import type {WalletProps} from './types';
+
+const carrots = {
+  [Themes.light]: lightCarrot,
+  [Themes.dark]: darkCarrot,
+};
 
 const Wallet = ({style, address, balance}: WalletProps) => {
   const [_, setString] = useClipboard();
   const [copied, setCopied] = useState(false);
   const timeout = useRef<Timeout>();
   const styles = useTheme(themedStyles);
+  const {presets} = usePresets();
 
   const copyToClipboard = () => {
     setCopied(true);
@@ -31,7 +40,7 @@ const Wallet = ({style, address, balance}: WalletProps) => {
 
   return (
     <View style={[styles.wrapper, style]}>
-      <Image source={carrot} />
+      <Image source={carrots[presets.theme]} />
       <View style={styles.info}>
         <View style={styles.balanceContainer}>
           <Text style={[fonts.base, styles.label]}>Balance:</Text>

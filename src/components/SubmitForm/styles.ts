@@ -11,7 +11,8 @@ const styles = (theme: Themes) => ({
     width: '100%',
     height: boxes.buttonHeight,
     borderRadius: boxes.thumbnailRadius,
-    backgroundColor: colors[theme].paleGrey,
+    backgroundColor: colors[theme].neutralTender,
+    color: colors[theme].neutralStrong,
     paddingLeft: boxes.elementPadding,
     paddingRight: boxes.elementPadding,
   },
@@ -19,8 +20,12 @@ const styles = (theme: Themes) => ({
     marginTop: boxes.boxPadding * -1,
     paddingBottom: boxes.boxPadding,
   },
+  actionBar: {
+    height: boxes.buttonHeight,
+    marginTop: boxes.elementPadding,
+  },
   text: {
-    color: colors[theme].darkGrey,
+    color: colors[theme].neutralStrong,
     fontSize: fontSizes.h4,
     fontFamily: fontFamilies.poppinsRegular,
   },

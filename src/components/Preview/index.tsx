@@ -6,10 +6,12 @@ import {Icon} from '../Elements';
 import previewPlaceholder from '../../assets/images/preview.png';
 import type {PreviewProps} from './types';
 import {useTheme} from '../../hooks/useTheme';
+import {usePresets} from '../../hooks/usePresets';
 import themedStyles from './styles';
 
 const Preview = ({style, fetchStatus, data}: PreviewProps) => {
   const styles = useTheme(themedStyles);
+  const {presets} = usePresets();
   if (fetchStatus !== FetchStatus.success || !data) {
     return <Image source={previewPlaceholder} style={styles.placeholder} />;
   }
@@ -21,12 +23,20 @@ const Preview = ({style, fetchStatus, data}: PreviewProps) => {
       <Image source={{uri: albumArt}} style={styles.image} />
       <View style={styles.info}>
         <View style={styles.row}>
-          <Icon name="disc" size={18} color={colors.light.lightGrey} />
+          <Icon
+            name="disc"
+            size={18}
+            color={colors[presets.theme].neutralMild}
+          />
           <Text style={styles.album}>{data.album}</Text>
         </View>
         <Text style={styles.title}>{data.name}</Text>
         <View style={styles.row}>
-          <Icon name="mic" size={18} color={colors.light.darkGrey} />
+          <Icon
+            name="mic"
+            size={18}
+            color={colors[presets.theme].neutralStrong}
+          />
           <Text style={styles.artist}>{data.artists}</Text>
         </View>
       </View>

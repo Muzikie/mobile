@@ -2,12 +2,13 @@
 import React, {useRef, useState} from 'react';
 import {View, Text} from 'react-native';
 import {useClipboard} from '@react-native-community/clipboard';
-import {fonts} from '../../config/stylesGuides';
+import {colors, fonts} from '../../config/stylesGuides';
 import type {Timeout} from '../../config/types';
 import {useTheme} from '../../hooks/useTheme';
-import themedStyles from './styles';
+import {usePresets} from '../../hooks/usePresets';
 import {useAccount} from '../../hooks/useAccount';
 import {IconButton} from '../Elements';
+import themedStyles from './styles';
 
 const BackupPassphrase = () => {
   const {account} = useAccount();
@@ -16,6 +17,7 @@ const BackupPassphrase = () => {
   const [visible, setVisible] = useState(false);
   const timeout = useRef<Timeout>();
   const styles = useTheme(themedStyles);
+  const {presets} = usePresets();
 
   const copyToClipboard = () => {
     setCopied(true);
@@ -36,6 +38,7 @@ const BackupPassphrase = () => {
       <IconButton
         iconSize={24}
         iconName={visible ? 'eyeOff' : 'eye'}
+        iconColor={colors[presets.theme].neutralZero}
         style={styles.iconButton}
         onPress={() => setVisible(!visible)}
       />

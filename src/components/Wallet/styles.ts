@@ -11,21 +11,21 @@ const styles = (theme: Themes) => ({
   },
   info: {
     flex: 1,
-    backgroundColor: colors[theme].white,
+    backgroundColor: colors[theme].neutralZero,
     borderRadius: boxes.boxBorderRadius,
   },
   copied: {
     position: 'absolute',
     top: boxes.boxPadding - 1,
     right: boxes.boxPadding,
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     opacity: 0,
   },
   visible: {
     opacity: 1,
   },
   label: {
-    color: colors[theme].grey,
+    color: colors[theme].neutralMild,
     paddingBottom: boxes.elementPadding,
     textAlign: 'center',
   },
@@ -38,7 +38,7 @@ const styles = (theme: Themes) => ({
     paddingBottom: boxes.doublePadding,
   },
   address: {
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     letterSpacing: 1,
     textAlign: 'center',
   },
@@ -47,7 +47,7 @@ const styles = (theme: Themes) => ({
     paddingBottom: boxes.elementPadding,
   },
   balance: {
-    color: colors[theme].purple,
+    color: colors[theme].primaryStrong,
     textAlign: 'center',
   },
 });

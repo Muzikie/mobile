@@ -13,8 +13,8 @@ export const ListFooter = ({status}: {status: FetchStatus}) => {
         size="large"
         color={
           status === FetchStatus.pending
-            ? colors.light.purple
-            : colors.light.beige
+            ? colors.light.primaryStrong
+            : colors.light.secondaryStrong
         }
       />
     </View>

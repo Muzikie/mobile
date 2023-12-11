@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import {fonts} from '../../config/stylesGuides';
 import {useTheme} from '../../hooks/useTheme';
 import themedStyles from './styles';
 import pkg from '../../../package.json';
@@ -11,8 +10,8 @@ const About = () => {
   return (
     <View style={styles.wrapper}>
       <Image style={styles.image} source={logo} />
-      <Text style={[fonts.h1, styles.title]}>Muzikie</Text>
-      <Text style={fonts.h3}>{`Version: ${pkg.version}`}</Text>
+      <Text style={styles.title}>Muzikie</Text>
+      <Text style={styles.version}>{`Version: ${pkg.version}`}</Text>
     </View>
   );
 };
