@@ -127,15 +127,27 @@
     },
     {
       "path": "src/assets/images/badges/daybadge@2x.png",
-      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
+      "sha1": "a6d3652ac11b698c1001de8f470c73fe49ab629b"
+    },
+    {
+      "path": "src/assets/images/badges/daybadge@3x.png",
+      "sha1": "cee5498c596a03e1d2ebf7a0b72d5c56e8538291"
     },
     {
       "path": "src/assets/images/badges/monthbadge@2x.png",
-      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
+      "sha1": "acb9978af7c4839b611bbab0de090be9c67f7bb3"
+    },
+    {
+      "path": "src/assets/images/badges/monthbadge@3x.png",
+      "sha1": "608e4faa36d95e0a195725a18f04c297f70f949f"
     },
     {
       "path": "src/assets/images/badges/weekbadge@2x.png",
-      "sha1": "dc2c3bc49ccc9e32666fec474ee6b1f505f669f2"
+      "sha1": "6ad97dcbb5717bfbdea9f5c68b84aa70919fced4"
+    },
+    {
+      "path": "src/assets/images/badges/weekbadge@3x.png",
+      "sha1": "9e1d66ad1cd89dd7f2e7539d94f39d7d0cfe3eb9"
     },
     {
       "path": "src/assets/images/coin@2x.png",
@@ -147,7 +159,7 @@
     },
     {
       "path": "src/assets/images/corps.png",
-      "sha1": "016847b3cc4181c8a5ba353266280180f49c0e4c"
+      "sha1": "71e6646603fcc398370e0f18d62be53a1a5401ca"
     },
     {
       "path": "src/assets/images/darkcarrot@2x.png",
@@ -156,6 +168,14 @@
     {
       "path": "src/assets/images/darkcarrot@3x.png",
       "sha1": "18f718fac3dffa78ef456934885efd019b86005d"
+    },
+    {
+      "path": "src/assets/images/darkpreview@2x.png",
+      "sha1": "057d1555550924b17e12045c6a1c4673553d4e2c"
+    },
+    {
+      "path": "src/assets/images/darkpreview@3x.png",
+      "sha1": "5c15a809f63f10b661d663a7517d5997ef473fee"
     },
     {
       "path": "src/assets/images/heart@2x.png",
@@ -176,6 +196,14 @@
     {
       "path": "src/assets/images/lightcarrot@3x.png",
       "sha1": "f88732fdf5cd2eefdd4e52cdf837260e631e47b7"
+    },
+    {
+      "path": "src/assets/images/lightpreview@2x.png",
+      "sha1": "426fb434927e49793cb69f495c47d8b254dcdd17"
+    },
+    {
+      "path": "src/assets/images/lightpreview@3x.png",
+      "sha1": "b4522abbc750820d058c09b88b5e658a86473a1d"
     },
     {
       "path": "src/assets/images/motivation1.png",
@@ -204,14 +232,6 @@
     {
       "path": "src/assets/images/party@3x.png",
       "sha1": "b24e635f98dd68320eb10705a41bdb1ea5911766"
-    },
-    {
-      "path": "src/assets/images/preview@2x.png",
-      "sha1": "057d1555550924b17e12045c6a1c4673553d4e2c"
-    },
-    {
-      "path": "src/assets/images/preview@3x.png",
-      "sha1": "5c15a809f63f10b661d663a7517d5997ef473fee"
     },
     {
       "path": "src/assets/images/splashScreen.png",
