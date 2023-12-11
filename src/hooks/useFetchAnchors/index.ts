@@ -28,6 +28,8 @@ export const useFetchAnchors = (filter: 'winner' | 'all') => {
 
         if (response.meta.count < API_CALL_LIMIT) {
           setEnded(true);
+        } else if (ended && refresh) {
+          setEnded(false);
         }
 
         if (response?.data?.length) {
