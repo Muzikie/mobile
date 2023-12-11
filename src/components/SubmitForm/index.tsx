@@ -4,19 +4,32 @@ import {useTheme} from '../../hooks/useTheme';
 import themedStyles from './styles';
 import {Button} from '../Elements';
 import {ButtonThemes} from '../Elements/Button/types';
-import Feedback from '../Feedback';
 import Preview from '../Preview';
 import {useFetchTrack} from '../../hooks/useFetchTrack';
-import {useTransaction} from '../../hooks/useTransaction';
 import {usePresets} from '../../hooks/usePresets';
 import {useModal} from '../../hooks/useModal';
 import {useAccount} from '../../hooks/useAccount';
 import {FetchStatus, Timeout} from '../../config/types';
-import {getStatus} from './utils';
-import type {SubmitFormProps} from './types';
+import type {SubmitFormProps, Feedback} from './types';
 import Confirm from './Confirm';
-import {COMMANDS, MODULES} from '../../config/constants';
 import {colors} from '../../config/stylesGuides';
+import successImage from '../../assets/images/success.png';
+import errorImage from '../../assets/images/error.png';
+
+const finalMessages = (feedback: Feedback) => {
+  if (feedback.status === FetchStatus.success) {
+    return {
+      title: 'Success!',
+      description: 'Your song has been submitted.',
+      image: successImage,
+    };
+  }
+  return {
+    title: 'Error!',
+    description: feedback.message || 'Something went wrong.',
+    image: errorImage,
+  };
+};
 
 const SubmitForm = ({style}: SubmitFormProps) => {
   const timer = useRef<Timeout>();
@@ -28,14 +41,15 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     updateUrl,
     reset: resetTrack,
   } = useFetchTrack();
-  const {
-    signAndBroadcast,
-    broadcastStatus,
-    reset: resetTransaction,
-  } = useTransaction();
-  const {show, hide} = useModal();
+
+  const {show} = useModal();
   const styles = useTheme(themedStyles);
   const {presets} = usePresets();
+
+  const onDone = (feedback: Feedback) => {
+    resetTrack();
+    show(finalMessages(feedback));
+  };
 
   const onSubmit = async () => {
     Keyboard.dismiss();
@@ -43,19 +57,7 @@ const SubmitForm = ({style}: SubmitFormProps) => {
       show({
         title: 'Looking good!',
         description: '',
-        content: <Confirm />,
-        onPrimaryPress: async () => {
-          hide();
-          // Submit the song data to the blockchain
-          await signAndBroadcast({
-            params: {
-              ...anchor,
-              appleMusicId: '',
-            },
-            module: MODULES.ANCHOR,
-            command: COMMANDS.CREATE,
-          });
-        },
+        content: <Confirm anchor={anchor} onDone={onDone} />,
       });
     } else {
       // @todo Replace this with an error display prompt
@@ -63,23 +65,12 @@ const SubmitForm = ({style}: SubmitFormProps) => {
     }
   };
 
-  useEffect(() => {
-    if (broadcastStatus.status === FetchStatus.success) {
-      timer.current = setTimeout(() => {
-        resetTrack();
-        resetTransaction();
-      }, 2000);
-    }
-  }, [broadcastStatus, resetTrack, resetTransaction]);
-
   useEffect(
     () => () => {
       clearTimeout(timer.current);
     },
     [],
   );
-
-  const status = getStatus(broadcastStatus.status, fetchFeedback.status);
 
   return (
     <View style={style}>
@@ -99,10 +90,6 @@ const SubmitForm = ({style}: SubmitFormProps) => {
           disabled={fetchFeedback.status !== FetchStatus.success}
         />
       </View>
-      <Feedback
-        status={status}
-        message={broadcastStatus.message || fetchFeedback.message}
-      />
     </View>
   );
 };

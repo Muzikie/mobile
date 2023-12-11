@@ -29,7 +29,7 @@ const styles = (theme: Themes) => ({
     color: colors[theme].neutralMild,
   },
   iconWrapper: {
-    backgroundColor: colors[theme].neutralTender,
+    backgroundColor: colors[theme].neutralZero,
     width: 40,
     height: 40,
     justifyContent: 'center',

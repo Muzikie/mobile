@@ -21,6 +21,8 @@ const styles = (theme: Themes) => ({
     paddingBottom: boxes.boxPadding,
   },
   actionBar: {
+    flexDirection: 'row',
+    width: '100%',
     height: boxes.buttonHeight,
     marginTop: boxes.elementPadding,
   },

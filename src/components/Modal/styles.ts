@@ -47,7 +47,7 @@ const styles = (theme: Themes) => ({
   image: {
     width: 50,
     height: 50,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
     marginBottom: 20,
   },
   actionBar: {

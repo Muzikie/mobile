@@ -3,17 +3,28 @@ import {Text, View, Image} from 'react-native';
 import {FetchStatus} from '../../config/types';
 import {colors} from '../../config/stylesGuides';
 import {Icon} from '../Elements';
-import previewPlaceholder from '../../assets/images/preview.png';
+import darkPreview from '../../assets/images/darkpreview.png';
+import lightPreview from '../../assets/images/lightpreview.png';
 import type {PreviewProps} from './types';
 import {useTheme} from '../../hooks/useTheme';
 import {usePresets} from '../../hooks/usePresets';
 import themedStyles from './styles';
 
+const previewPlaceholder = {
+  light: lightPreview,
+  dark: darkPreview,
+};
+
 const Preview = ({style, fetchStatus, data}: PreviewProps) => {
   const styles = useTheme(themedStyles);
   const {presets} = usePresets();
   if (fetchStatus !== FetchStatus.success || !data) {
-    return <Image source={previewPlaceholder} style={styles.placeholder} />;
+    return (
+      <Image
+        source={previewPlaceholder[presets.theme]}
+        style={styles.placeholder}
+      />
+    );
   }
 
   const albumArt = data?.images.sort((a, b) => a.width - b.width)[0].url;
