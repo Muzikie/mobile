@@ -116,8 +116,12 @@ export const getFromAppleMusic = (storefront: string, id: string) =>
 export const getFromSpotify = async (id: string) =>
   get(`${API_URLS.RELAY}/spotify/${id}`, {});
 
-export const getAnchors = async (params: EndpointParams) =>
-  getList('anchors', params);
+export const getAnchors = async (params: EndpointParams) => {
+  const res = await getList('anchors', params);
+  console.log('res', res);
+
+  return res;
+}
 
 export const getBadges = async (params: EndpointParams) =>
   getList('badges', params);

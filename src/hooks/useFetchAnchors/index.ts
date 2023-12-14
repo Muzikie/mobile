@@ -4,12 +4,17 @@ import {API_CALL_LIMIT} from '../../config/constants';
 import {FetchStatus} from '../../config/types';
 import {getAnchors} from '../../utils/api';
 
-export const useFetchAnchors = (filter: 'winner' | 'all') => {
+export enum Filter {
+  winner = 'winner',
+  all = 'all',
+}
+
+export const useFetchAnchors = (filter: Filter) => {
   const [feedback, setFeedback] = useState({
     status: FetchStatus.idle,
     message: '',
   });
-  const [anchors, setAnchors] = useState<Anchor[]>([]);
+  const [anchors, setAnchors] = useState<Required<Anchor>[]>([]);
   const [offset, setOffset] = useState(0);
   const [ended, setEnded] = useState(false);
 

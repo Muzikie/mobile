@@ -1,6 +1,8 @@
 export const SPOTIFY_LINK_REG =
   /^https:\/\/open\.spotify\.com\/track\/[\w-]+\?si=[\w-]+/;
 
+export const SPOTIFY_BASE = 'https://open.spotify.com/track/';
+
 export const API_CALL_LIMIT = 10;
 
 export const HTTP_STATUS = {

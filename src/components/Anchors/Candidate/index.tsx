@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
 import {Icon} from '../../Elements';
+import {SPOTIFY_BASE} from '../../../config/constants';
 import VoteConfirmation from '../../VoteConfirmation';
 import {truncateText} from '../../../utils/helpers';
 import {useTheme} from '../../../hooks/useTheme';
 import themedStyles from './styles';
-import type {AnchorRowProps} from './types';
+import type {CandidateProps} from './types';
 
-const AnchorRow = ({
+const Candidate = ({
   item,
   onVote,
   show,
   hide,
   skipVoteConfirmation,
   address,
-}: AnchorRowProps) => {
+}: CandidateProps) => {
   const [voted, setVoted] = useState(false);
   const styles = useTheme(themedStyles);
   const {name, artists, submitter, votes, images} = item;
@@ -46,7 +47,7 @@ const AnchorRow = ({
       await Linking.openURL(`spotify:track:${songID}`);
     } else {
       // If Spotify app is not installed, open the default browser
-      await Linking.openURL(`https://open.spotify.com/track/${songID}`);
+      await Linking.openURL(`${SPOTIFY_BASE}${songID}`);
     }
   };
 
@@ -78,4 +79,4 @@ const AnchorRow = ({
   );
 };
 
-export default AnchorRow;
+export default Candidate;

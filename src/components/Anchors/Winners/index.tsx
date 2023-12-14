@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, RefreshControl, View, LayoutChangeEvent} from 'react-native';
-import {useFetchAnchors} from '../../../hooks/useFetchAnchors';
+import {useFetchAnchors, Filter} from '../../../hooks/useFetchAnchors';
 import {useTheme} from '../../../hooks/useTheme';
 import {FetchStatus} from '../../../config/types';
 import {calculateItemsToDisplay} from '../../../utils/helpers';
@@ -8,9 +8,9 @@ import Winner from '../Winner';
 import ListFooter from '../../ListFooter';
 import themedStyles from './styles';
 
-const AnchorsList = () => {
+const Winners = () => {
   const [displaySize, setDisplaySize] = useState(0);
-  const {anchors, feedback, retrieve} = useFetchAnchors('winner');
+  const {anchors, feedback, retrieve} = useFetchAnchors(Filter.winner);
   const styles = useTheme(themedStyles);
 
   const onRefresh = async () => {
@@ -24,16 +24,20 @@ const AnchorsList = () => {
   };
 
   useEffect(() => {
-    if (feedback.message === FetchStatus.idle) {
+    if (
+      feedback.status === FetchStatus.idle &&
+      !anchors.length &&
+      displaySize > 0
+    ) {
       retrieve(null, false);
     }
-  }, [feedback, retrieve]);
+  }, [feedback, retrieve, anchors, displaySize]);
 
   return (
     <View onLayout={handleLayout} style={styles.wrapper}>
       <FlatList
         data={anchors}
-        renderItem={Winner}
+        renderItem={({item}) => <Winner item={item} />}
         keyExtractor={item => item.anchorID}
         ListFooterComponent={
           anchors.length > displaySize ? (
@@ -53,4 +57,4 @@ const AnchorsList = () => {
   );
 };
 
-export default AnchorsList;
+export default Winners;

@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef, useCallback} from 'react';
 import {Anchor} from '../../config/types';
-import {SPOTIFY_LINK_REG} from '../../config/constants';
+import {SPOTIFY_LINK_REG, SPOTIFY_BASE} from '../../config/constants';
 import {getFromSpotify} from '../../utils/api';
 import {FetchStatus, Timeout} from '../../config/types';
 
@@ -15,7 +15,7 @@ export const useFetchTrack = () => {
     message: '',
   });
   const [anchor, setAnchor] =
-    useState<Omit<Anchor, 'anchorID' | 'submitter'>>();
+    useState<Omit<Anchor, 'anchorID' | 'submitter' | 'createdAt'>>();
 
   const retrieveInfo = useCallback(async () => {
     setFeedback({
@@ -24,9 +24,7 @@ export const useFetchTrack = () => {
     });
 
     // Request song data from Spotify API
-    const trackID = url.value
-      .replace('https://open.spotify.com/track/', '')
-      .split('?')[0];
+    const trackID = url.value.replace(SPOTIFY_BASE, '').split('?')[0];
     const data = await getFromSpotify(trackID);
     if (!data?.name) {
       setFeedback({
@@ -38,7 +36,10 @@ export const useFetchTrack = () => {
         status: FetchStatus.success,
         message: '',
       });
-      const normalizedData: Omit<Anchor, 'anchorID' | 'submitter'> = {
+      const normalizedData: Omit<
+        Anchor,
+        'anchorID' | 'submitter' | 'createdAt'
+      > = {
         spotifyId: trackID,
         name: data.name,
         album: data.album.name,

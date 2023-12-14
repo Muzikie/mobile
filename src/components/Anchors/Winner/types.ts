@@ -1,5 +1,5 @@
 import {Anchor} from '../../../config/types';
 
-export interface WinnerRowProps {
+export interface WinnerProps {
   item: Required<Anchor>;
 }

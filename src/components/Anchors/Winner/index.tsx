@@ -1,9 +1,10 @@
 import React from 'react';
 import {Text, Image, View, TouchableHighlight, Linking} from 'react-native';
+import {SPOTIFY_BASE} from '../../../config/constants';
 import {truncateText} from '../../../utils/helpers';
 import {useTheme} from '../../../hooks/useTheme';
 import themedStyles from './styles';
-import type {WinnerRowProps} from './types';
+import type {WinnerProps} from './types';
 
 const shorten = (date: string) => {
   const dateArray = date.split('-');
@@ -12,7 +13,7 @@ const shorten = (date: string) => {
   return `${day}.${month}`;
 };
 
-const WinnerRow = ({item}: WinnerRowProps) => {
+const Winner = ({item}: WinnerProps) => {
   const styles = useTheme(themedStyles);
   const {name, artists, submitter, images} = item;
 
@@ -25,7 +26,7 @@ const WinnerRow = ({item}: WinnerRowProps) => {
       await Linking.openURL(`spotify:track:${songID}`);
     } else {
       // If Spotify app is not installed, open the default browser
-      await Linking.openURL(`https://open.spotify.com/track/${songID}`);
+      await Linking.openURL(`${SPOTIFY_BASE}${songID}`);
     }
   };
 
@@ -57,4 +58,4 @@ const WinnerRow = ({item}: WinnerRowProps) => {
   );
 };
 
-export default WinnerRow;
+export default Winner;

@@ -4,22 +4,22 @@ import {COMMANDS, MODULES} from '../../../config/constants';
 import {useModal} from '../../../hooks/useModal';
 import {useAccount} from '../../../hooks/useAccount';
 import {useTransaction} from '../../../hooks/useTransaction';
-import {useFetchAnchors} from '../../../hooks/useFetchAnchors';
+import {useFetchAnchors, Filter} from '../../../hooks/useFetchAnchors';
 import {usePresets} from '../../../hooks/usePresets';
 import {FetchStatus} from '../../../config/types';
 import {bufferize, calculateItemsToDisplay} from '../../../utils/helpers';
-import AnchorRow from '../Candidate';
+import Candidate from '../Candidate';
 import {HomeHeader} from '../../Headers';
 import ListFooter from '../../ListFooter';
 import {useTheme} from '../../../hooks/useTheme';
 import themedStyles from './styles';
 
-const AnchorsList = () => {
+const Candidates = () => {
   const [displaySize, setDisplaySize] = useState(0);
   const {account} = useAccount();
   const {presets} = usePresets();
   const {signAndBroadcast} = useTransaction();
-  const {anchors, feedback, retrieve} = useFetchAnchors('all');
+  const {anchors, feedback, retrieve} = useFetchAnchors(Filter.all);
   const {show, hide} = useModal();
   const styles = useTheme(themedStyles);
 
@@ -44,10 +44,14 @@ const AnchorsList = () => {
   };
 
   useEffect(() => {
-    if (feedback.message === FetchStatus.idle) {
+    if (
+      feedback.status === FetchStatus.idle &&
+      !anchors.length &&
+      displaySize > 0
+    ) {
       retrieve(null, false);
     }
-  }, [feedback, retrieve]);
+  }, [feedback, retrieve, anchors, displaySize]);
 
   return (
     <View onLayout={handleLayout} style={styles.wrapper}>
@@ -55,7 +59,7 @@ const AnchorsList = () => {
         data={anchors}
         ListHeaderComponent={HomeHeader}
         renderItem={({item}) => (
-          <AnchorRow
+          <Candidate
             item={item}
             skipVoteConfirmation={presets.skipVoteConfirmation}
             onVote={() => onVote(item.anchorID)}
@@ -83,4 +87,4 @@ const AnchorsList = () => {
   );
 };
 
-export default AnchorsList;
+export default Candidates;
