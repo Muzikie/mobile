@@ -174,8 +174,12 @@
       "sha1": "057d1555550924b17e12045c6a1c4673553d4e2c"
     },
     {
-      "path": "src/assets/images/darkpreview@3x.png",
-      "sha1": "5c15a809f63f10b661d663a7517d5997ef473fee"
+      "path": "src/assets/images/error@2x.png",
+      "sha1": "0c321f4f3ae8136674c6b894f25b54fe3735f2db"
+    },
+    {
+      "path": "src/assets/images/error@3x.png",
+      "sha1": "33ee1fcdbf0f53c55e9c6c4fbe68d128c65e9080"
     },
     {
       "path": "src/assets/images/heart@2x.png",
@@ -234,6 +238,10 @@
       "sha1": "b24e635f98dd68320eb10705a41bdb1ea5911766"
     },
     {
+      "path": "src/assets/images/preview@3x.png",
+      "sha1": "5c15a809f63f10b661d663a7517d5997ef473fee"
+    },
+    {
       "path": "src/assets/images/splashScreen.png",
       "sha1": "6671eb1c528e9141f272658c832e024333e938de"
     },
@@ -244,6 +252,14 @@
     {
       "path": "src/assets/images/splashScreen@3x.png",
       "sha1": "d93f1eb41533bdf0a6a9294fedaa52423404c096"
+    },
+    {
+      "path": "src/assets/images/success@2x.png",
+      "sha1": "69a163bed91f9c5ef3d34449c5ce5062bc0a58d1"
+    },
+    {
+      "path": "src/assets/images/success@3x.png",
+      "sha1": "8f88929cd636cf2347bc9223aa735279e528e90b"
     },
     {
       "path": "src/assets/images/wallet-gradient.png",
